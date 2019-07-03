@@ -1,5 +1,37 @@
 {
     "editor.wordWrap": "on",
     "files.autoSave": "onFocusChange",
-    "python.pythonPath": "env\\Scripts\\python.exe"
+    "python.pythonPath": "env\\Scripts\\python.exe",
+    "sqltools.connections": [
+        {
+            "connectionTimeout": 30,
+            "database": "butian",
+            "dialect": "MySQL",
+            "name": "10.249.173.230",
+            "password": "butian123",
+            "port": 3306,
+            "server": "10.249.173.230",
+            "username": "butian"
+        },
+        {
+            "connectionTimeout": 30,
+            "database": "butian",
+            "dialect": "MySQL",
+            "name": "10.249.173.230",
+            "password": "butian123",
+            "port": 3306,
+            "server": "10.249.173.230",
+            "username": "butian"
+        },
+        {
+            "connectionTimeout": 30,
+            "database": "butian",
+            "dialect": "MySQL",
+            "name": "10.249.173.230",
+            "password": "butian123",
+            "port": 3306,
+            "server": "10.249.173.230",
+            "username": "butian"
+        }
+    ]
 }
