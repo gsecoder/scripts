@@ -32,6 +32,16 @@
             "port": 3306,
             "server": "10.249.173.230",
             "username": "butian"
+        },
+        {
+            "connectionTimeout": 30,
+            "database": "butian",
+            "dialect": "MySQL",
+            "name": "10.95.55.115",
+            "password": "rp33NB!@#HAHA$%^7890",
+            "port": 3306,
+            "server": "10.95.55.115",
+            "username": "root"
         }
     ]
 }
