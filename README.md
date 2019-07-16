@@ -6,9 +6,9 @@ Python Basic Theory Knowledge
     鉴于 Python 工程师的发展方向是有共同的知识集的，此模块就是基于 Python 的入门和高级部分形成。
 
 # 一、Python 入门
-## 1.基本数据结构
+## 1.数据类型
 #### 1.1 [基本数据类型]()
-#### 1.2 [列表List](https://www.baidu.com)
+#### 1.2 [列表List]()
 #### 1.3 元组
 #### 1.3 字典
 #### 1.4 集合

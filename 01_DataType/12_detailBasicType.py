@@ -1,14 +1,14 @@
 #!/usr/bin/env python
 # -*- encoding: utf-8 -*-
-'''
-@File    :   12_basic_type_deatil.py
+"""
+@File    :   12_detailBasicType.py
 @Time    :   2019/07/08 11:40:38
-@Author  :   Crisimple 
+@Author  :   Crisimple
 @Github :    https://crisimple.github.io/
 @Contact :   Crisimple@foxmail.com
 @License :   (C)Copyright 2017-2019, Micro-Circle
 @Desc    :   None
-'''
+"""
 
 # here put the import lib
 # 1.数字类型（int）
