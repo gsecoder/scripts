@@ -23,3 +23,15 @@ print(bit_length_int.bit_length())
 
 
 # 2.bool类型（bool）
+none_value = bool(None)
+print("none_value: ", none_value)
+blank_1 = bool([])
+print("blank_1: ", blank_1)
+blank_2 = bool({})
+print("blank_2: ", blank_2)
+blank_3 = bool("")
+print("blank_3: ", blank_3)
+blank_4 = bool(())
+print("blank_4: ", blank_4)
+zero_value = bool(0)
+print("zero_value: ", zero_value)
