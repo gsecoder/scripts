@@ -148,13 +148,35 @@ print("index_list: ", index_list)
 section_list = list41[0: 3]
 print("section_list: ", section_list)
 
-# （2）追加【append】
+# （2）追加【append】----- 将元素整体添加
 list42 = [123, 'string', [1, 2, 3], (1, 2)]
-list42.append("12222222222222222222")
+list42.append([1, 2])
 print("append_list: ", list42)
 
-# （3）拓展【extend】
+# （3）拓展【extend】----- 将元素分解添加
+list43 = [123, 'string', [1, 2, 3], (1, 3)]
+list43.extend([1, 3])
+print("append_list: ", list43)
+
 # （4）插入【insert】
+list44 = [1, 2, "ok", [20, 9]]
+list44.insert(3, "R")
+print("insert_list: ", list44)
+
 # （5）取出【pop】
+list45 = [23, "OOO", "pop"]
+list45.pop()
+print("pop_list: ", list45)
+
 # （6）删除【remove、del】
+list461 = ["1", 2, "ok", [20, 9]]
+list462 = ["1", 2, "ok", [20, 9]]
+list461.remove("1")
+print("remove_list: ", list461)
+del list462[0]
+print("del_list: ", list462)
+
 # （7）排序【sorted】
+list47 = [11,55,88,66,35,42]
+print("sorted_list: ", sorted(list47))
+print("sorted_reverse_list: ", sorted(list47, reverse=True))
