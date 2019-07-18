@@ -135,3 +135,26 @@ print(string12.format_map({"name": "MI", "age": 90}))
 string13 = "name\tage\tsex\nA\t22\tmale\nB\t23\tfmale"
 expandtabs_str = string13.expandtabs()
 print("expandtabs_str: \n", expandtabs_str)
+
+
+# -----------------------------------------
+# 4.列表
+#   列表是由一系列特定元素顺序排列的元素组成的，它的元素可以是任何数据类型即数字、字符串、列表、元组
+#   字典、布尔值等等，同时其元素也是可以修改的
+# （1）索引、切片
+list41 = [123, 'string', [1, 2, 3], (1, 2), {"APP": "1"}, True]
+index_list = list41[2]
+print("index_list: ", index_list)
+section_list = list41[0: 3]
+print("section_list: ", section_list)
+
+# （2）追加【append】
+list42 = [123, 'string', [1, 2, 3], (1, 2)]
+list42.append("12222222222222222222")
+print("append_list: ", list42)
+
+# （3）拓展【extend】
+# （4）插入【insert】
+# （5）取出【pop】
+# （6）删除【remove、del】
+# （7）排序【sorted】
