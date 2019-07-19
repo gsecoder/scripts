@@ -208,3 +208,44 @@ print(dict61.items())
 print(dict61.values())
 
 
+# ----------------
+# 7. 集合（set类）
+# 集合是一个无序不重复元素的集。set集合类需要的参数必须是迭代类型的，如：序列
+# 、字典等，然后转换为无序不重复的元素集。由于集合是不重复的，所以可以对字符串、列表、元组进行去重。
+# 集合的特性：
+# （1）去重
+# （2）无序
+# （3）每个元素必须为不可变类型（hashable类型，可作为字典的key）
+# （1）集合的创建
+set711 = {"ABC", 'abc', "test", "test", (12, 3), True}
+set712 = set({"ABC", 'abc', "test", "test", (12, 3), True})
+set713 = frozenset({"ABC", 'abc', "test", "test", (12, 3), True, "这是一个不可变的集合"})
+
+# （2）增【add、update】
+set721 = {'A', 'B', 'C'}
+set721.add('D')
+print("set_add: ", set721)
+set722 = {'A', 'B', 'C'}
+set722.update("ERT")
+print("update_set: ", set722)
+
+#（3）删除【pop、remove、discard】
+set731 = {'A', 'B', 'C'}
+set731.pop()
+print("pop_set: ", set731)
+set732 = {'A', 'B', 'C', 'D'}
+set732.remove('C')
+print('remove_set: ', set732)
+set733 = {'A', 'B', 'C', 'DF'}
+set733.discard('E')     # 如果未找到该元素，则无视
+print("discard_set: ", set733)
+
+#（4）关系运算【交集&、并集|、差集-、交叉补集^、issubset、isupperset】
+set741 = {'a', 'b', 'c', 'd', 1}
+set742 = {'A', 'D', 'e', 'F', 1}
+print("交集&", set741 & set742)
+print("并集|", set741 | set742)
+print("差集-", set741 - set742)
+print("交叉补集^", set741 ^ set742)
+print("issubset前是否是后的子集：", set741.issubset(set742))
+print("isupperset前是否是后的父集：", set741.issuperset(set742))
