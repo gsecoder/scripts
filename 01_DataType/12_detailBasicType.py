@@ -177,7 +177,7 @@ del list462[0]
 print("del_list: ", list462)
 
 # （7）排序【sorted】
-list47 = [11,55,88,66,35,42]
+list47 = [11, 55, 88, 66, 35, 42]
 print("sorted_list: ", sorted(list47))
 print("sorted_reverse_list: ", sorted(list47, reverse=True))
 
@@ -186,3 +186,25 @@ print("sorted_reverse_list: ", sorted(list47, reverse=True))
 # 5.元组（tuple类）
 tuple51 = (1, 2, [22, 3])
 print("切片：", tuple51[0])
+
+
+# ------------------
+# 6.字典（dict类）
+# 字典为一系列的键-值对，每个键值通过逗号分割，每个键对应一个值，可以通过键来访问值。无序访问。
+#  键的要求：必须是不可变的。可以是数字、字符串、元组、布尔值。
+dict61 = {
+    ('ok', ): 1,
+    "abc": "中文",
+    True: ['abc']
+}
+print("dict61: ", dict61)
+# 遍历字典----键
+for key in dict61:
+    print(key)
+print(dict61.keys())
+# 遍历字典----键值对
+print(dict61.items())
+# 遍历字典----值
+print(dict61.values())
+
+
