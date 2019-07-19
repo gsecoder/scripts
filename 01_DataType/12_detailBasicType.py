@@ -180,3 +180,9 @@ print("del_list: ", list462)
 list47 = [11,55,88,66,35,42]
 print("sorted_list: ", sorted(list47))
 print("sorted_reverse_list: ", sorted(list47, reverse=True))
+
+
+# ----------------------
+# 5.元组（tuple类）
+tuple51 = (1, 2, [22, 3])
+print("切片：", tuple51[0])
