@@ -16,7 +16,19 @@
 import codecs
 
 f_read = codecs.open('read_file.txt', 'rb', encoding="utf-8")
-print("f_read: ", f_read.read())
+text = f_read.read()
+print(type(text))
+print("f_read: ", text)
 f_read.close()
+
+
+# 2. 写文件
+f_write = codecs.open('write_file.txt', 'wb', encoding='utf-8')
+f_write.write("********************\n")
+f_write.write("<鹅>\n")
+f_write.write("曲项向天歌\n")
+f_write.write("白毛浮绿水\n")
+f_write.close()
+
 
 
