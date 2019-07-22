@@ -82,3 +82,9 @@ print("f_name_closed", f_name.closed)
 # 3.7 flush(): 刷新缓冲区的，即将缓冲区中的数据立刻写入文件，同时清空缓冲区，不需要是被动的等待输出缓冲区写入。一般情况下，文件关闭后会自动刷新缓冲区，
 # 但有时你需要在关闭前刷新它，这时就可以使用 flush() 方法。
 
+
+# 4.Python文件上下文管理
+with codecs.open('with_file.txt', 'wb', encoding='utf-8') as f_with:
+    f_with.write("test with.")
+    print("f_with_closed: ", f_with.closed)
+print("f_with_closed: ", f_with.closed)
