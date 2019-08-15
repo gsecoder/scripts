@@ -10,6 +10,8 @@
 @Desc    :   None
 """
 
+
+# 1. 封装
 class ThisClass(object):
     class_name = 'This class'
     class_age = 12
@@ -34,4 +36,58 @@ ThisClass.class_add_attribute = 'Test add attribute'
 print(ThisClass.class_add_attribute)
 tc = ThisClass('A', 23)
 print(tc.print_class())
+
+
+# 2.继承
+class FatherClass(object):
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
+        self.country = '中国'
+
+    def father_method(self):
+        print('father is walking')
+
+    def talk(self):
+        print("I'am father. %s" % self.name)
+
+
+class BoyClass(FatherClass):
+    # 先继承再重构，反着来子类就不能继承父类的属性了
+    def __init__(self, name, age, sex):
+        # 继承父类的构造方法
+        # 经典继承
+        # FatherClass.__init__(self, name, age)
+        # 新式类继承
+        super(BoyClass, self).__init__(name, age)
+        # 定义子类本身的属性
+        self.sex = sex
+        print(self.name, self.age, self.country, self.sex)
+
+    def child_method(self):
+        print('child is walking...')
+
+    def talk(self):
+        print("I'am child. %s" % self.name)
+
+
+class GirlClass(FatherClass):
+    pass
+
+
+# 2.1 构造方法继承
+# 子类构造方法继承父类构造方法过程如下：
+#   实例化对象b ---> b调用子类的构造方法__init__() ---> 子类的构造方法__init__()继承父类的构造方法__init__() ---> 调用父类的构造方法__init__()
+b = BoyClass('Boy', 25, 'male')
+print(b.name)
+print(b.age)
+print(b.sex)
+print(b.country)
+# 2.2 子类重写父类方法
+f = FatherClass('A', 30)
+f.talk()
+b.talk()
+
+
+# 3.
 
