@@ -89,5 +89,39 @@ f.talk()
 b.talk()
 
 
-# 3.
+# 3. 多态
+class Animal(object):       # 同一类事物：动物
+    def say(self):
+        print("I'm animal.")
 
+
+class Dog(Animal):          # 动物的形态之一：狗
+    def say(self):
+        print("Wang wang~")
+
+
+class Cat(Animal):          # 动物的形态之一：猫
+    def say(self):
+        print("Miao miao~")
+
+
+class Cow(Animal):          # 动物的形态之一：牛
+    def say(self):
+        print("Mou mou~")
+
+
+d = Dog()
+ca = Cat()
+co = Cow()
+# d, ca, co 都是动物，都属于动物类，肯定都有say_hi()方法，因此不用考虑他们具体是什么类型，直接使用即可
+d.say()
+ca.say()
+co.say()
+# 我们可以统一一个接口来调用动物类的say_hi()方法
+def show_say(animal):
+    animal.say()
+
+
+show_say(d)
+show_say(ca)
+show_say(co)
