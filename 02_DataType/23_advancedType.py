@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- encoding: utf-8 -*-
 '''
-@File    :   13_advancedType.py
+@File    :   23_advancedType.py
 @Time    :   2019/07/20 22:53:19
 @Author  :   Crisimple 
 @Version :   1.0

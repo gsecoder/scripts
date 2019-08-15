@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- encoding: utf-8 -*-
 """
-@File    :   12_detailBasicType.py
+@File    :   22_detailBasicType.py
 @Time    :   2019/07/08 11:40:38
 @Author  :   Crisimple
 @Github :    https://crisimple.github.io/
