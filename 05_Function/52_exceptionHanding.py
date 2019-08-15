@@ -38,3 +38,21 @@ except SyntaxError as se:
 else:
     print("只有再try语句里面的执行成功的时候，才会执行else里面的内容")
 
+
+# 3.自定义异常
+class EvaException(BaseException):
+    def __int__(self, msg):
+        self.msg = msg
+
+    def __str__(self):
+        return self.msg
+
+
+# try:
+#     raise EvaException("自定义错误")
+# except EvaException as e:
+#     print(e)
+
+
+# 4. 断言
+
