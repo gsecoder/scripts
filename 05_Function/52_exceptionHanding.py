@@ -55,4 +55,11 @@ class EvaException(BaseException):
 
 
 # 4. 断言
+assert 1 == 1
+try:
+    assert 1 == 2
+except AssertionError as e:
+    print("看见我说明断言的判断条件是错误的，这个异常已经被我捕获了： %s" % e)
+
+
 
