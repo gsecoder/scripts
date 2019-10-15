@@ -152,3 +152,26 @@ print("\n")
 #       locals -- 变量作用域，局部命名空间，如果被提供，可以是任何映射对象
 print(eval('3 * 4'))
 print(eval('pow(2, 3)'))
+
+
+# 11. isinstance()  --- 判断一个对象是否是一个已知类型，类似于type()
+#       isinstance()会认为子类是一种父类类型，考虑继承关系。
+#       type()不会认为子类是一种父类类型，不考虑继承关系
+# isinstance(object, classinfo)
+a11 = 11
+print("%s 的类型为 %s" % (a11, isinstance(a11, int)))
+print("%s 的类型为 %s" % (a11, isinstance(a11, (list, int, str))))
+
+
+class A11(object):
+    pass
+
+
+class A12(A11):
+    pass
+
+
+print(isinstance(A11(), A11))
+print(isinstance(A12(), A11))
+print(type(A11()) == A11)
+print(type(A12()) == A11)
