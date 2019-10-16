@@ -18,6 +18,35 @@ print("%s 的绝对值为 %s" % (a11, abs(a11)))
 print("%s 的绝对值为 %s" % (a12, abs(a12)))
 print("%s 的绝对值为 %s" % (a13, abs(a13)))
 print("\n")
+# --------------------------------
+# bin()     --- 返回一个整数int或长整型long int的二进制表示
+bin_1 = 10
+bin_2 = 20
+print("%s经过bin后返回%s" % (bin_1, bin(10)))
+print("%s经过bin后返回%s" % (bin_2, bin(20)))
+print("\n")
+# --------------------------------
+# max() --- 返回给定参数的最大值，参数可以为序列
+print("返回序列的最大值：", max(100, 200, 3000, 800))
+print("\n")
+# ---------------------------------
+# reversed()    --- 用于反向列表元素
+reverse_list = [3, 5, 7, 1]
+reversed_tuple = (1, 4, 3, 5)
+reverse_list.reverse()
+print("%s 的反向输出为：%s" % (reverse_list, reverse_list))
+# print("%s 的反向输出为：%s" % (reversed_tuple, reversed_tuple))
+print("\n")
+# -----------------------------
+# zip() --- 函数用于将可迭代的对象作为参数，将对象中对应的元素打包成一个个元组，然后返回由这些元组组成的列表。
+# 如果各个迭代器的元素个数不一致，则返回列表长度与最短的对象相同，利用 * 号操作符，可以将元组解压为列表。
+zip_1 = [1, 2, 3]
+zip_2 = [4, 5, 6]
+zip_3 = [7, 8, 9]
+zipped1 = zip(zip_1, zip_2)
+zipped2 = zip(zip_3, zip_2)
+print("压缩成数组：", zipped1)
+print("解压数组：", zip(*zipped2))
 
 
 # 2. divmod() --- 把除数和余数运算结果结合起来，返回一个包含商和余数的元组(a // b, a % b)
@@ -30,6 +59,25 @@ b23 = 0
 print("%s 除以 %s 的；返回结果为：%s" % (a21, b21, divmod(a21, b21)))
 print("%s 除以 %s 的；返回结果为：%s" % (a22, b22, divmod(a22, b22)))
 # print("%s 除以 %s 的；返回结果为：%s" % (a23, b23, divmod(a23, b23)))
+print("\n")
+#  pow(x, y) --- 返回x的y次方的值
+c31 = 2
+cc31 = -3
+c32 = 2
+cc32 = 3
+print("%s 的 %s 次幂运算为：%s" % (c31, cc31, pow(c31, cc31)))
+print("%s 的 %s 次幂运算为：%s" % (c32, cc32, pow(c32, cc32)))
+print("\n")
+# ---------------------------------------------------------
+# sum(iterable[, start]) --- 对一系列数据求和
+#   iterable --- 可迭代对象：列表、元组、集合
+#   start --- 指定增加的参数，如果没有设置这个值，默认为0
+sum_1 = [0, 1, 2, 3]
+sum_2 = (9, 1, 2, 3)
+sum_3 = {9, 1, 2, 0}
+print("%s 求和结果为：%s" %(sum_1, sum(sum_1)))
+print("%s 求和结果为：%s" %(sum_2, sum(sum_2)))
+print("%s 求和结果为：%s" %(sum_3, sum(sum_3)))
 print("\n")
 
 
@@ -44,6 +92,7 @@ print("\n")
 
 
 # 4. open() --- 用于打开一个文件，创建一个 file 对象，相关的方法才可以调用它进行读写
+# file()    --- 用于创建file对象，它有一个别名叫open()
 #  打开文件的模式：
 #       r	以只读方式打开文件。文件的指针将会放在文件的开头。这是默认模式。
 #       rb	以二进制格式打开一个文件用于只读。文件指针将会放在文件的开头。这是默认模式。
@@ -69,16 +118,29 @@ print("\n")
 with open('55_decorators.py', 'r', encoding='utf-8') as f:
     content = f.readline()
     print(content)
+print("\n")
 
 
-# 5. staticmethod()    --- 内置装饰器，返回类的静态函数
+# 5. staticmethod    --- 内置装饰器，返回类的静态函数
 class StatiClass(object):
     @staticmethod
     def write():
         print("类的静态方法")
-
-
 StatiClass.write()
+print("\n")
+# -------------------------------------
+# classmethod   --- 内置装饰器修饰的函数不需要实例化，第一个参数由self变为cls，用来调用类的属性、类的方法、
+class ClassMethod(object):
+    bar = 1
+    def func1(self):
+        print('foo')
+
+    @classmethod
+    def func2(cls):
+        print(cls.bar)
+        cls().func1()
+
+ClassMethod.func2()
 print("\n")
 
 
@@ -115,6 +177,16 @@ for i, element in enumerate(sequence72):
 for i, element in enumerate(sequence73):
     print(i, element)
 print("\n")
+# iter(object[, sentinel])    --- 生成迭代器
+iter_1 = [1, 2, 3, 4, 5, 6]
+iter_2 = "xiao"
+for i in iter_1:
+    print("=====%s" % i)
+print("**************", next(iter(iter_2)))
+print("**************", next(iter(iter_2)))
+print("**************", next(iter(iter_2)))
+print("**************", next(iter(iter_2)))
+print("\n")
 
 
 # 8. int()  --- 将一个字符串或数字转换为整型
@@ -130,6 +202,49 @@ print("\n")
 # str()     --- 返回一个对象的string格式
 print(str(123))
 print(type(str({"A": 1, "B": 2})))
+print("\n")
+# --------------------------------------------------------------
+# tuple()   --- 将列表转换为元组
+tuple_1 = [1, 2, 3, 7]
+print("tuple()将 %s 转换成元组后为：%s" % (tuple_1, tuple(tuple_1)))
+print("\n")
+# --------------------------------
+# list()    --- 将元组转换为列表
+list_1 = (1, '2', 'xyz', 7)
+print("list()将 %s 转换成列表后为：%s" % (list_1, list(list_1)))
+print("\n")
+# --------------------------------
+# bool()    --- 将给定参数转换为布尔类型，如果没有参数，返回False
+bool_1 = 0
+bool_2 = 1
+bool_3 = None
+bool_4 = ''
+bool_5 = 'A'
+print("bool() 将 %s 转换为bool类型后为：%s" % (bool_1, bool(bool_1)))
+print("bool() 将 %s 转换为bool类型后为：%s" % (bool_2, bool(bool_2)))
+print("bool() 将 %s 转换为bool类型后为：%s" % (bool_3, bool(bool_3)))
+print("bool() 将 %s 转换为bool类型后为：%s" % (bool_4, bool(bool_4)))
+print("bool() 将 %s 转换为bool类型后为：%s" % (bool_5, bool(bool_5)))
+print("\n")
+# --------------------------------
+# float()   --- 将整数和字符串转换成浮点数
+print("整数转换为浮点数：", float(12))
+print("字符串转换为浮点数：", float('234'))
+print("\n")
+# --------------------------------
+# map(function,iterable,...)    --- 会根据提供的函数对指定序列做映射
+map_result = map(lambda x: x ** 2, [1, 2, 3, 4, 5])
+print("map函数返回", map_result)
+print("\n")
+# --------------------------------
+# repr()    --- 将对象转换为供解释器读取的形式
+repr_dict = {"A": 1, "B": 2}
+print("repr返回对象的string形式：", repr(repr_dict))
+print("\n")
+# --------------------------------
+# bytearray()   --- 返回一个新自己数据，数组里的元素是可变的，并且每个元素的值的范围为 0 <= x < 256
+print("bytearray....: ", bytearray([1, 2, 3]))
+print("bytearray....: ", bytearray())
 print("\n")
 
 
@@ -152,6 +267,13 @@ print("\n")
 #       locals -- 变量作用域，局部命名空间，如果被提供，可以是任何映射对象
 print(eval('3 * 4'))
 print(eval('pow(2, 3)'))
+print("\n")
+# ----------------------------------
+# str.format()  字符串格式化功能
+print("{} {}".format("Hello", "Python"))
+print("{1} {0} {1}".format("Hello", "Python"))
+print("冲动的人：{name1}, 喜欢的人：{name2}".format(name1="小徐", name2="where?"))
+print("\n")
 
 
 # 11. isinstance()  --- 判断一个对象是否是一个已知类型，类似于type()
@@ -161,17 +283,118 @@ print(eval('pow(2, 3)'))
 a11 = 11
 print("%s 的类型为 %s" % (a11, isinstance(a11, int)))
 print("%s 的类型为 %s" % (a11, isinstance(a11, (list, int, str))))
-
-
 class A11(object):
     pass
-
-
 class A12(A11):
     pass
-
-
 print(isinstance(A11(), A11))
 print(isinstance(A12(), A11))
 print(type(A11()) == A11)
 print(type(A12()) == A11)
+
+
+# 12. issubclass(class, classinfo)  --- 判断参数class是否是类型参数classinfo的子类
+class Issub_A:
+    pass
+class Issub_B(Issub_A):
+    pass
+print("%s 是否是 %s的之类？%s" % (Issub_B, Issub_A, issubclass(Issub_B, Issub_A)))
+print("\n")
+# -------------------------
+# callable() --- 检查一个对象是否是可嗲用的，如果返回True，object仍有可能调用失败；如果返回False，调用绝对失败
+print("callable 1返回：", callable(0))
+print("callable 2返回：", callable(pow))
+print("\n")
+# -------------------------
+# locals()  --- 以字典类型返回当前位置的全部局部变量
+def return_local(x: object, y: object) -> object:
+    z = 1
+    print(locals())
+all_result = return_local(2, 3)
+print("返回当前位置的全部局部变量：", all_result)
+print("\n")
+
+
+# 13. super()   --- 函数是用于调用父类（超类）的方法
+# super 是用来解决多重继承问题的，直接用类名调用父类方法在使用单继承的时候没问题，但是如果使用多继承，会涉及到查找顺序（MRO）、重复调用（钻石继承）等种种问题
+# MRO 就是类的方法解析顺序表, 其实也就是继承父类方法时的顺序表。
+class Super_A(object):
+    def add(self,x):
+        y = x + 1
+        print(y)
+class Super_B(Super_A):
+    def add(self,x):
+        super().add(x)
+superb = Super_B()
+superb.add(2)
+print("\n")
+# ------------------------------
+# property()    --- 在新式类中返回属性值
+class Property_A(object):
+    def __init__(self):
+        self._x = None
+
+    def getx(self):
+        return self._x
+
+    def setx(self, value):
+        self._x = value
+
+    def delx(self):
+        del self._x
+
+    x = property(getx, setx, delx, "I'm the 'x' property.")
+# -----------------------------------
+# getattr() --- 返回一个对象属性值
+class Getattr(object):
+    bar = 1
+g = Getattr()
+print("获取属性值：", getattr(g, 'bar'))
+print("\n")
+
+
+# 14. filter(function, iterable)  --- 过滤序列中不符合条件的元素，返回由符合条件元素组成的新列表
+#   function    --- 判断函数
+#   iterable    --- 可迭代对象
+import random
+def func_filter(x):
+    list_a = []
+    for i1 in x:
+        if (i1 % 2) == 0:
+           list_a.append(i1)
+    return list_a
+filter_result = func_filter([1, 2, 3, 4])
+print("过滤后的序列为：%s" % filter_result)
+
+
+# 15. len() --- 返回对象（字符、列表、元组等）长度或项目个数
+len_1 = "len"
+len_2 = [1, 2, 3, 4]
+len_3 = (1, 2, 3)
+print("%s 的长度为：%s" % (len_1, len(len_1)))
+print("%s 的长度为：%s" % (len_2, len(len_2)))
+print("%s 的长度为：%s" % (len_3, len(len_3)))
+print("\n")
+# vars()    --- 返回对象object的属性和属性值的字典对象。
+class Vars_A(object):
+    a = 1
+print("vars()返回：", vars(Vars_A))
+print("vars()返回：", vars(Vars_A()))
+print("\n")
+# -------------------------------------------------
+# range(start, stop[, step])
+range_result = range(10)
+print("&&&&&&&&", range_result)
+print("\n")
+# -------------------------------------------------
+# frozenset()   --- 返回一个冻结集合，冻结后结合不能再添加或删除任何元素
+frozenset_1 = frozenset(range(10))
+print("frozenset1: %s" % frozenset_1)
+frozenset_2 = frozenset("HELLO")
+print("frozenset2: %s" % frozenset_2)
+print("\n")
+# --------------------------------------------------
+# globals() --- 以字典类型返回当前位置的全部变量
+globals_1 = 'test'
+print("当前位置的全局变量：", globals())
+print("\n")
