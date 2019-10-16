@@ -47,6 +47,14 @@ zipped1 = zip(zip_1, zip_2)
 zipped2 = zip(zip_3, zip_2)
 print("压缩成数组：", zipped1)
 print("解压数组：", zip(*zipped2))
+print("\n")
+# -----------------------------
+# complex([real[, imag]])   创建一个值为 real + imag * j 的复数或者转化一个字符串或数为复数。如果第一个参数为字符串，则不需要指定第二个参数
+#   real -- int, long, float或字符串
+#   imag -- int, long, float
+print("返回一个复数：", complex(1, 2))
+print("返回一个复数：", complex("1+2j"))
+print("\n")
 
 
 # 2. divmod() --- 把除数和余数运算结果结合起来，返回一个包含商和余数的元组(a // b, a % b)
@@ -274,6 +282,18 @@ print("{} {}".format("Hello", "Python"))
 print("{1} {0} {1}".format("Hello", "Python"))
 print("冲动的人：{name1}, 喜欢的人：{name2}".format(name1="小徐", name2="where?"))
 print("\n")
+# -----------------------------------
+# compile(source, filename, mode[, flags[, dont_inherit]]) --- 将一个字符串编译为字节代码
+#   source -- 字符串或者AST（Abstract Syntax Trees）对象
+#   filename -- 代码文件名称，如果不是从文件读取代码则传递一些可辨认的值。
+#   mode -- 指定编译代码的种类。可以指定为 exec, eval, single。
+#   flags -- 变量作用域，局部命名空间，如果被提供，可以是任何映射对象
+#   flags和dont_inherit是用来控制编译源码时的标志
+compile_str = "for i in range(10): print(i)"
+c_str = compile(compile_str, '', 'exec')
+print("编译后执行结果是：", exec(c_str))
+print("\n")
+
 
 
 # 11. isinstance()  --- 判断一个对象是否是一个已知类型，类似于type()
@@ -351,6 +371,16 @@ class Getattr(object):
 g = Getattr()
 print("获取属性值：", getattr(g, 'bar'))
 print("\n")
+# ------------------------------------
+# hasattr(object, name) --- 用于判断对象是否包含对应的属性
+#   object--对象；name--属性名字符串
+class Hasattr(object):
+    x = 10
+    y = 100
+    z = 1000
+print("判断对象是否含有属性：", hasattr(Hasattr, 'x'))
+print("判断对象是否含有属性：", hasattr(Hasattr, 'e'))
+print("\n")
 
 
 # 14. filter(function, iterable)  --- 过滤序列中不符合条件的元素，返回由符合条件元素组成的新列表
@@ -398,3 +428,17 @@ print("\n")
 globals_1 = 'test'
 print("当前位置的全局变量：", globals())
 print("\n")
+
+
+# 16.memoryview --- 返回给定参数的内存查看对象(Momory view)。
+#   所谓内存查看对象，是指对支持缓冲区协议的数据进行包装，在不需要复制对象基础上允许Python代码访问。
+v = memoryview(bytearray('abc', 'utf-8'))
+print(v[0])
+print(v[1])
+print(v[2])
+print("\n")
+# -------------------------
+# round(x[, n]) --- 方法返回浮点数x的四舍五入值。
+print(round(10.2565, 2))
+
+
