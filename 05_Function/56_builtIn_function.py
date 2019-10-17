@@ -29,6 +29,10 @@ print("\n")
 # max() --- 返回给定参数的最大值，参数可以为序列
 print("返回序列的最大值：", max(100, 200, 3000, 800))
 print("\n")
+# --------------------------------
+# min() --- 返回给定参数的最小值，参数可以为序列
+print("返回序列的最小值：", min(-100, 200, 0, -10000))
+print("\n")
 # ---------------------------------
 # reversed()    --- 用于反向列表元素
 reverse_list = [3, 5, 7, 1]
@@ -37,6 +41,9 @@ reverse_list.reverse()
 print("%s 的反向输出为：%s" % (reverse_list, reverse_list))
 # print("%s 的反向输出为：%s" % (reversed_tuple, reversed_tuple))
 print("\n")
+# -----------------------------
+# oct() --- 将一个整数转换成8进制字符串
+print("返回八进制的字符串：", oct(10))
 # -----------------------------
 # zip() --- 函数用于将可迭代的对象作为参数，将对象中对应的元素打包成一个个元组，然后返回由这些元组组成的列表。
 # 如果各个迭代器的元素个数不一致，则返回列表长度与最短的对象相同，利用 * 号操作符，可以将元组解压为列表。
@@ -86,6 +93,15 @@ sum_3 = {9, 1, 2, 0}
 print("%s 求和结果为：%s" %(sum_1, sum(sum_1)))
 print("%s 求和结果为：%s" %(sum_2, sum(sum_2)))
 print("%s 求和结果为：%s" %(sum_3, sum(sum_3)))
+print("\n")
+# --------------------------------------------
+# sorted(iterable, cmp=None, key=None, reverse=False)
+#   iterable -- 可迭代对象
+#   cmp -- 比较的函数有两个参数，参数的值从可迭代对象中取出，函数必须遵守，大于返回1，小于则返回-1，等于则返回0
+#   key -- 用来进行比较的元素，只有一个参数，函数的参数取自于可迭代对象中，指定可迭代对象中的一个元素来进行排序
+#   reverse -- 排序规则，reverse = True 降序 ， reverse = False 升序（默认）
+sorted_dict = [('john', 'A', 15), ('jane', 'B', 12), ('dave', 'B', 10)]
+print("排序结果为：", sorted(sorted_dict, key=lambda s: s[2], reverse=True))
 print("\n")
 
 
@@ -195,6 +211,16 @@ print("**************", next(iter(iter_2)))
 print("**************", next(iter(iter_2)))
 print("**************", next(iter(iter_2)))
 print("\n")
+# -----------------------------
+# next() --- 返回迭代器的下一个项目
+next_1 = iter([1, 2, 3, 4])
+while True:
+    try:
+        x = next(next_1)
+        print("next访问迭代器的数据：", x)
+    except StopIteration:
+        break
+print("\n")
 
 
 # 8. int()  --- 将一个字符串或数字转换为整型
@@ -222,6 +248,21 @@ list_1 = (1, '2', 'xyz', 7)
 print("list()将 %s 转换成列表后为：%s" % (list_1, list(list_1)))
 print("\n")
 # --------------------------------
+# slice(start, stop, step) --- 实现切片对象，用在切片操作函数里的参数传递
+slice_list = [1, 2, 3, 4, 5, 6, 7]
+myslice = slice(1, 6, 2)
+print("slice截取列表：", slice_list[myslice] )
+print('\n')
+# --------------------------------
+# dict(**kwarg)
+# dict(mapping, **kwarg)
+# dict(iterable, **kwarg)
+print("字典1：", dict())
+print("字典1：", dict(a='1', b=2, c=3))
+print("字典1：", dict(zip(['AA', 'BB', 'CC'], [11, 22, 33])))
+print("字典1：", dict([("AAA", 111), ('BBB', 222), ('CCC', 333)]))
+print("\n")
+# --------------------------------
 # bool()    --- 将给定参数转换为布尔类型，如果没有参数，返回False
 bool_1 = 0
 bool_2 = 1
@@ -240,6 +281,16 @@ print("整数转换为浮点数：", float(12))
 print("字符串转换为浮点数：", float('234'))
 print("\n")
 # --------------------------------
+# set(iterable)   --- 创建一个无序不重复的元素集，iterable可迭代对象
+#       --- 可进行关系测试，删除重复数据，还可以计算并集、交集、差集等
+set_1 = set("HELLO")
+set_2 = set("WORLD")
+print("原集合分别为：%s %s" % (set_1, set_2))
+print("%s & %s 的结果为：%s" % (set_1, set_2, set_1 & set_2))
+print("%s | %s 的结果为：%s" % (set_1, set_2, set_1 | set_2))
+print("%s - %s 的结果为(即前面有后面没有的)：%s" % (set_1, set_2, set_1 - set_2))
+print("\n")
+# --------------------------------
 # map(function,iterable,...)    --- 会根据提供的函数对指定序列做映射
 map_result = map(lambda x: x ** 2, [1, 2, 3, 4, 5])
 print("map函数返回", map_result)
@@ -248,6 +299,21 @@ print("\n")
 # repr()    --- 将对象转换为供解释器读取的形式
 repr_dict = {"A": 1, "B": 2}
 print("repr返回对象的string形式：", repr(repr_dict))
+print("\n")
+# --------------------------------
+# hash() ---    获取取一个对象（字符串或者数值等）的哈希值
+hash_1 = "test hash"
+hash_2 = 123
+hash_3 = str([1, 2, 3])     # 集合
+hash_4 = str(sorted({'A': 1}))
+print("%s 的hash值为：%s" % (hash_1, hash(hash_1)))
+print("%s 的hash值为：%s" % (hash_2, hash(hash_2)))
+print("%s 的hash值为：%s" % (hash_3, hash(hash_3)))
+print("%s 的hash值为：%s" % (hash_4, hash(hash_4)))
+print("\n")
+# --------------------------------
+# hex() --- 将10进制整数转换成16进制，以字符串形式表示
+print("hex的结果：", hex(255))
 print("\n")
 # --------------------------------
 # bytearray()   --- 返回一个新自己数据，数组里的元素是可变的，并且每个元素的值的范围为 0 <= x < 256
@@ -277,6 +343,10 @@ print(eval('3 * 4'))
 print(eval('pow(2, 3)'))
 print("\n")
 # ----------------------------------
+# exec 执行储存在字符串或文件中的Python语句，相比于 eval，exec可以执行更复杂的 Python 代码。
+exec('print("Hello World")')
+print("\n")
+# ----------------------------------
 # str.format()  字符串格式化功能
 print("{} {}".format("Hello", "Python"))
 print("{1} {0} {1}".format("Hello", "Python"))
@@ -293,7 +363,6 @@ compile_str = "for i in range(10): print(i)"
 c_str = compile(compile_str, '', 'exec')
 print("编译后执行结果是：", exec(c_str))
 print("\n")
-
 
 
 # 11. isinstance()  --- 判断一个对象是否是一个已知类型，类似于type()
@@ -372,6 +441,24 @@ g = Getattr()
 print("获取属性值：", getattr(g, 'bar'))
 print("\n")
 # ------------------------------------
+# delattr(object, name_of_atrr)
+class Delattr(object):
+    x = 1
+    y = 2
+    z = 3
+d = Delattr()
+print("d的属性：", d.x)
+delattr(Delattr, 'x')
+# print("d的属性：" % d.x)
+print("\n")
+# ------------------------------------
+# setattr(object, name, value) -- 设置对象的属性值，该属性不一定是存在的
+class Setattr(object):
+    s1 = 1
+s_1 = Setattr()
+setattr(s_1, 's2', 5)
+print("设置不存在属性的值：", s_1.s2)
+print("\n")
 # hasattr(object, name) --- 用于判断对象是否包含对应的属性
 #   object--对象；name--属性名字符串
 class Hasattr(object):
@@ -441,4 +528,23 @@ print("\n")
 # round(x[, n]) --- 方法返回浮点数x的四舍五入值。
 print(round(10.2565, 2))
 
+
+# 17. help() --- 用于查看删除活模块的用途的详细说明
+print(help('sys'))
+print("\n")
+# print(help('str'))
+# --------------------------
+# dir() --- 不带参数时，返回当前范围内的变量、方法和定义的类型列表；
+# 带参数时，返回参数的属性、方法列表。如果参数包含方法__dir__()，该方法将被调用。
+# 如果参数不包含__dir__()，该方法将最大限度地收集参数信息。
+print("dir返回：", dir())
+print("\n")
+# id() --- 用于获取对象的内存地址
+id_1 = '1'
+id_2 = 1
+id_3 = 4
+print("%s 的内存id为：%s" % (id_1, id(id_1)))
+print("%s 的内存id为：%s" % (id_2, id(id_2)))
+print("%s 的内存id为：%s" % (id_3, id(id_3)))
+print("\n")
 
