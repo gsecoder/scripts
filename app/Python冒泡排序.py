@@ -25,5 +25,5 @@ def bubble_sort(args):
                 args[j], args[j+1] = args[j+1], args[j]
 
 arr = [64, 34, 25, 12, 22, 11, 90]
-print(bubble_sort(arr))
+bubble_sort(arr)
 
