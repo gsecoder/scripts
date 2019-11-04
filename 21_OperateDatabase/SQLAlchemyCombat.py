@@ -7,15 +7,18 @@
 @Github :    https://crisimple.github.io/
 @Contact :   Crisimple@foxmail.com
 @License :   (C)Copyright 2017-2019, Micro-Circle
-@Desc    :   None
+@Desc    :   1.form SQLAlchemy import News, engine
+             2.News.metadata.create_all(engine)
+             注意： sqlchemy对于Python3不友好， 链接数据库时需要用mysql+pymysql
 """
 
 from sqlalchemy import create_engine
+from pymysql import install_as_MySQLdb
 # 基类
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy import Column, Integer, String, DateTime, Boolean
 
-engine = create_engine("mysql://root:Root@159357@129.28.170.125/PythonDatabases")
+engine = create_engine("mysql+pymysql://root:Root@159357@129.28.170.125/PythonDatabases")
 Base = declarative_base()
 
 
