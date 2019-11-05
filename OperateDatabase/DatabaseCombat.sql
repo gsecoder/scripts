@@ -7,4 +7,4 @@
 -- @License :   (C)Copyright 2017-2019, Micro-Circle
 -- @Desc    :   None
 
-SELECT * FROM PythonDatabases.nets_news;
+SELECT * FROM PythonDatabases.news;

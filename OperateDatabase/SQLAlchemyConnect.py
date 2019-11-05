@@ -7,7 +7,7 @@
 @Github :    https://crisimple.github.io/
 @Contact :   Crisimple@foxmail.com
 @License :   (C)Copyright 2017-2019, Micro-Circle
-@Desc    :   1.form SQLAlchemy import News, engine
+@Desc    :   1.from SQLAlchemyConnect import News, engine
              2.News.metadata.create_all(engine)
              注意： sqlchemy对于Python3不友好， 链接数据库时需要用mysql+pymysql
 """
@@ -18,8 +18,16 @@ from pymysql import install_as_MySQLdb
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy import Column, Integer, String, DateTime, Boolean
 
-engine = create_engine("mysql+pymysql://root:Root@159357@129.28.170.125/PythonDatabases?charset='utf8")
 Base = declarative_base()
+
+def init_table():
+    engine = create_engine(
+        'mysql+pymysql://root:Root@159357@129.28.170.125/PythonDatabases?charset=utf8',
+        max_overflow=5,
+        encoding='utf8'
+    )
+    Base.metadata.create_all(engine)
+    return engine
 
 
 class News(Base):
@@ -33,3 +41,8 @@ class News(Base):
     view_count = Column(Integer)
     create_at = Column(DateTime)
     is_valid = Column(Boolean)
+    # 添加配置设置编码
+    __table_args__ = {
+        'mysql_charset': 'utf8'
+    }
+
