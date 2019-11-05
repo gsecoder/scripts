@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- encoding: utf-8 -*-
 """
-@File    :   SQLAlchemyCombat.py
+@File    :   SQLAlchemyConnect.py
 @Time    :   2019/11/4 20:16
 @Author  :   Crisimple
 @Github :    https://crisimple.github.io/
@@ -18,7 +18,7 @@ from pymysql import install_as_MySQLdb
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy import Column, Integer, String, DateTime, Boolean
 
-engine = create_engine("mysql+pymysql://root:Root@159357@129.28.170.125/PythonDatabases")
+engine = create_engine("mysql+pymysql://root:Root@159357@129.28.170.125/PythonDatabases?charset='utf8")
 Base = declarative_base()
 
 
