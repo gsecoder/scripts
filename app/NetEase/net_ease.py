@@ -27,6 +27,7 @@
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 from sqlalchemy import DateTime, Boolean
+from flask import render_template
 
 app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://root:Root@159357@129.28.170.125:3306/NetEase?charset=utf8'
@@ -52,5 +53,30 @@ class News(db.Model):
 
     def __repr__(self):
         return '<News %r>' % self.id
+
+@app.route('/')
+def index():
+    """新闻首页"""
+    news_lists = News.query.all()
+    return render_template("index.html", news_lists=news_lists)
+
+@app.route('/category/<name>/')
+def category(name):
+    """新闻分类
+       通过新闻的传入的name来显示新闻的分类
+    """
+    return render_template("category.html", name=name)
+
+@app.route('/detail/<int:pk>/')
+def detail(pk):
+    """新闻详情
+        用pk传递来表示具体的新闻
+    """
+    return render_template("detail.html", pk=pk)
+
+
+if __name__ == "__main__":
+    app.run(debug=True)
+
 
 

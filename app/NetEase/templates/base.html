@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/index.css', _external=True)}}">
+    <link>
+    {% block head %}
+    <title>首页</title>
+    {% endblock %}
+</head>
+<body>
+<!-- 页面头部 -->
+<header>
+    <nav>
+        <ul>
+            <li><a href="{{ url_for('index')}}">首页</a></li>
+            <li><a href="{{ url_for('category'), name='推荐'}}">推荐</a></li>
+            <li><a href="{{ url_for('category'), name='百家'}}">百家</a></li>
+            <li><a href="{{ url_for('category'), name='本地'}}">本地</a></li>
+            <li><a href="{{ url_for('category'), name='图片'}}">图片</a></li>
+        </ul>
+    </nav>
+</header>
+<!-- /页面头部 -->
+
+<!-- 新闻内容 -->
+<article>
+    {% block content %}
+    <!-- 内容区域 -->
+    {% endblock %}
+</article>
+<!-- /新闻内容 -->
+
+{% block extrajs %}
+    <!-- 其他脚本 -->
+{% endblock %}
+</body>
+</html>
+
+
+{#db.createUser({ user: "root", pwd: "Root@159357", roles: [{ role: "userAdminAnyDatabase", db: "admin" }] })#}
