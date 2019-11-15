@@ -9,19 +9,19 @@
 @License :   (C)Copyright 2017-2019, Micro-Circle
 @Desc    :   查询数据
 """
-from OperateDatabase.SQLAlchemyConnect import init_table
+from OperateDatabase.SQLAlchemyConnect import connect_database
 from sqlalchemy.orm import sessionmaker
 from OperateDatabase.SQLAlchemyConnect import News
 
 
 class SelectData(object):
     def __init__(self):
-        Session = sessionmaker(bind=init_table().engine)
+        Session = sessionmaker(bind=connect_database().engine)
         self.session = Session()
 
     def get_one(self):
         """查询一条数据"""
-        return self.session.query(News).get()
+        return self.session.query(News).all()
 
     def get_more(self):
         """查询多条数据"""
@@ -34,7 +34,7 @@ class SelectData(object):
 
 if __name__ == "__main__":
     sd = SelectData()
-    # print(sd.get_one())
-    print(sd.get_more())
-    print(sd.order_result())
+    sd.get_one()
+    # sd.get_more()
+    # print(sd.order_result())
 

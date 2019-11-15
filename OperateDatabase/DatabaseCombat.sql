@@ -8,3 +8,15 @@
 -- @Desc    :   None
 
 SELECT * FROM PythonDatabases.news;
+
+UPDATE PythonDatabases.news
+SET title = 'news19', content = 'news19Content', types = 'baijia19'
+WHERE id = 19;
+
+UPDATE PythonDatabases.news
+SET title = CASE
+    WHEN id = 1 THEN 'news1'
+    WHEN id = 2 THEN 'news2'
+    WHEN id = 3 THEN 'news3'
+    END
+WHERE id in (1, 2, 3)

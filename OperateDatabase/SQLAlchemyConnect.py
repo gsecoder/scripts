@@ -20,9 +20,9 @@ from sqlalchemy import Column, Integer, String, DateTime, Boolean
 
 Base = declarative_base()
 
-def init_table():
+def connect_database():
     engine = create_engine(
-        'mysql+pymysql://root:Root@159357@129.28.170.125/PythonDatabases?charset=utf8',
+        'mysql+pymysql://用户名:密码@XXX.XXX.XXX.125/PythonDatabases?charset=utf8',
         max_overflow=5,
         encoding='utf8'
     )
@@ -45,4 +45,8 @@ class News(Base):
     __table_args__ = {
         'mysql_charset': 'utf8'
     }
+
+
+if __name__ == "__main__":
+    ns = News()
 

@@ -10,14 +10,14 @@
 @Desc    :   None
 """
 
-from OperateDatabase.SQLAlchemyConnect import init_table
+from OperateDatabase.SQLAlchemyConnect import connect_database
 from sqlalchemy.orm import sessionmaker
 from OperateDatabase.SQLAlchemyConnect import News
 
 
 class DeleteData(object):
     def __init__(self):
-        Session = sessionmaker(bind=init_table().engine)
+        Session = sessionmaker(bind=connect_database().engine)
         self.session = Session()
 
     def delete_data(self):

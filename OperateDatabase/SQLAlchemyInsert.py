@@ -10,14 +10,14 @@
 @Desc    :   None
 """
 
-from OperateDatabase.SQLAlchemyConnect import init_table
+from OperateDatabase.SQLAlchemyConnect import connect_database
 from sqlalchemy.orm import sessionmaker
 from OperateDatabase.SQLAlchemyConnect import News
 
 
 class InsertData(object):
     def __init__(self):
-        Session = sessionmaker(bind=init_table().engine)
+        Session = sessionmaker(bind=connect_database().engine)
         self.session = Session()
 
     def add_one(self):
@@ -45,6 +45,7 @@ class InsertData(object):
         # self.session.add(news1)
         # self.session.add(news2)
         # self.session.add(news)
+
         # 插入多条数据
         self.session.add_all(news)
         self.session.commit()
