@@ -19,10 +19,10 @@ class PymongoOperate(object):
     """
     def __init__(self):
         self.client = MongoClient(
-            host="129.28.170.125",
+            host="xxx.xxx.xxx.xxx",
             port=27017,
-            username="root",
-            password="Root@159357"
+            username="用户名",
+            password="用户密码"
         )
 
     """
@@ -54,7 +54,11 @@ class PymongoOperate(object):
         print("创建新集合后，存在的集合有：%s" % new_collection_lists)
 
     def close_connect(self):
-        self.client.close()
+        try:
+            if self.client:
+                return self.client.close()
+        except Exception as e:
+            print("Error: %s" % e)
 
 
 if __name__ == "__main__":
