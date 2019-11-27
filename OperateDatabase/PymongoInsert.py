@@ -30,20 +30,20 @@ class InsertData(object):
         res = my_collection.insert_one(data_para)
         print(res.inserted_id)
 
-    def insert_datas(self, db_para, collect_para, data_para):
+    def insert_datas(self, db_paras2=None, collect_paras2=None, data_paras2=None):
         """
         插入多条数据
-        :param db_para: 被插入的数据库
-        :param collect_para:被插入的集合
-        :param data_para: 要插入的多条数据
+        :param db_paras2: 被插入的数据库
+        :param collect_paras2:被插入的集合
+        :param data_paras2: 要插入的多条数据
         :return:
         """
-        my_db = self.my_client[db_para]
-        my_collection = my_db[collect_para]
-        res = my_collection.insert_many(data_para, ordered=False)
+        my_db = self.my_client[db_paras2]
+        my_collection = my_db["apps"]
+        res = my_collection.insert_many(data_paras2)
         print(res.inserted_ids)
 
-    def id_insert_datas(self, db_para, collect_para, data_para):
+    def id_insert_datas(self, db_para=None, collect_para=None, data_para=None):
         """
         指定id插入多条数据
         :param db_para:
@@ -52,7 +52,7 @@ class InsertData(object):
         :return:
         """
         my_db = self.my_client[db_para]
-        my_collection = my_db[collect_para]
+        my_collection = my_db["id_apps"]
         res = my_collection.insert_many(data_para, ordered=False)
         print(res.inserted_ids)
 
@@ -70,24 +70,20 @@ if __name__ == "__main__":
 
     """插入多条数据"""
     db_para2 = "PyData"
-    collect_para2 = "apps",
+    # collect_para2 = "apps",
     data_para2 = [
-        {"name": "Taobao", "alexa": "100", "url": "https://www.taobao.com"},
-        {"name": "QQ", "alexa": "101", "url": "https://www.qq.com"},
         {"name": "Facebook", "alexa": "10", "url": "https://www.facebook.com"},
         {"name": "Zhihu", "alexa": "103", "url": "https://www.zhihu.com"},
         {"name": "Github", "alexa": "109", "url": "https://www.github.com"}
     ]
-    # ind.insert_datas(db_para=db_para2, collect_para=collect_para2, data_paras=data_para2)
+    # ind.insert_datas(db_paras2=db_para2, data_paras2=data_para2)
 
     """指定id插入多条数据"""
     db_para3 = "PyData"
     collect_para3 = "id_apps",
     data_para3 = [
-        {"_id": 1, "name": "Taobao", "alexa": "100", "url": "https://www.taobao.com"},
-        {"_id": 2, "name": "QQ", "alexa": "101", "url": "https://www.qq.com"},
-        {"_id": 3, "name": "Facebook", "alexa": "10", "url": "https://www.facebook.com"},
-        {"_id": 4, "name": "Zhihu", "alexa": "103", "url": "https://www.zhihu.com"},
-        {"_id": 5, "name": "Github", "alexa": "109", "url": "https://www.github.com"}
+        {"_id": 1, "name": "Facebook", "alexa": "10", "url": "https://www.facebook.com"},
+        {"_id": 2, "name": "Zhihu", "alexa": "103", "url": "https://www.zhihu.com"},
+        {"_id": 3, "name": "Github", "alexa": "109", "url": "https://www.github.com"}
     ]
-    ind.id_insert_datas(db_para=db_para3, collect_para=collect_para3, data_para=data_para3)
+    ind.id_insert_datas(db_para=db_para3, data_para=data_para3)
