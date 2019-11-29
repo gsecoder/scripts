@@ -14,6 +14,7 @@ from mongoengine import connect, disconnect
 from mongoengine import Document, StringField, IntField, DateTimeField
 import datetime
 
+
 class MongoConnect(object):
 
     def __init__(self):
@@ -32,13 +33,13 @@ class MongoConnect(object):
             # 对连接的mongodb数据库起个别名，方便连接多个数据库【这是个坑】
             # alias="Al_PyData",
             # mongodb数据库服务器ip
-            host="129.28.170.125",
+            host="xxx.xxx.xxx.xxx",
             # mongodb数据库的端口号
             port=27017,
             # 用户名字
-            username="root",
+            username="用户名",
             # 用户密码
-            password="Root@159357",
+            password="用户密码",
             # 进行身份认证的数据库，一般都是admin
             authentication_source="admin"
         )
