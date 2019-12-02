@@ -11,8 +11,20 @@
 """
 
 from OperateDatabase.MongoEngineConnect import MongoConnect
+from OperateDatabase.MongoEngineConnect import User
+import mongoengine
 
 
 class DeleteData(object):
     def __init__(self):
-        pass
+        self.my_connect = MongoConnect()
+
+    def delete_data(self):
+        print("成功建立mongodb连接: %s" % self.my_connect.DEFAULT_CONNECTION_NAME)
+        user1 = mongoengine.ReferenceField(name="User", reversed_delete_rule=mongoengine.CASCADE)
+        print(user1)
+
+
+if __name__ == "__main__":
+    dd = DeleteData()
+    dd.delete_data()
