@@ -12,18 +12,18 @@
 
 import redis
 
-class RedisConnect(object):
-    def __int__(self):
-        self.r = redis.StrictRedis(
-            host="xxx.xxx.xxx.xxx",
-            port=6379,
-            password="用户密码",
-            db=0
-        )
 
-        return self.r
+class RedisConnect(object):
+    redis_connect = redis.Redis(
+        host="129.28.170.125",
+        port=6379,
+        password="Root@159357",
+        db=0
+    )
 
 
 if __name__ == "__main__":
-    print(RedisConnect().r)
+    rc = RedisConnect.redis_connect
+    # rc.__redis.set()
+    print(rc.set())
     # print(rc.r)
