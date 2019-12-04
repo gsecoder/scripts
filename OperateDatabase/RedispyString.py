@@ -92,6 +92,7 @@ class RedisString(object):
 
 if __name__ == "__main__":
     rs = RedisString()
+    print(rs.rc)
 
     # 插入单条数据
     # rs.set_value(key="RedispyString", value="set_value2")
