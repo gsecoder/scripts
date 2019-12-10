@@ -1,0 +1,195 @@
+{
+  "uid" : "dcde352f72a0a084",
+  "name" : "test_add_goods_cart",
+  "fullName" : "Allure.test_allure_shopping.TestAllure#test_add_goods_cart",
+  "historyId" : "0b23a03c4bf6961611c2d92dc2d7dc82",
+  "time" : {
+    "start" : 1575972636937,
+    "stop" : 1575972636945,
+    "duration" : 8
+  },
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ {
+    "name" : "env",
+    "time" : {
+      "start" : 1575972636936,
+      "stop" : 1575972636936,
+      "duration" : 0
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "hasContent" : false,
+    "shouldDisplayMessage" : false,
+    "attachmentsCount" : 0
+  } ],
+  "testStage" : {
+    "status" : "passed",
+    "steps" : [ {
+      "name" : "用户登录",
+      "time" : {
+        "start" : 1575972636938,
+        "stop" : 1575972636938,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ {
+        "name" : "user",
+        "value" : "'crisimple'"
+      }, {
+        "name" : "passwd",
+        "value" : "'123456'"
+      } ],
+      "stepsCount" : 0,
+      "hasContent" : true,
+      "shouldDisplayMessage" : false,
+      "attachmentsCount" : 0
+    }, {
+      "name" : "浏览商品",
+      "time" : {
+        "start" : 1575972636938,
+        "stop" : 1575972636940,
+        "duration" : 2
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ {
+        "uid" : "ab4ed0259b3ac972",
+        "name" : "C",
+        "source" : "ab4ed0259b3ac972.attach",
+        "type" : "text/plain",
+        "size" : 7
+      }, {
+        "uid" : "f789906d37e59842",
+        "name" : "C",
+        "source" : "f789906d37e59842.attach",
+        "type" : "text/plain",
+        "size" : 7
+      } ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "hasContent" : true,
+      "shouldDisplayMessage" : false,
+      "attachmentsCount" : 2
+    }, {
+      "name" : "加入商品",
+      "time" : {
+        "start" : 1575972636940,
+        "stop" : 1575972636943,
+        "duration" : 3
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ {
+        "uid" : "d2b080896c686cba",
+        "name" : "2",
+        "source" : "d2b080896c686cba.attach",
+        "type" : "text/plain",
+        "size" : 7
+      }, {
+        "uid" : "3f79177e6c32fe29",
+        "name" : "3",
+        "source" : "3f79177e6c32fe29.attach",
+        "type" : "text/plain",
+        "size" : 7
+      } ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "hasContent" : true,
+      "shouldDisplayMessage" : false,
+      "attachmentsCount" : 2
+    }, {
+      "name" : "校验商品",
+      "time" : {
+        "start" : 1575972636943,
+        "stop" : 1575972636945,
+        "duration" : 2
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ {
+        "uid" : "f8c060af890f7935",
+        "name" : "共2个",
+        "source" : "f8c060af890f7935.attach",
+        "type" : "text/plain",
+        "size" : 19
+      }, {
+        "uid" : "22b2be6bd320b33f",
+        "name" : "共0个",
+        "source" : "22b2be6bd320b33f.attach",
+        "type" : "text/plain",
+        "size" : 19
+      } ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "hasContent" : true,
+      "shouldDisplayMessage" : false,
+      "attachmentsCount" : 2
+    } ],
+    "attachments" : [ {
+      "uid" : "edc7e233171af075",
+      "name" : "stdout",
+      "source" : "edc7e233171af075.txt",
+      "type" : "text/plain",
+      "size" : 30
+    } ],
+    "parameters" : [ ],
+    "stepsCount" : 4,
+    "hasContent" : true,
+    "shouldDisplayMessage" : false,
+    "attachmentsCount" : 7
+  },
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "story",
+    "value" : "加入购物车"
+  }, {
+    "name" : "feature",
+    "value" : "报告购物车"
+  }, {
+    "name" : "parentSuite",
+    "value" : "Allure"
+  }, {
+    "name" : "suite",
+    "value" : "test_allure_shopping"
+  }, {
+    "name" : "subSuite",
+    "value" : "TestAllure"
+  }, {
+    "name" : "host",
+    "value" : "A-006068-NC"
+  }, {
+    "name" : "thread",
+    "value" : "9884-MainThread"
+  }, {
+    "name" : "framework",
+    "value" : "pytest"
+  }, {
+    "name" : "language",
+    "value" : "cpython3"
+  }, {
+    "name" : "package",
+    "value" : "Allure.test_allure_shopping"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ ],
+    "tags" : [ ]
+  },
+  "source" : "dcde352f72a0a084.json",
+  "parameterValues" : [ ]
+}

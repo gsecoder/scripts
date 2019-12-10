@@ -1,0 +1,79 @@
+{
+  "uid" : "969796f3fbffb16d",
+  "name" : "test_delete_shopping_cart",
+  "fullName" : "Allure.test_allure_shopping.TestAllure#test_delete_shopping_cart",
+  "historyId" : "3855e564729315077fc3b0cde3f9ffba",
+  "time" : {
+    "start" : 1575972637079,
+    "stop" : 1575972637079,
+    "duration" : 0
+  },
+  "status" : "skipped",
+  "statusMessage" : "Skipped: 删除购物车不执行",
+  "statusTrace" : "('Allure\\\\test_allure_shopping.py', 53, 'Skipped: 删除购物车不执行')",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ {
+    "name" : "env",
+    "time" : {
+      "start" : 1575972636936,
+      "stop" : 1575972636936,
+      "duration" : 0
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "hasContent" : false,
+    "shouldDisplayMessage" : false,
+    "attachmentsCount" : 0
+  } ],
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "feature",
+    "value" : "报告购物车"
+  }, {
+    "name" : "story",
+    "value" : "删除购物车"
+  }, {
+    "name" : "parentSuite",
+    "value" : "Allure"
+  }, {
+    "name" : "suite",
+    "value" : "test_allure_shopping"
+  }, {
+    "name" : "subSuite",
+    "value" : "TestAllure"
+  }, {
+    "name" : "host",
+    "value" : "A-006068-NC"
+  }, {
+    "name" : "thread",
+    "value" : "9884-MainThread"
+  }, {
+    "name" : "framework",
+    "value" : "pytest"
+  }, {
+    "name" : "language",
+    "value" : "cpython3"
+  }, {
+    "name" : "package",
+    "value" : "Allure.test_allure_shopping"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ ],
+    "tags" : [ ]
+  },
+  "source" : "969796f3fbffb16d.json",
+  "parameterValues" : [ ]
+}

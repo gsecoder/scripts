@@ -1,0 +1,80 @@
+{
+  "0b23a03c4bf6961611c2d92dc2d7dc82" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 1,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "dcde352f72a0a084",
+      "status" : "passed",
+      "time" : {
+        "start" : 1575972636937,
+        "stop" : 1575972636945,
+        "duration" : 8
+      }
+    } ]
+  },
+  "3855e564729315077fc3b0cde3f9ffba" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 0,
+      "skipped" : 1,
+      "passed" : 0,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "969796f3fbffb16d",
+      "status" : "skipped",
+      "statusDetails" : "Skipped: 删除购物车不执行",
+      "time" : {
+        "start" : 1575972637079,
+        "stop" : 1575972637079,
+        "duration" : 0
+      }
+    } ]
+  },
+  "9e09ff4b99349e502670df8a28c95d48" : {
+    "statistic" : {
+      "failed" : 1,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 0,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "cf3d9d691430f63",
+      "status" : "failed",
+      "statusDetails" : "AssertionError: assert 0",
+      "time" : {
+        "start" : 1575972636962,
+        "stop" : 1575972636963,
+        "duration" : 1
+      }
+    } ]
+  },
+  "26eaa6551eef0fe15eb71b7b56db4cc5" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 1,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "6009220aab0e03a9",
+      "status" : "passed",
+      "time" : {
+        "start" : 1575972636952,
+        "stop" : 1575972636954,
+        "duration" : 2
+      }
+    } ]
+  }
+}

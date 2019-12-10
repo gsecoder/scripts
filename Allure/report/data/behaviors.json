@@ -1,0 +1,77 @@
+{
+  "uid" : "b1a8273437954620fa374b796ffaacdd",
+  "name" : "behaviors",
+  "children" : [ {
+    "name" : "报告购物车",
+    "children" : [ {
+      "name" : "加入购物车",
+      "children" : [ {
+        "name" : "test_add_goods_cart",
+        "uid" : "dcde352f72a0a084",
+        "parentUid" : "5d4f260029cd50a0da2601f0dbf97d5b",
+        "status" : "passed",
+        "time" : {
+          "start" : 1575972636937,
+          "stop" : 1575972636945,
+          "duration" : 8
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      } ],
+      "uid" : "5d4f260029cd50a0da2601f0dbf97d5b"
+    }, {
+      "name" : "继续购物",
+      "children" : [ {
+        "name" : "test_continue_shopping_cart",
+        "uid" : "6009220aab0e03a9",
+        "parentUid" : "40c595ebc0a553225ed7e203660bfb8d",
+        "status" : "passed",
+        "time" : {
+          "start" : 1575972636952,
+          "stop" : 1575972636954,
+          "duration" : 2
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      } ],
+      "uid" : "40c595ebc0a553225ed7e203660bfb8d"
+    }, {
+      "name" : "减少商品失败",
+      "children" : [ {
+        "name" : "test_edit_shopping_cart",
+        "uid" : "cf3d9d691430f63",
+        "parentUid" : "f7c3fb2e86316b787c5bb3c10ff93ee5",
+        "status" : "failed",
+        "time" : {
+          "start" : 1575972636962,
+          "stop" : 1575972636963,
+          "duration" : 1
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      } ],
+      "uid" : "f7c3fb2e86316b787c5bb3c10ff93ee5"
+    }, {
+      "name" : "删除购物车",
+      "children" : [ {
+        "name" : "test_delete_shopping_cart",
+        "uid" : "969796f3fbffb16d",
+        "parentUid" : "2fd77fb7e010c658da0431af4f5d00b1",
+        "status" : "skipped",
+        "time" : {
+          "start" : 1575972637079,
+          "stop" : 1575972637079,
+          "duration" : 0
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      } ],
+      "uid" : "2fd77fb7e010c658da0431af4f5d00b1"
+    } ],
+    "uid" : "c2a5f5815fe88cde4547958d333feb59"
+  } ]
+}
