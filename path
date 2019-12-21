@@ -1,0 +1,35 @@
+. Pytest/test_class.py::TestClass::test_one
+F Pytest/test_class.py::TestClass::test_two
+ self = <Pytest.test_class.TestClass object at 0x7f3989d39ba8>
+ 
+     def test_two(self):
+         print("two case...\n")
+         x = "hello"
+ >       assert hasattr(x, 'check')
+ E       AssertionError: assert False
+ E        +  where False = hasattr('hello', 'check')
+ 
+ Pytest/test_class.py:28: AssertionError
+. Pytest/test_func.py::test_answer
+F Pytest/test_para_case.py::test_timedistance_v0[a0-b0-excepted0]
+ a = datetime.datetime(2019, 12, 7, 0, 0), b = datetime.datetime(2019, 12, 8, 0, 0), excepted = datetime.timedelta(1)
+ 
+     @pytest.mark.parametrize("a, b, excepted", para_data)
+     def test_timedistance_v0(a, b, excepted):
+         diff = a - b
+ >       assert diff == excepted
+ E       assert datetime.timedelta(-1) == datetime.timedelta(1)
+ 
+ Pytest/test_para_case.py:26: AssertionError
+. Pytest/test_para_case.py::test_timedistance_v0[a1-b1-excepted1]
+F Pytest/test_para_case.py::test_timedistance_v2[20191207-20191208-expected0]
+ a = datetime.datetime(2019, 12, 7, 0, 0), b = datetime.datetime(2019, 12, 8, 0, 0), expected = datetime.timedelta(1)
+ 
+     @pytest.mark.parametrize("a,b,expected", para_data, ids=ifdn)
+     def test_timedistance_v2(a, b, expected):
+         diff = a - b
+ >       assert diff == expected
+ E       assert datetime.timedelta(-1) == datetime.timedelta(1)
+ 
+ Pytest/test_para_case.py:38: AssertionError
+. Pytest/test_para_case.py::test_timedistance_v2[20191207-20191208-expected1]

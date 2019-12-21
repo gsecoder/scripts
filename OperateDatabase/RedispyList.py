@@ -128,4 +128,3 @@ if __name__ == "__main__":
     # 存在的key
     # print(rl.lrange_get(k="list1", s=0, e=-1))
     # print(rl.lpushx_data(k="list1", v="test_list1"))
-

@@ -12,6 +12,7 @@
 
 from pathlib import Path
 import os
+import sys
 
 # 返回当前目录
 p = Path()
@@ -58,6 +59,12 @@ print("创建一个文件：%s" % p.touch("test.txt"))
 # 将路径解析成url
 p_u = Path("../usr/local/sbin")
 # print("将路径解析成url：%s" % p_u.as_uri())
+
+print("返回操作系统：%s" % os.name)
+print("显示当前操作系统的详细信息: (%s, %s, %s, %s, %s)" % os.uname())
+print("返回当前的操作系统：%s" % sys.platform)
+print("返回目录列表的内容：%s" % os.listdir("./"))
+print("修改文件的权限：%s" % os.chmod("01_workpath_os_path.py", 777))
 
 # 返回 p1 下目录的相关信息
 p1 = Path("/usr/local/httpd/httpd.conf")

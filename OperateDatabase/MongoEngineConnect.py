@@ -33,13 +33,13 @@ class MongoConnect(object):
             # 对连接的mongodb数据库起个别名，方便连接多个数据库【这是个坑】
             # alias="Al_PyData",
             # mongodb数据库服务器ip
-            host="xxx.xxx.xxx.xxx",
+            host="129.28.170.125",
             # mongodb数据库的端口号
             port=27017,
             # 用户名字
-            username="用户名",
+            username="root",
             # 用户密码
-            password="用户密码",
+            password="Root@159357",
             # 进行身份认证的数据库，一般都是admin
             authentication_source="admin"
         )
