@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- encoding: utf-8 -*-
 """
-@File    :   02_workpath_pathlib.py
+@File    :   11_workpath_pathlib.py
 @Time    :   2019/12/2013:53
 @Author  :   Crisimple
 @Github :    https://crisimple.github.io/
@@ -64,7 +64,7 @@ print("返回操作系统：%s" % os.name)
 print("显示当前操作系统的详细信息: (%s, %s, %s, %s, %s)" % os.uname())
 print("返回当前的操作系统：%s" % sys.platform)
 print("返回目录列表的内容：%s" % os.listdir("./"))
-print("修改文件的权限：%s" % os.chmod("01_workpath_os_path.py", 777))
+print("修改文件的权限：%s" % os.chmod("10_workpath_os_path.py", 777))
 
 # 返回 p1 下目录的相关信息
 p1 = Path("/usr/local/httpd/httpd.conf")
