@@ -13,6 +13,7 @@
 import os
 import sys
 import xlrd
+from xlutils.copy import copy
 
 BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 sys.path.append(BASE_DIR)
@@ -67,6 +68,19 @@ class OperateExcel(object):
         cell_data = self.sheet_table.cell_value(row, col)
         return cell_data
 
+    # 写数据到 Excel 文件中
+    def write_to_excel(self, row, col, value):
+        # 获取操作Excel的操作句柄
+        data = xlrd.open_workbook(self.file_name)
+        # 拷贝数据
+        copy_data = copy(data)
+        # 选择要写入的Excel sheet页
+        copy_data_sheet = copy_data.get_sheet(self.sheet_id)
+        # 写入数据
+        copy_data_sheet.write(row, col, value)
+        # 保存数据到excel
+        copy_data.save(self.file_name)
+
 
 if __name__ == "__main__":
     oe = OperateExcel()
@@ -75,3 +89,4 @@ if __name__ == "__main__":
     print("Excel有：%s 行" % oe.get_sheet_nrows())
     print("Excel有：%s 列" % oe.get_sheet_ncols())
     print("Excel的第 %s 行 %s 列的值为： %s" % (2, 2, oe.get_sheet_cell(2, 2)))
+    oe.write_to_excel(11, 5, "Values")
