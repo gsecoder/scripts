@@ -26,9 +26,9 @@ class OperateXml(object):
             self.file_name = file_name
         else:
             self.file_name = "../OperateFile/data/xml.xml"
-            
-        self.dom = self.read_xml()
         
+        self.dom = self.read_xml()
+    
     def read_xml(self):
         """
         :return: 获取xml文件对象
@@ -83,7 +83,7 @@ class OperateXml(object):
         id_node.appendChild(id_text_value)
         # 把id_node挂在到person节点上，认亲
         person_node.appendChild(id_node)
-
+        
         # 创建name节点，并设置textValue
         name_node = self.dom.createElement("name")
         name_text_value = self.dom.createTextNode("D")
@@ -91,7 +91,7 @@ class OperateXml(object):
         name_node.appendChild(name_text_value)
         # 把name_node挂在到person节点上，认亲
         person_node.appendChild(name_node)
-
+        
         # 创建age节点，并设置textValue
         age_node = self.dom.createElement("age")
         age_text_value = self.dom.createTextNode("23")
@@ -99,7 +99,7 @@ class OperateXml(object):
         age_node.appendChild(age_text_value)
         # 把age_node挂在到person节点上，认亲
         person_node.appendChild(age_node)
-
+        
         # 创建sex节点，并设置textValue
         sex_node = self.dom.createElement("sex")
         sex_text_value = self.dom.createTextNode("male")
@@ -107,7 +107,7 @@ class OperateXml(object):
         sex_node.appendChild(sex_text_value)
         # 把sex_node挂在到person节点上，认亲
         person_node.appendChild(sex_node)
-
+        
         # 创建comments节点，并设置textValue
         comments_node = self.dom.createElement("comments")
         comments_text_value = self.dom.createCDATASection("create success")
@@ -122,7 +122,7 @@ class OperateXml(object):
         # 调整格式
         with open(self.file_name, 'w') as f:
             self.dom.writexml(f, addindent="", encoding="utf-8")
-            
+    
     def update_xml(self):
         # 文档根元素
         rootNode = self.dom.documentElement
@@ -144,10 +144,10 @@ class OperateXml(object):
                 age.childNodes[0].data = "9999"
             else:
                 print("请检查你的节点是否存在")
-
+        
         with open(self.file_name, 'w') as f:
             self.dom.writexml(f, addindent='', encoding="utf-8")
-        
+
 
 if __name__ == "__main__":
     ox = OperateXml()
