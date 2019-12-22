@@ -19,10 +19,10 @@ class PymongoOperate(object):
     """
     def __init__(self):
         self.client = MongoClient(
-            host="xxx.xxx.xxx.xxx",
+            host="129.28.170.125",
             port=27017,
-            username="用户名",
-            password="用户密码"
+            username="root",
+            password="Root@159357"
         )
 
     """

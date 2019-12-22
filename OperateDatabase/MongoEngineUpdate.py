@@ -20,11 +20,11 @@ class UpdateData(object):
 
     def update_data(self):
         print("成功建立mongodb连接: %s" % self.my_connect.DEFAULT_CONNECTION_NAME)
-        user = User.objects.all()
-        user = User.objects(name="9999xcv222333444")
-        user.name = "dj"
-        user.update()
-        print(user.name)
+        # user = User.objects.all()
+        user1 = User.objects(name="9999xcv")
+        user1.name = "dj"
+        user1.update()
+        print(user1.name)
         print("成功关闭连接: %s" % self.my_connect.close_connect())
 
 
