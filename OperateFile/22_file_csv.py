@@ -69,6 +69,9 @@ class OperateCsv(object):
             names=args
         )
         return drc
+    
+    def drop_col(self, *args):
+        return self.df.drop(args)
 
 
 if __name__ == "__main__":
@@ -76,6 +79,8 @@ if __name__ == "__main__":
     # print("获取csv的所有数据：%s" % oc.read_csv())
     # print("获取前 %s 的数据: %s" % (4, oc.read_front_rows(4)))
     # print("获取后 %s 的数据: %s" % (3, oc.read_tail_rows(3)))
-    print("获取数据跳过某些行: %s" % (oc.read_skiprows(0, 1, 2)))
+    # print("获取数据跳过某些行: %s" % (oc.read_skiprows(0, 1, 2)))
     # print("获取指定列" % oc.read_rows_cols('start_time', 'id'))
+    print("删除指定列", oc.drop_col(['id']))
+    
 
