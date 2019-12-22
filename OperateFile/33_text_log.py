@@ -64,4 +64,4 @@ if __name__ == "__main__":
     # ol.write_log1(file_name_1)
     
     file_name_2 = "./logs/%s_log.log" % log_times
-    # ol.write_log2(file_name_2)
+    ol.write_log2(file_name_2, message="[test......]")
