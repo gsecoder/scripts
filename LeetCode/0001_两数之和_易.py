@@ -54,5 +54,3 @@ if __name__ == "__main__":
     s1 = Solution1()
     print(s1.twoSum(nums=nums1, target=target1))
 
-
-
