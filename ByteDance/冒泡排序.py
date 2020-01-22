@@ -12,27 +12,6 @@
 
 a = [1, 3, 10, 9, 21, 35, 4, 6]
 
-# # len_a = len(a)
-# len_b = range(1, len(a))[::-1]
-# # print(len_a)
-# print(len_b)
-#
-#
-# def bubble_sort(list_para):
-#     len_a = len(a)
-#     for i in range(len_a-1):    # 外循环控制遍历到那一位
-#         count = 0   # 定义一个变量，记录没有交换位置
-#         for j in range(len_a-1-i):  # 内循环控制遍历到哪一位
-#             if list_para[j] > list_para[j+1]:
-#                 list_para[j], list_para[j+1] = list_para[j+1], list_para[j]
-#                 count += 1  # 如果列表里的数字有发生变化，那么count加1
-#         if count == 0:
-#             return list_para
-#     return list_para
-#
-#
-# print(bubble_sort(a))
-
 
 def bubble_list(list_param):
     # 确定要循环的次数
