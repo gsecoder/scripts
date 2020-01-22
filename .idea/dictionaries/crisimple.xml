@@ -2,6 +2,7 @@
   <dictionary name="crisimple">
     <words>
       <w>crisimple</w>
+      <w>digui</w>
       <w>joinpath</w>
       <w>ncols</w>
       <w>newdir</w>

@@ -12,18 +12,6 @@
 5的三次方＋3的三次方。
 """
 
-# sxh = []
-# for i in range(100, 1000):
-#     s = 0
-#     m = list(str(i))
-#     for j in m:
-#         s += int(j)**len(m)
-#     if i == s:
-#         print(i)
-#         sxh.append(i)
-# print("sxh: %s" % sxh)
-
-
 sxh = []
 for i in range(100, 1000):
     m = list(list(str(i)))

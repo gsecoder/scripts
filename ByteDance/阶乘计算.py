@@ -23,4 +23,5 @@ def digui(n):
     else:
         return n * digui(n-1)
 
+
 print(digui(a))

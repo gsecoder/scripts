@@ -14,17 +14,6 @@
 外，其余5个数相加，1+2+4+7+14=28。
 那么问题来了，求1000以内的完全数有哪些？
 """
-# a = []
-# for i in range(1, 1000):
-#     s = 0
-#     for j in range(1, i):
-#         if i % j == 0 and j < i:
-#             s += j
-#     if i == s:
-#         print(i)
-#         a.append(i)
-#
-# print("a: %s" % a)
 
 a = []
 
