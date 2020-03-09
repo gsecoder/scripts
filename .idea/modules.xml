@@ -3,7 +3,9 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/BasicPython.iml" filepath="$PROJECT_DIR$/BasicPython.iml" />
-      <module fileurl="file://$PROJECT_DIR$/../../Jenkins/Jenkins.iml" filepath="$PROJECT_DIR$/../../Jenkins/Jenkins.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../../ButianTest/ButianTest.iml" filepath="$PROJECT_DIR$/../../ButianTest/ButianTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../FinanceAnalysis/FinanceAnalysis.iml" filepath="$PROJECT_DIR$/../FinanceAnalysis/FinanceAnalysis.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../../LeetCode/LeetCode.iml" filepath="$PROJECT_DIR$/../../LeetCode/LeetCode.iml" />
     </modules>
   </component>
 </project>

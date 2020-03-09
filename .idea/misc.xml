@@ -6,5 +6,5 @@
   <component name="KotlinScriptingSettings">
     <option name="isAutoReloadEnabled" value="true" />
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_13" default="false" project-jdk-name="Python 3.5 (BasicPython)" project-jdk-type="Python SDK" />
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_13" default="false" project-jdk-name="Python 3.5" project-jdk-type="Python SDK" />
 </project>
