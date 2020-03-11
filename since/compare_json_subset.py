@@ -52,7 +52,7 @@ def compare_json_subset(json_1, json_2):
             for index in range(len(json_1)):
                 for json_1_list, json_2_list in zip(sorted(json_1[index]), sorted(json_2[index])):
                     print(zip(sorted(json_1[index]), sorted(json_2[index])))
-                    compare_json_3(json_1_list, json_2_list)
+                    compare_json_subset(json_1_list, json_2_list)
         else:
             for json_1_list, json_2_list in zip(sorted(json_1[index]), sorted(json_2[index])):
                 compare_json_subset(json_1_list, json_2_list)

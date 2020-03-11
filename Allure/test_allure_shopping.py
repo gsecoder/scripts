@@ -28,12 +28,10 @@ class TestAllure(object):
             # allure.attach--打印一些附加信息
             allure.attach("商品1", "C")
             allure.attach("商品2", "C")
-            
         # 步骤三
         with allure.step("加入商品"):
             allure.attach("商品1", 2)
             allure.attach("商品2", 3)
-            
         # 步骤四
         with allure.step("校验商品"):
             allure.attach("商品1加入成功", "共2个")

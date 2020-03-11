@@ -14,7 +14,7 @@ import random
 
 def qiang_redpackage(money_count, people_count):
     # 抢到红包的人的个数
-    for i in people_count:
+    for i in range(people_count):
         j = 0
         while j <= people_count:
             # 已抢到红包额度初始化

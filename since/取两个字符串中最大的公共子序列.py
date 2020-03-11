@@ -60,4 +60,4 @@ for m in map_maxstr:
      print(map_maxstr.get(m))
 
 
-findLcsStr(str_1, str_2)
+# findLcsStr(str_1, str_2)
