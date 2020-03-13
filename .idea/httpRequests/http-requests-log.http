@@ -1,5 +1,0 @@
-GET http://test/api/item?id=99
-Accept: application/json
-
-###
-

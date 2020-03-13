@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="PublishConfigData">
+  <component name="PublishConfigData" serverName="10.249.173.230">
     <serverData>
-      <paths name="129.28.170.125">
+      <paths name="10.249.173.230">
         <serverdata>
           <mappings>
-            <mapping local="$PROJECT_DIR$/../../Jenkins" web="/" />
             <mapping local="$PROJECT_DIR$" web="/" />
           </mappings>
         </serverdata>
