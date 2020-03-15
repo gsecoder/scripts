@@ -1,83 +1,501 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:github" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="1371b105-3bbd-4fd2-9cb0-7f85c0ef80b6" name="Default Changelist" comment="" />
+    <list default="true" id="17d1bda1-0b0a-4fd9-9a18-eaa40d0d9033" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/../../ButianTest/sql/补天商城优惠券.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/leetcode/editor.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ButianTest/sql/补天_白帽空间.sql" beforeDir="false" afterPath="$PROJECT_DIR$/../../ButianTest/sql/补天_白帽空间.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="DatabaseLocalColorSettings">
-    <colors>
-      <entry key="34744387-0be0-4ee5-bec6-959dc7010969" value="Violet" />
-    </colors>
+  <component name="Compare Directories">
+    <option name="identicalVisible" value="true" />
+    <option name="differentVisible" value="true" />
+    <option name="differentInBlanksVisible" value="true" />
+    <option name="differentNonSignificantVisible" value="true" />
+    <option name="leftOnlyVisible" value="true" />
+    <option name="rightOnlyVisible" value="true" />
+    <option name="mostProbablyIdenticalVisible" value="true" />
+    <option name="probablyIdenticalLeftNewerVisible" value="true" />
+    <option name="probablyIdenticalRightNewerVisible" value="true" />
+    <option name="probablyDifferentLeftNewerVisible" value="true" />
+    <option name="probablyDifferentRightNewerVisible" value="true" />
+    <option name="javaStructureVisible" value="false" />
+    <option name="autoExcludeHidden" value="false" />
+    <option name="autoScrollFromSource" value="false" />
+    <option name="lastLeftPaths">
+      <value len="0" />
+    </option>
+    <option name="lastRightPaths">
+      <value len="0" />
+    </option>
+    <option name="ignoredFileMasks">
+      <value len="0" />
+    </option>
+    <option name="exportFileName" value="CompareDirectories.txt" />
+    <option name="allowedDiffMasks">
+      <value len="0" />
+    </option>
+    <option name="diffsInCommentsNonSignificant" value="false" />
   </component>
-  <component name="ProjectId" id="1Z3RIZqz6IbJByW5vs44nDtktLm" />
+  <component name="DjangoConsoleOptions" custom-start-script="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)">
+    <option name="myCustomStartScript" value="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Mark Down" />
+        <option value="MySql File" />
+        <option value="HTTP Public Environment File" />
+        <option value="MarkDown File" />
+        <option value="HTTP Request" />
+        <option value="Jupyter Notebook" />
+        <option value="Python Script" />
+        <option value="Empty Mind Map" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../ButianTest" />
+  </component>
+  <component name="JupyterTrust" id="21261524-cab5-45fa-a55f-218a2b477693" />
+  <component name="ProjectId" id="1VFsgnDSDCtUiBqxzu33FuvYRjg" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
-    <option name="autoscrollFromSource" value="true" />
+    <option name="flattenModules" value="true" />
     <option name="flattenPackages" value="true" />
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
     <option name="showMembers" value="true" />
     <option name="showVisibilityIcons" value="true" />
-    <option name="sortByType" value="true" />
   </component>
   <component name="PropertiesComponent">
     <property name="DatabaseDriversLRU" value="mysql" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="true" />
     <property name="WebServerToolWindowPanel.toolwindow.highlight.mappings" value="true" />
     <property name="WebServerToolWindowPanel.toolwindow.highlight.symlinks" value="true" />
     <property name="WebServerToolWindowPanel.toolwindow.show.date" value="false" />
     <property name="WebServerToolWindowPanel.toolwindow.show.permissions" value="false" />
     <property name="WebServerToolWindowPanel.toolwindow.show.size" value="false" />
+    <property name="android.sdk.path" value="$USER_HOME$/Android/Sdk" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../FinanceAnalysis" />
-    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
-    <property name="settings.editor.splitter.proportion" value="0.19082126" />
+    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.proportion" value="0.18423048" />
+    <property name="project.structure.side.proportion" value="0.29014307" />
+    <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
+    <property name="settings.editor.selected.configurable" value="terminal" />
+    <property name="settings.editor.splitter.proportion" value="0.2179392" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/../../ButianTest/sql" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Python.compare_json_subset">
+    <configuration name="微信抢红包" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="BasicPython" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/since" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/since/微信抢红包.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="取两个字符串中最大的公共子序列" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="BasicPython" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/since" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/since/取两个字符串中最大的公共子序列.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="水仙花数" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="BasicPython" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/ByteDance" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/ByteDance/水仙花数.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="完全数" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="BasicPython" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/ByteDance" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/ByteDance/完全数.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="阶乘计算" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="BasicPython" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/ByteDance" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/ByteDance/阶乘计算.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="compare_json_subset" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="BasicPython" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/since" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/since/compare_json_subset.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="excel_read" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="ButianTest" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/../../ButianTest/util" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/../../ButianTest/util/excel_read.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="project_get_query" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="ButianTest" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/../../ButianTest/zc_pingan_api" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/../../ButianTest/zc_pingan_api/project_get_query.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.compare_json_subset" />
+        <item itemvalue="Python.微信抢红包" />
+        <item itemvalue="Python.excel_read" />
+        <item itemvalue="Python.project_get_query" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="17d1bda1-0b0a-4fd9-9a18-eaa40d0d9033" name="Default Changelist" comment="" />
+      <created>1576860290153</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1576860290153</updated>
+      <workItem from="1576860292531" duration="146000" />
+      <workItem from="1576898877365" duration="505000" />
+      <workItem from="1576899400569" duration="10785000" />
+      <workItem from="1577107351566" duration="631000" />
+      <workItem from="1578196580675" duration="339000" />
+      <workItem from="1578196947590" duration="410000" />
+      <workItem from="1578197426494" duration="2488000" />
+      <workItem from="1578826488773" duration="43000" />
+      <workItem from="1579093462633" duration="305000" />
+      <workItem from="1579536002393" duration="36000" />
+      <workItem from="1579616248933" duration="831000" />
+      <workItem from="1579660745708" duration="4850000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="275" y="22" key="#Deployment" timestamp="1584080647348">
-      <screen x="0" y="0" width="1366" height="728" />
+    <state x="797" y="212" key="#Console" timestamp="1583564863902">
+      <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state x="275" y="22" key="#Deployment/0.0.1366.728@0.0.1366.728" timestamp="1584080647348" />
-    <state x="275" y="22" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1584080602445">
-      <screen x="0" y="0" width="1366" height="728" />
+    <state x="797" y="212" key="#Console/0.0.1920.1080@0.0.1920.1080" timestamp="1583564863902" />
+    <state x="359" y="53" width="1202" height="995" key="#Deployment" timestamp="1584158266953">
+      <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state x="275" y="22" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1366.728@0.0.1366.728" timestamp="1584080602445" />
-    <state x="463" y="97" key="FileChooserDialogImpl" timestamp="1584067151859">
-      <screen x="0" y="0" width="1366" height="728" />
+    <state x="359" y="53" width="1202" height="995" key="#Deployment/0.0.1920.1080@0.0.1920.1080" timestamp="1584158266953" />
+    <state x="592" y="115" width="727" height="843" key="#Notifications" timestamp="1584254303949">
+      <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state x="463" y="97" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1584067151859" />
-    <state width="921" height="119" key="GridCell.Tab.0.bottom" timestamp="1584085628604">
-      <screen x="0" y="0" width="1366" height="728" />
+    <state x="592" y="115" width="727" height="843" key="#Notifications/0.0.1920.1080@0.0.1920.1080" timestamp="1584254303949" />
+    <state x="359" y="16" key="#Plugins" timestamp="1583505058702">
+      <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state width="921" height="119" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1584085628604" />
-    <state width="921" height="119" key="GridCell.Tab.0.center" timestamp="1584085628604">
-      <screen x="0" y="0" width="1366" height="728" />
+    <state x="359" y="16" key="#Plugins/0.0.1920.1080@0.0.1920.1080" timestamp="1583505058702" />
+    <state x="288" y="24" width="1545" height="1024" key="#Project_Structure" timestamp="1583910220066">
+      <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state width="921" height="119" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1584085628604" />
-    <state width="921" height="119" key="GridCell.Tab.0.left" timestamp="1584085628604">
-      <screen x="0" y="0" width="1366" height="728" />
+    <state x="359" y="27" key="#Project_Structure/0.0.1920.1025@0.0.1920.1025" timestamp="1583465083573" />
+    <state x="288" y="24" width="1545" height="1024" key="#Project_Structure/0.0.1920.1080@0.0.1920.1080" timestamp="1583910220066" />
+    <state x="309" y="0" key="#SSH_Configurations" timestamp="1583390062540">
+      <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state width="921" height="119" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1584085628604" />
-    <state width="921" height="119" key="GridCell.Tab.0.right" timestamp="1584085628604">
-      <screen x="0" y="0" width="1366" height="728" />
+    <state x="309" y="0" key="#SSH_Configurations/0.0.1920.1080@0.0.1920.1080" timestamp="1583390062540" />
+    <state x="513" y="0" key="#Unnamed" timestamp="1583549408210">
+      <screen x="0" y="0" width="1920" height="1025" />
     </state>
-    <state width="921" height="119" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1584085628604" />
-    <state width="286" height="456" key="HiddenNamespacesPopup" timestamp="1584080685848">
-      <screen x="0" y="0" width="1366" height="728" />
+    <state x="513" y="0" key="#Unnamed/0.0.1920.1025@0.0.1920.1025" timestamp="1583549408210" />
+    <state x="423" y="167" width="1197" height="759" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1583507347036">
+      <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state width="286" height="456" key="HiddenNamespacesPopup/0.0.1366.728@0.0.1366.728" timestamp="1584080685848" />
-    <state x="259" y="62" key="NewModule_or_Project.wizard" timestamp="1584067154650">
-      <screen x="0" y="0" width="1366" height="728" />
+    <state x="423" y="167" width="1197" height="759" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1583507347036" />
+    <state x="565" y="311" width="781" height="430" key="#com.intellij.ide.actions.ChooseComponentsToExportDialog" timestamp="1583413947311">
+      <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state x="259" y="62" key="NewModule_or_Project.wizard/0.0.1366.728@0.0.1366.728" timestamp="1584067154650" />
-    <state x="7" y="8" width="1345" height="711" key="SettingsEditor" timestamp="1584086007303">
-      <screen x="0" y="0" width="1366" height="728" />
+    <state x="565" y="311" width="781" height="430" key="#com.intellij.ide.actions.ChooseComponentsToExportDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1583413947311" />
+    <state x="439" y="123" key="#com.intellij.ide.fileTemplates.ui.ConfigureTemplatesDialog" timestamp="1583552007598">
+      <screen x="0" y="0" width="1920" height="1036" />
     </state>
-    <state x="7" y="8" width="1345" height="711" key="SettingsEditor/0.0.1366.728@0.0.1366.728" timestamp="1584086007303" />
-    <state x="528" y="262" key="WebDeployment.AddServerDialog.v.1" timestamp="1584080642066">
-      <screen x="0" y="0" width="1366" height="728" />
+    <state x="439" y="123" key="#com.intellij.ide.fileTemplates.ui.ConfigureTemplatesDialog/0.0.1920.1036@0.0.1920.1036" timestamp="1583552007598" />
+    <state x="743" y="109" key="#com.intellij.ide.ui.customization.CustomizableActionsPanel.FindAvailableActionsDialog" timestamp="1584029382470">
+      <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state x="528" y="262" key="WebDeployment.AddServerDialog.v.1/0.0.1366.728@0.0.1366.728" timestamp="1584080642066" />
+    <state x="743" y="109" key="#com.intellij.ide.ui.customization.CustomizableActionsPanel.FindAvailableActionsDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1584029382470" />
+    <state x="607" y="351" key="#com.intellij.ws.actions.HttpClientConvertFromCurlDialog" timestamp="1583552065836">
+      <screen x="0" y="0" width="1920" height="1036" />
+    </state>
+    <state x="607" y="351" key="#com.intellij.ws.actions.HttpClientConvertFromCurlDialog/0.0.1920.1036@0.0.1920.1036" timestamp="1583552065836" />
+    <state x="652" y="348" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1" timestamp="1576915128462">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="652" y="348" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.0.1920.1080@0.0.1920.1080" timestamp="1576915128462" />
+    <state x="100" y="100" width="1720" height="825" key="DiffContextDialog" timestamp="1583549518244">
+      <screen x="0" y="0" width="1920" height="1025" />
+    </state>
+    <state x="100" y="100" width="1720" height="825" key="DiffContextDialog/0.0.1920.1025@0.0.1920.1025" timestamp="1583549518244" />
+    <state x="652" y="206" width="680" height="808" key="FileChooserDialogImpl" timestamp="1584260696713">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="652" y="206" width="680" height="808" key="FileChooserDialogImpl/0.0.1920.1080@0.0.1920.1080" timestamp="1584260696713" />
+    <state width="1888" height="291" key="GridCell.Tab.0.bottom" timestamp="1584281430707">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1477" height="325" key="GridCell.Tab.0.bottom/0.0.1920.1036@0.0.1920.1036" timestamp="1583552165158" />
+    <state width="1888" height="291" key="GridCell.Tab.0.bottom/0.0.1920.1080@0.0.1920.1080" timestamp="1584281430707" />
+    <state width="1888" height="291" key="GridCell.Tab.0.center" timestamp="1584281430706">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1477" height="325" key="GridCell.Tab.0.center/0.0.1920.1036@0.0.1920.1036" timestamp="1583552165158" />
+    <state width="1888" height="291" key="GridCell.Tab.0.center/0.0.1920.1080@0.0.1920.1080" timestamp="1584281430706" />
+    <state width="1888" height="291" key="GridCell.Tab.0.left" timestamp="1584281430706">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1477" height="325" key="GridCell.Tab.0.left/0.0.1920.1036@0.0.1920.1036" timestamp="1583552165158" />
+    <state width="1888" height="291" key="GridCell.Tab.0.left/0.0.1920.1080@0.0.1920.1080" timestamp="1584281430706" />
+    <state width="1888" height="291" key="GridCell.Tab.0.right" timestamp="1584281430707">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1477" height="325" key="GridCell.Tab.0.right/0.0.1920.1036@0.0.1920.1036" timestamp="1583552165158" />
+    <state width="1888" height="291" key="GridCell.Tab.0.right/0.0.1920.1080@0.0.1920.1080" timestamp="1584281430707" />
+    <state width="1477" height="172" key="GridCell.Tab.1.bottom" timestamp="1583564788984">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1477" height="172" key="GridCell.Tab.1.bottom/0.0.1920.1080@0.0.1920.1080" timestamp="1583564788984" />
+    <state width="1477" height="172" key="GridCell.Tab.1.center" timestamp="1583564788984">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1477" height="172" key="GridCell.Tab.1.center/0.0.1920.1080@0.0.1920.1080" timestamp="1583564788984" />
+    <state width="1477" height="172" key="GridCell.Tab.1.left" timestamp="1583564788984">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1477" height="172" key="GridCell.Tab.1.left/0.0.1920.1080@0.0.1920.1080" timestamp="1583564788984" />
+    <state width="1477" height="172" key="GridCell.Tab.1.right" timestamp="1583564788984">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1477" height="172" key="GridCell.Tab.1.right/0.0.1920.1080@0.0.1920.1080" timestamp="1583564788984" />
+    <state width="476" height="729" key="HiddenNamespacesPopup" timestamp="1583844077411">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state width="476" height="729" key="HiddenNamespacesPopup/0.0.1920.1080@0.0.1920.1080" timestamp="1583844077411" />
+    <state x="372" y="196" key="NewModule_or_Project.wizard" timestamp="1583564713283">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="372" y="196" key="NewModule_or_Project.wizard/0.0.1920.1080@0.0.1920.1080" timestamp="1583564713283" />
+    <state x="266" y="0" key="PyManagePackagesDialog" timestamp="1584260682591">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="266" y="0" key="PyManagePackagesDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1584260682591" />
+    <state x="0" y="0" width="1920" height="1080" key="SettingsEditor" timestamp="1584260846045">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="67" y="0" width="1628" height="1025" key="SettingsEditor/0.0.1920.1025@0.0.1920.1025" timestamp="1583549796013" />
+    <state x="67" y="0" width="1751" height="1036" key="SettingsEditor/0.0.1920.1036@0.0.1920.1036" timestamp="1583552128745" />
+    <state x="0" y="0" width="1920" height="1080" key="SettingsEditor/0.0.1920.1080@0.0.1920.1080" timestamp="1584260846045" />
+    <state x="553" y="152" width="810" height="786" key="StructurePopup" timestamp="1583506968967">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="553" y="152" width="810" height="786" key="StructurePopup/0.0.1920.1080@0.0.1920.1080" timestamp="1583506968967" />
+    <state x="100" y="100" width="1720" height="880" key="com.intellij.history.integration.ui.views.DirectoryHistoryDialog" timestamp="1583560960263">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="100" y="100" width="1720" height="880" key="com.intellij.history.integration.ui.views.DirectoryHistoryDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1583560960263" />
+    <state x="428" y="302" key="com.jetbrains.python.documentation.PythonDocumentationEntryEditor" timestamp="1584259498983">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="428" y="302" key="com.jetbrains.python.documentation.PythonDocumentationEntryEditor/0.0.1920.1080@0.0.1920.1080" timestamp="1584259498983" />
+    <state x="317" y="0" key="new project wizard" timestamp="1576899526393">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="317" y="0" key="new project wizard/0.0.1920.1080@0.0.1920.1080" timestamp="1576899526393" />
+    <state x="573" y="372" width="966" height="394" key="org.intellij.images.editor.actions.BackgroundImageDialog" timestamp="1583506036011">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="573" y="372" width="966" height="394" key="org.intellij.images.editor.actions.BackgroundImageDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1583506036011" />
+    <state x="440" y="0" width="1036" height="1076" key="search.everywhere.popup" timestamp="1583506979786">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="440" y="0" width="1036" height="1076" key="search.everywhere.popup/0.0.1920.1080@0.0.1920.1080" timestamp="1583506979786" />
+    <state x="582" y="415" key="vcs.readOnlyHandler.ReadOnlyStatusDialog" timestamp="1576910664751">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="582" y="415" key="vcs.readOnlyHandler.ReadOnlyStatusDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1576910664751" />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/BasicPython$project_get_query.coverage" NAME="project_get_query Coverage Results" MODIFIED="1583910223478" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../../ButianTest/zc_pingan_api" />
+    <SUITE FILE_PATH="coverage/BasicPython$compare_json_subset.coverage" NAME="compare_json_subset Coverage Results" MODIFIED="1584263274575" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/since" />
+    <SUITE FILE_PATH="coverage/BasicPython$compare_json_tools.coverage" NAME="compare_json_tools Coverage Results" MODIFIED="1583299545374" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/BasicPython$excel_read.coverage" NAME="excel_read Coverage Results" MODIFIED="1583910225940" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../../ButianTest/util" />
+    <SUITE FILE_PATH="coverage/BasicPython$jsonJust.coverage" NAME="compare_json_tools Coverage Results" MODIFIED="1583247942449" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/BasicPython$compare_json.coverage" NAME="compare_json_equal Coverage Results" MODIFIED="1583311278240" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../../ButianTest/util" />
+    <SUITE FILE_PATH="coverage/MySpace$.coverage" NAME="取两个字符串中最大的公共子序列 Coverage Results" MODIFIED="1583914335750" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/since" />
+    <SUITE FILE_PATH="coverage/BasicPython$.coverage" NAME="取两个字符串中最大的公共子序列 Coverage Results" MODIFIED="1583214088080" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Interview" />
+    <SUITE FILE_PATH="coverage/MySpace$compare_json_subset.coverage" NAME="compare_json_subset Coverage Results" MODIFIED="1583911708456" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/since" />
   </component>
 </project>
