@@ -11,8 +11,10 @@
 """
 import unittest
 from unittest import mock
+
 from mock.template_class import Template
-    
+
+
 # ------------- mock --------------------
 class TemplateTest(unittest.TestCase):
     # -------------- *** 1.使用mock类返回固定值 *** ----------------

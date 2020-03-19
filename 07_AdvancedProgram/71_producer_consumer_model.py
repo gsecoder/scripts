@@ -10,8 +10,9 @@
 @Desc    :   None
 """
 
-from multiprocessing import Process, Queue, JoinableQueue
 import time
+from multiprocessing import Process, JoinableQueue
+
 
 def producer(qq, name):
     for i in range(3):

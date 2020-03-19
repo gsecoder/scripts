@@ -11,8 +11,7 @@
 """
 
 import pytest
-import allure
-import yaml
+
 
 @pytest.fixture(scope="session", autouse=True)
 def env(request):

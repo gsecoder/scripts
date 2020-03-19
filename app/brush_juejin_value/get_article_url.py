@@ -9,10 +9,12 @@
 @License :   (C)Copyright 2017-2019, Micro-Circle
 @Desc    :   None
 """
+import time
+
+import random
 import requests
 from app.util.read_excel import ReadExcel
-import time
-import random
+
 
 class GetArticle(object):
     ExcelPath = "../brush_juejin_value/brush_juejin_value.xlsx"

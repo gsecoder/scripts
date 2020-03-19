@@ -10,9 +10,11 @@
 @Desc    :   None
 """
 
-from threading import Thread
 import time
+from threading import Thread
+
 import random
+
 
 def thread_one(name):
     print("%s is running." % name)

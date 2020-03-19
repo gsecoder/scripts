@@ -10,8 +10,8 @@
 @Desc    :   None
 """
 
-import pytest
 import allure
+import pytest
 
 
 # allure.feature 定义功能

@@ -10,11 +10,12 @@
 @Desc    :   None
 """
 
+import time
+from multiprocessing import Process
 # 1. 开启速度
 # 1.1 在主进程下开启线程
 from threading import Thread
-from multiprocessing import Process
-import time
+
 
 def run(name):
     print("%s thread is running..." % name)

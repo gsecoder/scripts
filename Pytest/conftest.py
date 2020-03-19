@@ -11,7 +11,6 @@
 """
 
 import pytest
-import allure
 import yaml
 
 @pytest.fixture(scope="function")

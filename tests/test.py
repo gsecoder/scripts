@@ -1,6 +1,8 @@
-from selenium import webdriver
 import time
+
 from PIL import Image
+from selenium import webdriver
+
 base_url = 'http://47.103.116.159:8082'
 browser = webdriver.Chrome()
 browser.set_window_size(1920, 1080)

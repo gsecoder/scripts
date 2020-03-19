@@ -37,7 +37,6 @@ print("blank_4: ", blank_4)
 zero_value = bool(0)
 print("zero_value: ", zero_value)
 
-
 # ------------------------------------------------------
 # 3.字符串类型（str）
 # （1）索引

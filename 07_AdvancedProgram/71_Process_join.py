@@ -9,8 +9,9 @@
 @License :   (C)Copyright 2017-2019, Micro-Circle
 @Desc    :   None
 """
-from multiprocessing import Process
 import time
+from multiprocessing import Process
+
 import os
 
 

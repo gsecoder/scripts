@@ -10,9 +10,10 @@
 @Desc    :   None
 """
 
-from mock.template_class import Template
-from unittest import mock
 import unittest
+from unittest import mock
+
+from mock.template_class import Template
 
 
 class TemplateTest(unittest.TestCase):

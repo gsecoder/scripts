@@ -10,9 +10,9 @@
 @Desc    :   None
 """
 
-import os
 import sys
-from xml.etree.ElementTree import ElementTree, Element
+
+import os
 from xml.dom.minidom import parse
 
 BASE_DIR = os.path.dirname(os.path.dirname(__file__))

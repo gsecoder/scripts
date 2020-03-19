@@ -10,10 +10,11 @@
 @Desc    :   None
 """
 
-from multiprocessing import Process
 import time
-import random
+from multiprocessing import Process
+
 import os
+import random
 
 
 def task(name):

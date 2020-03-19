@@ -10,9 +10,9 @@
 @Desc    :   None
 """
 
+from OperateDatabase.SQLAlchemyConnect import News
 from OperateDatabase.SQLAlchemyConnect import connect_database
 from sqlalchemy.orm import sessionmaker
-from OperateDatabase.SQLAlchemyConnect import News
 
 
 class UpdateData(object):

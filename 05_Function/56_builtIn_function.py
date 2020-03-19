@@ -473,7 +473,6 @@ print("\n")
 # 14. filter(function, iterable)  --- 过滤序列中不符合条件的元素，返回由符合条件元素组成的新列表
 #   function    --- 判断函数
 #   iterable    --- 可迭代对象
-import random
 def func_filter(x):
     list_a = []
     for i1 in x:

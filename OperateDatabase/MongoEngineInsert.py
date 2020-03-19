@@ -10,9 +10,10 @@
 @Desc    :   None
 """
 
-from mongoengine import Document, StringField, IntField, DateTimeField
 from datetime import datetime
+
 from OperateDatabase.MongoEngineConnect import MongoConnect
+from mongoengine import Document, StringField, IntField, DateTimeField
 
 
 class Categories(Document):

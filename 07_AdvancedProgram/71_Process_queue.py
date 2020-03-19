@@ -10,7 +10,7 @@
 @Desc    :   None
 """
 
-from multiprocessing import Process, Queue
+from multiprocessing import Queue
 
 q = Queue(3)
 

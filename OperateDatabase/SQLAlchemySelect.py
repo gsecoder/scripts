@@ -9,9 +9,9 @@
 @License :   (C)Copyright 2017-2019, Micro-Circle
 @Desc    :   查询数据
 """
+from OperateDatabase.SQLAlchemyConnect import News
 from OperateDatabase.SQLAlchemyConnect import connect_database
 from sqlalchemy.orm import sessionmaker
-from OperateDatabase.SQLAlchemyConnect import News
 
 
 class SelectData(object):

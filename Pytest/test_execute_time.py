@@ -10,7 +10,6 @@
 @Desc    :   None
 """
 
-import pytest
 
 # from __future__ import unicode_literals
 

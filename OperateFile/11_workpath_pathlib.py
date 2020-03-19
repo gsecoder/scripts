@@ -10,9 +10,10 @@
 @Desc    :   https://www.cnblogs.com/dianel/p/10073718.html
 """
 
-from pathlib import Path
-import os
 import sys
+from pathlib import Path
+
+import os
 
 # 返回当前目录
 p = Path()

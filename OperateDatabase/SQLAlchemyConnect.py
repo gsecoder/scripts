@@ -12,11 +12,10 @@
              注意： sqlchemy对于Python3不友好， 链接数据库时需要用mysql+pymysql
 """
 
+from sqlalchemy import Column, Integer, String, DateTime, Boolean
 from sqlalchemy import create_engine
-from pymysql import install_as_MySQLdb
 # 基类
 from sqlalchemy.ext.declarative import declarative_base
-from sqlalchemy import Column, Integer, String, DateTime, Boolean
 
 Base = declarative_base()
 

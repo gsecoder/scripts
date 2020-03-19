@@ -25,9 +25,9 @@
 """
 
 from flask import Flask
+from flask import render_template
 from flask_sqlalchemy import SQLAlchemy
 from sqlalchemy import DateTime, Boolean
-from flask import render_template
 
 app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://root:Root@159357@129.28.170.125:3306/NetEase?charset=utf8'

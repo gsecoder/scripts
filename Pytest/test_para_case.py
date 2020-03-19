@@ -10,9 +10,9 @@
 @Desc    :   None
 """
 
-import pytest
 from datetime import datetime, timedelta
 
+import pytest
 
 para_data = [
     (datetime(2019, 12, 7), datetime(2019, 12, 8), timedelta(1)),

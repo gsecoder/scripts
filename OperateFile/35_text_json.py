@@ -18,8 +18,6 @@
 
 """
 
-import os
-import sys
 import json
 
 file_name = "../OperateFile/data/json.json"

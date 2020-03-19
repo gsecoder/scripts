@@ -10,9 +10,8 @@
 @Desc    :   None
 """
 
-from OperateDatabase.MongoEngineConnect import MongoConnect
-from OperateDatabase.MongoEngineConnect import User
 import mongoengine
+from OperateDatabase.MongoEngineConnect import MongoConnect
 
 
 class DeleteData(object):

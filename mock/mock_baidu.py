@@ -11,7 +11,9 @@
 """
 
 from unittest import mock
+
 import requests
+
 
 def mock_baidu(base_url):
     results = requests.get(base_url)

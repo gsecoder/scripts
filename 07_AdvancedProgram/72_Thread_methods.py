@@ -10,8 +10,8 @@
 @Desc    :   None
 """
 
-from threading import Thread, currentThread, active_count, enumerate
 import time
+from threading import Thread, currentThread, active_count, enumerate
 
 
 def task():

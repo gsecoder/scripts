@@ -11,7 +11,7 @@
 """
 
 # 1. 信号量（Semaphore）
-from threading import Thread, Semaphore, currentThread
+from threading import Semaphore
 
 # 信号量大小，也就是同一时间3个任务去拿锁
 sm = Semaphore(3)
@@ -25,7 +25,7 @@ def semaphore_task():
 # 2. Event
 #  有多个工作线程尝试链接MySQL，我们想要在连接前确保MySQL服务正常才让那些工作线程去连接MySQL服务器，
 #  如果连接不成功，都会去尝试重新连接。那么我们就可以采用threading.Event机制来协调各个工作线程的连接操作
-from threading import Event, Thread, currentThread
+from threading import Event, currentThread
 import time
 
 event = Event()

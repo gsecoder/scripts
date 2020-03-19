@@ -10,9 +10,9 @@
 @Desc    :   None
 """
 
-import os
 import sys
-import numpy as np
+
+import os
 import pandas as pd
 
 BASE_DIR = os.path.dirname(os.path.dirname(__file__))

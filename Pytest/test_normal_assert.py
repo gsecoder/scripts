@@ -10,8 +10,6 @@
 @Desc    :   None
 """
 
-import pytest
-
 
 def func():
     return 3

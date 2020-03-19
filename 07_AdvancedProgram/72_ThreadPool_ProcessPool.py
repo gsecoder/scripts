@@ -10,10 +10,12 @@
 @Desc    :   None
 """
 
-from concurrent.futures import ProcessPoolExecutor, ThreadPoolExecutor
 import time
+from concurrent.futures import ThreadPoolExecutor
+
 import os
 import random
+
 
 def task(name):
     print("name: %s pid: %s run" % (name, os.getpid()))

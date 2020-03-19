@@ -24,7 +24,6 @@ json_b = {
 }
 """
 
-import json
 
 def compare_json_subset(json_1, json_2):
     # 若为 dict 格式

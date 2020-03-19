@@ -10,8 +10,8 @@
 @Desc    :   None
 """
 
-from threading import Thread
 import time
+from threading import Thread
 
 
 def run(name):

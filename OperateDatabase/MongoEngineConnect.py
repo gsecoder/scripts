@@ -10,9 +10,10 @@
 @Desc    :   None
 """
 
-from mongoengine import connect, disconnect
-from mongoengine import Document, StringField, IntField, DateTimeField
 import datetime
+
+from mongoengine import Document, StringField, IntField, DateTimeField
+from mongoengine import connect, disconnect
 
 
 class MongoConnect(object):

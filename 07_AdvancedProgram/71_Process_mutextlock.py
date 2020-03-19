@@ -9,9 +9,10 @@
 @License :   (C)Copyright 2017-2019, Micro-Circle
 @Desc    :   None
 """
-from multiprocessing import Process, Lock
-import time
 import json
+import time
+from multiprocessing import Process, Lock
+
 
 # 未加互斥锁
 def unlock(name):

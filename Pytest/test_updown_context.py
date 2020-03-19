@@ -10,8 +10,6 @@
 @Desc    :   None
 """
 
-import pytest
-
 
 def test_up_down():
     print("start......")

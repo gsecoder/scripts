@@ -10,9 +10,11 @@
 @Desc    :   None
 """
 
-from concurrent.futures import ThreadPoolExecutor
 import time
+from concurrent.futures import ThreadPoolExecutor
+
 import random
+
 
 def swim(name):
     print("%s is swimming" % name)

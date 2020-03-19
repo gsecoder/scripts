@@ -10,8 +10,8 @@
 @Desc    :   None
 """
 
-from threading import Thread, Lock
 import time
+from threading import Thread, Lock
 
 n1 = 100
 n2 = 100
