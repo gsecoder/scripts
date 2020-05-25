@@ -2,34 +2,33 @@ from django.shortcuts import render
 from .models import Article
 from django.http import JsonResponse, HttpResponse
 import json
-
+from django.contrib.auth import authenticate
 # Create your views here.
 
 """
 接口认证
 """
-def user_auth(request):
-    def auth():
-        user_name = request
-        user_password = json.loads(request.body)
-        print("user_name: ", user_name)
-        print("user_password: ", user_password)
-        # if user_name and user_password:
-        #     if user_name == "crisimple1" and user_password == "159357":
-        #         return JsonResponse({
-        #             "status": 200,
-        #             "msg": "认证成功"
-        #         })
-        #     else:
-        #         return JsonResponse({
-        #             "status": 401,
-        #             "msg": "认证失败"
-        #         })
-        # else:
-        #     return JsonResponse({
-        #         "status": 400,
-        #         "msg": "需要认证，才能操作"
-        #     })
+def user_auth(func):
+    def auth(request, *args, **kwargs):
+        # print("=======request========: ", request.headers)
+        print("=======request========: ", request.headers.get("Authorization"))
+        # username = request.META.get("USERNAME")
+        # print("username: ", username)
+        # user = authenticate(username=username, password=password)
+        authorization = request.headers.get("Authorization")
+        print("request.headers: ", request.headers)
+        print("request.cookies: ", request)
+        if authorization == 'Basic Y3Jpc2ltcGxlMTExOjE1OTM1Nw==':
+            # return JsonResponse({
+            #     "status": 200,
+            #     "msg": "认证成功"
+            # })
+            print(JsonResponse({
+                "msg": "认证成功"
+            }))
+            return func(request)
+        else:
+            return HttpResponse("认证失败")
     return auth
 
 """
@@ -60,6 +59,7 @@ def query_article(request):
 """
 增加文章接口
 """
+@user_auth
 def add_article(request):
     if request.method == "POST":
         # 查询当前库中有哪些文章
@@ -115,6 +115,7 @@ def add_article(request):
 """
 修改文章
 """
+@user_auth
 def modify_article(request, article_id):
     if request.method == "POST":
         article = Article.objects.get(id=article_id)
@@ -164,6 +165,7 @@ def modify_article(request, article_id):
 """
 删除文章
 """
+@user_auth
 def delete_article(request, article_id):
     if request.method == "DELETE":
         try:
