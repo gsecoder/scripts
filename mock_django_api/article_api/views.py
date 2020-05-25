@@ -6,9 +6,37 @@ import json
 # Create your views here.
 
 """
+接口认证
+"""
+def user_auth(request):
+    def auth():
+        user_name = request
+        user_password = json.loads(request.body)
+        print("user_name: ", user_name)
+        print("user_password: ", user_password)
+        # if user_name and user_password:
+        #     if user_name == "crisimple1" and user_password == "159357":
+        #         return JsonResponse({
+        #             "status": 200,
+        #             "msg": "认证成功"
+        #         })
+        #     else:
+        #         return JsonResponse({
+        #             "status": 401,
+        #             "msg": "认证失败"
+        #         })
+        # else:
+        #     return JsonResponse({
+        #         "status": 400,
+        #         "msg": "需要认证，才能操作"
+        #     })
+    return auth
+
+"""
 可以先在后台管理中添加一些文章测试数据
 查询文章接口
 """
+@user_auth
 def query_article(request):
     if request.method == 'GET':
         articles = {}
@@ -27,6 +55,7 @@ def query_article(request):
         print("request.body: ", request.body)
     else:
         return HttpResponse("请求方法错误")
+
 
 """
 增加文章接口
