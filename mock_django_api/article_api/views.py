@@ -2,9 +2,15 @@ from django.shortcuts import render
 from .models import Article
 from django.http import JsonResponse, HttpResponse
 import json
-from django.contrib.auth import authenticate
 # Create your views here.
-from util.get_authorization_info import decode_user_password
+from .util.get_authorization_info import decode_user_password
+import os
+import sys
+
+current_path = os.path.abspath(os.path.dirname(__file__))
+root_path = os.path.split(current_path)[0]
+print(".......................: ", root_path)
+sys.path.append(root_path)
 
 """
 接口认证

@@ -10,6 +10,13 @@ __function__:
 """
 import base64
 
+import os
+import sys
+
+current_path = os.path.abspath(os.path.dirname(__file__))
+root_path = os.path.split(current_path)[0]
+sys.path.append(root_path)
+
 """ 解码Basic Auth中的用户名密码 """
 def decode_user_password(str1):
     decode_base = str1.replace('Basic ', '')
