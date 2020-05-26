@@ -4,25 +4,23 @@ from django.http import JsonResponse, HttpResponse
 import json
 from django.contrib.auth import authenticate
 # Create your views here.
+from util.get_authorization_info import decode_user_password
 
 """
 接口认证
 """
 def user_auth(func):
     def auth(request, *args, **kwargs):
-        # print("=======request========: ", request.headers)
+        # 获取 Authorization 并读取用户名和密码
         print("=======request========: ", request.headers.get("Authorization"))
-        # username = request.META.get("USERNAME")
-        # print("username: ", username)
-        # user = authenticate(username=username, password=password)
         authorization = request.headers.get("Authorization")
-        print("request.headers: ", request.headers)
-        print("request.cookies: ", request)
-        if authorization == 'Basic Y3Jpc2ltcGxlMTExOjE1OTM1Nw==':
-            # return JsonResponse({
-            #     "status": 200,
-            #     "msg": "认证成功"
-            # })
+        username = decode_user_password(authorization)[0]
+        print("username", username)
+        password = decode_user_password(authorization)[1]
+        print("password", password)
+
+        # 用户鉴权认证
+        if username == 'crisimple' and password == '123456':
             print(JsonResponse({
                 "msg": "认证成功"
             }))
@@ -43,7 +41,7 @@ def query_article(request):
         query_articles = Article.objects.all()
         print("query_articles: ", query_articles)
         for article in query_articles:
-            articles[article.title] = article.content
+            articles[article.title] = article.id
         return JsonResponse(
             {
                 "status": 200,
