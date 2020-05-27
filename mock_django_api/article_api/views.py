@@ -4,13 +4,17 @@ from django.http import JsonResponse, HttpResponse
 import json
 # Create your views here.
 from .util.get_authorization_info import decode_user_password
-import os
-import sys
 
-current_path = os.path.abspath(os.path.dirname(__file__))
-root_path = os.path.split(current_path)[0]
-print(".......................: ", root_path)
-sys.path.append(root_path)
+# import os
+# import sys
+#
+# current_path = os.path.abspath(os.path.dirname(__file__))
+# root_path = os.path.split(current_path)[0]
+# print(".......................: ", root_path)
+# sys.path.append(root_path)
+
+def index(request):
+    return HttpResponse("Hello, Django. You're at the article api index.")
 
 """
 接口认证
@@ -40,7 +44,7 @@ def user_auth(func):
 查询文章接口
 """
 @user_auth
-def query_article(request):
+def query(request):
     if request.method == 'GET':
         articles = {}
         # 查询所有文章
@@ -64,7 +68,7 @@ def query_article(request):
 增加文章接口
 """
 @user_auth
-def add_article(request):
+def add(request):
     if request.method == "POST":
         # 查询当前库中有哪些文章
         articles_title = []
@@ -120,7 +124,7 @@ def add_article(request):
 修改文章
 """
 @user_auth
-def modify_article(request, article_id):
+def update(request, article_id):
     if request.method == "POST":
         article = Article.objects.get(id=article_id)
         print("article: ", article)
@@ -170,7 +174,7 @@ def modify_article(request, article_id):
 删除文章
 """
 @user_auth
-def delete_article(request, article_id):
+def delete(request, article_id):
     if request.method == "DELETE":
         try:
             article = Article.objects.get(id=article_id)

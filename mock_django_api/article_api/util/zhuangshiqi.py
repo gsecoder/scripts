@@ -7,6 +7,7 @@ __date__   : 2020-05-26 11:25
 __function__:
 装饰器小回顾
 """
+import os
 
 def user_auth(func):
     def auth():
@@ -20,6 +21,7 @@ def user_auth(func):
 @user_auth
 def my_wallet():
     print("钱包余额：99999999999")
+    print("路径：", os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 
 if __name__ == "__main__":

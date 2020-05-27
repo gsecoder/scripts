@@ -14,28 +14,23 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 import os
-import sys
 from django.contrib import admin
 from django.urls import path
-from article_api.views import query_article
-from article_api.views import add_article
-from article_api.views import modify_article
-from article_api.views import delete_article
+from django.urls import include
 
 """
 当前路径
 """
-current_path = os.path.dirname(__file__)
-print("current_path: ", current_path)
-# import os
+# import sys
+# current_path = os.path.abspath(os.path.dirname(__file__))
+# root_path = os.path.split(current_path)[0]
+# sys.path.append(root_path)
+# print("root_path: ", root_path)
+
 os.environ.update({"DJANGO_SETTINGS_MODULE": "config.settings"})
 
 
 urlpatterns = [
+    path('article_api/', include('article_api.urls')),
     path('admin/', admin.site.urls),
-    path('query_article/', query_article, name='query_article'),
-    path('add_article/', add_article, name='add_article'),
-    path('modify_article/<int:article_id>', modify_article, name='modify_article'),
-    path('delete_article/<int:article_id>', delete_article, name='delete_article'),
-    path('article/<int:article_id>', modify_article)
 ]
