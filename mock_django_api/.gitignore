@@ -2,3 +2,7 @@ BasicPython.iml
 .ideapath
 .idea/
 env/
+article_api/__pycache__/
+article_api/__pycache__/__init__.cpython-38.pyc article_api/__pycache__/admin.cpython-38.pyc article_api/__pycache__/apps.cpython-38.pyc article_api/__pycache__/models.cpython-38.pyc article_api/__pycache__/urls.cpython-38.pyc article_api/__pycache__/views.cpython-38.pyc
+mock_django_api/__pycache__/__init__.cpython-38.pyc mock_django_api/__pycache__/settings.cpython-38.pyc mock_django_api/__pycache__/urls.cpython-38.pyc mock_django_api/__pycache__/wsgi.cpython-38.pyc
+mock_django_api/__pycache__/
