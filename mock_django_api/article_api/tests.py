@@ -5,12 +5,6 @@ from django.test import TestCase
 from django.test import RequestFactory      # RequestFactory：django自身集成的测试套件
 from .views import Article
 
-import sys
-import os
-current_path = os.path.abspath(os.path.dirname(__file__))
-root_path = current_path.split(current_path)[0]
-sys.path.append(root_path)
-
 
 class TestArticleApi(TestCase):
 
@@ -24,3 +18,4 @@ class TestArticleApi(TestCase):
     def test_query_article(self):
         request = self.factory.get('/query_article')
         print("request: ", request)
+

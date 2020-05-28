@@ -11,10 +11,10 @@ import os
 import sys
 from django.test import TestCase
 from .models import Article
-
-current_path = os.path.abspath(os.path.dirname(__file__))
-root_path = os.path.split(current_path)[0]
-sys.path.append(root_path)
+#
+# current_path = os.path.abspath(os.path.dirname(__file__))
+# root_path = os.path.split(current_path)[0]
+# sys.path.append(root_path)
 
 
 class TestArticle(TestCase):

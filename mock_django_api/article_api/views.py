@@ -1,20 +1,11 @@
 from django.shortcuts import render
 from .models import Article
-from django.http import JsonResponse, HttpResponse
+from django.http import JsonResponse
+from django.http import HttpResponse
+from django.http import Http404
 import json
 # Create your views here.
 from .util.get_authorization_info import decode_user_password
-
-# import os
-# import sys
-#
-# current_path = os.path.abspath(os.path.dirname(__file__))
-# root_path = os.path.split(current_path)[0]
-# print(".......................: ", root_path)
-# sys.path.append(root_path)
-
-def index(request):
-    return HttpResponse("Hello, Django. You're at the article api index.")
 
 """
 接口认证
@@ -23,21 +14,51 @@ def user_auth(func):
     def auth(request, *args, **kwargs):
         # 获取 Authorization 并读取用户名和密码
         print("=======request========: ", request.headers.get("Authorization"))
-        authorization = request.headers.get("Authorization")
-        username = decode_user_password(authorization)[0]
-        print("username", username)
-        password = decode_user_password(authorization)[1]
-        print("password", password)
+        try:
+            authorization = request.headers.get("Authorization")
+            username = decode_user_password(authorization)[0]
+            print("username: ", username)
+            password = decode_user_password(authorization)[1]
+            print("password: ", password)
 
-        # 用户鉴权认证
-        if username == 'crisimple' and password == '123456':
-            print(JsonResponse({
-                "msg": "认证成功"
-            }))
-            return func(request)
-        else:
-            return HttpResponse("认证失败")
+            # 用户鉴权认证
+            if username == 'crisimple' and password == '123456':
+                print(JsonResponse({
+                    "msg": "认证成功"
+                }))
+                return func(request, *args, **kwargs)
+            else:
+                return JsonResponse({
+                    "status": 402,
+                    "msg": "认证失败"
+                })
+        except Exception:
+            return JsonResponse({
+                "status": 401,
+                "msg": "请先进行身份认证"
+            })
     return auth
+
+def index(request):
+    request_articles = Article.objects.all()
+    articles = {}
+    for article in request_articles:
+        articles[article] = article.id
+    return render(request, 'article/index.html', {'articles': articles})
+
+def index_detail(request, article_id):
+    try:
+        request_articles = Article.objects.all()
+        print("request_articles: ", request_articles)
+        articles = {}
+        for article in request_articles:
+            if article.id == article_id:
+                articles[article_id] = article.content
+        print("articles", articles)
+        print("articles", articles[article_id])
+    except Article.DoesNotExist:
+        raise Http404("Question does not exist")
+    return render(request, 'article/index_detail.html', {'articles': articles[article_id]})
 
 """
 可以先在后台管理中添加一些文章测试数据
