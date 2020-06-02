@@ -1,0 +1,3 @@
+{
+  "月度1": "SELECT * FROM article WHERE id = %s"
+}
