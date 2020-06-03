@@ -25,11 +25,20 @@ class ReadSql(object):
         # 初始化数据库操作
         self.od = OperateDatabase()
 
-    def read_sql(self, sql_name, *args):
+    def select_sql(self, method, sql_name, *args):
         sql_val = self.json_data[sql_name]
-        result = self.od.execute_sql('select', sql_val, (4, ))
-        print(sql_name, result)
+        result = self.od.execute_sql(method, sql_val, *args)
+        return result
+
+    def commit_sql(self):
+        pass
+
 
 if __name__ == "__main__":
     rs = ReadSql()
-    rs.read_sql('月度1')
+    select_result = rs.select_sql('select', '月度1', (4, ))
+    print(type(select_result))
+    print(select_result)
+    for items in select_result:
+        for item in items:
+            print(item)
