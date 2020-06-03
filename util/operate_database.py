@@ -13,12 +13,12 @@ class OperateDatabase(object):
 
     def __init__(self):
         self.connect = pymysql.connect(
-            host='129.28.170.125',
+            host='',
             user='root',
-            passwd='159357',
+            passwd='',
             port=3306,
             charset='utf8',
-            db='unittest_api'
+            db=''
         )
         self.cursor = self.connect.cursor()
 
