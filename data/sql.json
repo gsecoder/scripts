@@ -1,3 +1,4 @@
 {
-  "月度1": "SELECT * FROM article WHERE id = %s"
+  "第一": "SELECT * FROM article WHERE id = %s",
+  "第二": "SELECT * FROM article WHERE id = %s"
 }

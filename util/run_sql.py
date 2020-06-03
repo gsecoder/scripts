@@ -17,5 +17,11 @@ class RunSql(object):
     def __init__(self):
         self.rs = ReadSql()
 
-    def run_sql(self):
-        self.rs.select_sql()
+    def run_sql(self, method, *args):
+        for index in self.rs.json_data:
+            result = self.rs.select_sql(method, index, *args)
+            print(result)
+
+if __name__ == "__main__":
+    rsl = RunSql()
+    rsl.run_sql('select', (4, ))

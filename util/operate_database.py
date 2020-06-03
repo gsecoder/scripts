@@ -63,8 +63,9 @@ class OperateDatabase(object):
             print("error: ", e)
             self.connect.rollback()
         finally:
-            self.cursor.close()
-            self.connect.close()
+            # self.cursor.close()
+            # self.connect.close()
+            pass
 
 if __name__ == "__main__":
     odb = OperateDatabase()
