@@ -20,7 +20,7 @@ class OperateDatabase(object):
             charset='utf8',
             db='unittest_api'
         )
-        self.cursor = self.connect.cursor()
+        self.cursor = self.connect.cursor(pymysql.cursors.DictCursor)
 
     """创建数据库"""
     def create_db(self, db_name):

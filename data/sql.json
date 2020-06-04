@@ -1,4 +1,10 @@
 {
-  "第一": "SELECT * FROM article WHERE id = %s",
-  "第二": "SELECT * FROM article WHERE id = %s"
+  "第一":{
+      "sql": "SELECT * FROM article WHERE id = %s",
+      "args": "4"
+  },
+  "第二": {
+    "sql": "SELECT * FROM article WHERE id = %s",
+    "args": "5"
+  }
 }

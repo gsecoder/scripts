@@ -9,6 +9,7 @@ __function__:
     可以读取 mysql 中数据
     可以读取 ini 文件中的数据
 """
+import json
 
 from util.read_sql import ReadSql
 
@@ -17,11 +18,14 @@ class RunSql(object):
     def __init__(self):
         self.rs = ReadSql()
 
-    def run_sql(self, method, *args):
-        for index in self.rs.json_data:
-            result = self.rs.select_sql(method, index, *args)
-            print(result)
+    def run_sql(self):
+        sql_select_result = self.rs.select_sql(method='select')
+        print(json.dumps(
+            sql_select_result,
+            indent=4,
+            ensure_ascii=False
+        ))
 
 if __name__ == "__main__":
     rsl = RunSql()
-    rsl.run_sql('select', (4, ))
+    rsl.run_sql()
