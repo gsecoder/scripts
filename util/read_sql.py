@@ -9,6 +9,7 @@ __github__ :  https://crisimple.github.io/
 """
 import json
 from util.operate_database import OperateDatabase
+from util.format_data import FormatData
 
 class ReadSql(object):
 
@@ -25,12 +26,20 @@ class ReadSql(object):
         # 初始化数据库操作
         self.od = OperateDatabase()
 
+        # 初始化 tuple 转换方法
+        self.fd = FormatData
+
     def select_sql(self, method):
         dict_result = {}
         for index, item in self.json_data.items():
-            # print("item: ", item)
-            result = self.od.execute_sql(method, item['sql'], item['args'])
+            param = self.fd.strtuple_to_tuple(item['args'])
+            sql = item['sql']
+            print("type of param", type(param))
+            print("param: ", param)
+            print("sql: ", sql)
+            result = self.od.execute_sql(method, sql, param)
             dict_result[index] = result
+        # print("dict_result: ", dict_result)
         return dict_result
 
     def commit_sql(self):

@@ -9,3 +9,4 @@ util/__pycache__/*
 */__pycache__/*
 tools/__pycahe__/*
 test/__pycache__/*
+data/mysql.ini

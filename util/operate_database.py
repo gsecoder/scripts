@@ -8,14 +8,18 @@ __function__:
     操作 mysql 数据库
 """
 import pymysql
+from util.read_ini import ReadIni
 
 class OperateDatabase(object):
 
     def __init__(self):
+        i_host = ReadIni().read_ini('login_info', 'i_host')
+        i_user = ReadIni().read_ini('login_info', 'i_user')
+        i_passwd = ReadIni().read_ini('login_info', 'i_passwd')
         self.connect = pymysql.connect(
-            host='129.28.170.125',
-            user='root',
-            passwd='159357',
+            host=i_host,
+            user=i_user,
+            passwd=i_passwd,
             port=3306,
             charset='utf8',
             db='unittest_api'
@@ -53,8 +57,8 @@ class OperateDatabase(object):
             if method == "select":
                 self.cursor.execute(sql_param, *args)
                 result = self.cursor.fetchall()
-                return result
                 # print("查询结果为：", result)
+                return result
             else:
                 self.cursor.execute(sql_param, *args)
                 self.connect.commit()
@@ -79,7 +83,7 @@ if __name__ == "__main__":
     ) ENGINE=InnoDB DEFAULT CHARSET='utf8';
     """ % 'article'
 
-    select_sql = " SELECT * FROM article WHERE title = %s;"
+    select_sql = " SELECT * FROM article WHERE title = %s AND active = %s;"
 
     insert_sql = " INSERT INTO article(title, content, active)  VALUES (%s, %s, %s);"
 
@@ -89,7 +93,7 @@ if __name__ == "__main__":
 
     # odb.create_db('unittest_api')
     # odb.create_table(create_table_sql)
-    odb.execute_sql('select', select_sql, ('aa', ))
+    odb.execute_sql('select', select_sql, ('aa', 0))
     # odb.execute_sql('insert', insert_sql, ("a中文", "aa中文", 1))
     # odb.execute_sql('delete', delete_sql, ('1', ))
     # odb.execute_sql('update', update_sql, ('aa', 4))
