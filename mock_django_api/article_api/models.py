@@ -22,3 +22,4 @@ class Article(models.Model):
 
     def __str__(self):
         return self.title
+            # , self.content, self.content, self.status

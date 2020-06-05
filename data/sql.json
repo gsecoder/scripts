@@ -1,6 +1,6 @@
 {
-  "第一":{
-      "sql": "SELECT * FROM article WHERE title = %s AND active = %s",
-      "args": "(aa, 0)"
+  "文章查询":{
+      "sql": "SELECT * FROM article WHERE 1 = %s",
+      "args": "1"
   }
 }

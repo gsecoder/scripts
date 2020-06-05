@@ -12,7 +12,7 @@ __function__:
 import requests
 import json
 
-class RequestMethod():
+class RequestMethod(object):
 
     @staticmethod
     def request_method(request_type, api_url, headers=None, data=None):
@@ -42,7 +42,7 @@ if __name__ == "__main__":
     }
     response_data = re.request_method(
         request_type="GET",
-        api_url='http://127.0.0.1:8000/article_api/' + 'query/',
+        api_url='http://129.28.170.125:8000/article_api/' + 'query/',
         headers=api_headers)
 
     # 代码转码
