@@ -67,16 +67,33 @@ def index_detail(request, article_id):
 @user_auth
 def query(request):
     if request.method == 'GET':
-        articles = {}
+        article_list = []
+        # articles_inlist = []
         # 查询所有文章
         query_articles = Article.objects.all()
         print("query_articles: ", query_articles)
+        print("type of query_articles: ", type(query_articles))
+        i = 0
         for article in query_articles:
-            articles[article.title] = article.id
+            articles = {}
+            print("======article======: ", article)
+            articles["id"] = article.id
+            print("article.id: ", article.id)
+            articles["title"] = article.title
+            articles["content"] = article.content
+            articles["status"] = article.status
+            i += 1
+            print("articles %s, %s" % (i, articles))
+            article_list.append(articles)
+            print("articles_inlist: ", article_list)
+
+        # article_list.append(articles_inlist)
+        print("type of article_list: ", type(article_list))
+        print("article_list: ", article_list)
         return JsonResponse(
             {
                 "status": 200,
-                "articles": articles,
+                "articles": article_list,
                 "msg": "查询成功"
             }
         )

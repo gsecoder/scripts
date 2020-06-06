@@ -14,5 +14,5 @@ fi
 
 # 提交代码
 git add .
-git commit -m "测试代码同步脚本"
+git commit -m "改造article query接口，开发接口查询自动化验证"
 git push origin "${current_branch}"
