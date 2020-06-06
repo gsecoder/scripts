@@ -13,6 +13,7 @@ from util.format_data import FormatData
 from util.read_ini import ReadIni
 from util.read_sql import ReadSql
 import json
+from util.compare_json import CompareJson
 
 class TestArticleQuery(unittest.TestCase):
 
@@ -35,6 +36,10 @@ class TestArticleQuery(unittest.TestCase):
         # 初始化执行SQL
         self.rs = ReadSql(json_file="../data/sql.json")
 
+        # 初始化比较返回结果的方法
+        self.cj = CompareJson
+
+
 
     def test_article_query(self):
 
@@ -56,6 +61,7 @@ class TestArticleQuery(unittest.TestCase):
         sql_data_dict = sql_data["第一"]
         print("sql_data: ", type(sql_data))
         print("sql_data: ", sql_data_dict)
+
 
 
     def tearDown(self) -> None:
