@@ -17,28 +17,29 @@ from util.compare_json import CompareJson
 
 class TestArticleQuery(unittest.TestCase):
 
-    def setUp(self) -> None:
+    @classmethod
+    def setUpClass(cls) -> None:
         # 初始化格式化
-        self.fd = FormatData()
+        cls.fd = FormatData()
 
         # 初始化读取 ini 文件方法
-        self.ri = ReadIni(ini_file="../data/unittest_api.ini")
+        cls.ri = ReadIni(ini_file="../data/unittest_api.ini")
         # 获取要请求接口的 url 和 headers
-        self.base_request_type = self.ri.read_ini("article_api_query", "base_request_type")
+        cls.base_request_type = cls.ri.read_ini("article_api_query", "base_request_type")
         # print("base_request_type: ", self.base_request_type)
-        self.base_url = self.ri.read_ini("article_api_query", "base_url")
+        cls.base_url = cls.ri.read_ini("article_api_query", "base_url")
         # print("base_url: ", self.base_url)
-        self.base_headers = self.fd.strdict_to_dict(self.ri.read_ini("article_api_query", "base_headers"))
+        cls.base_headers = cls.fd.strdict_to_dict(cls.ri.read_ini("article_api_query", "base_headers"))
 
         # 初始化综合请求接口方法
-        self.rm = RequestMethod()
+        cls.rm = RequestMethod()
 
         # 初始化执行SQL
-        self.rs = ReadSql()
+        cls.rs = ReadSql()
         # self.rs = ReadSql(json_file="../data/sql.json")
 
         # 初始化比较返回结果的方法
-        self.cj = CompareJson
+        cls.cj = CompareJson
 
 
 
@@ -84,9 +85,17 @@ class TestArticleQuery(unittest.TestCase):
         print(sql_data)
 
 
-    def tearDown(self) -> None:
+    @classmethod
+    def tearDownClass(cls) -> None:
         print("执行完毕")
 
 
 if __name__ == "__main__":
-    unittest.main()
+    # 构建测试套件
+    suite = unittest.TestSuite()
+    suite.addTest(TestArticleQuery('test_query_all'))
+    suite.addTest(TestArticleQuery('test_query_condition'))
+
+    # 执行测试
+    runner = unittest.TextTestRunner(verbosity=2)
+    runner.run(suite)

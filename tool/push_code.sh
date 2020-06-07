@@ -14,5 +14,5 @@ fi
 
 # 提交代码
 git add .
-git commit -m "优化 mysql.json 选项读取"
+git commit -m "测试套件构建"
 git push origin "${current_branch}"
