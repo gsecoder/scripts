@@ -14,5 +14,5 @@ fi
 
 # 提交代码
 git add .
-git commit -m "测试套件构建"
+git commit -m "添加测试邮件配置"
 git push origin "${current_branch}"
