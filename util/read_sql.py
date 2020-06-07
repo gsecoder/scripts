@@ -29,18 +29,39 @@ class ReadSql(object):
         # 初始化 tuple 转换方法
         self.fd = FormatData
 
-    def select_sql(self, method):
+    def select_sql(self, method, which_args):
         dict_result = {}
-        for index, item in self.json_data.items():
-            param = self.fd.strtuple_to_tuple(item['args'])
-            sql = item['sql']
-            print("type of param", type(param))
-            print("param: ", param)
-            print("sql: ", sql)
-            result = self.od.execute_sql(method, sql, param)
-            dict_result[index] = result
-        # print("dict_result: ", dict_result)
-        return dict_result
+        which_one = dict(dict(self.json_data.items())[which_args].items())
+        # print("self.json_data.items(): ", dict(self.json_data.items())["query_all"])
+        # print("self.json_data.items(): ", type(self.json_data.items()))
+        # print("which_sql: ", type(which_one))
+        # print("which_sql: ", which_one)
+        # print("which_sqlsql: ", which_sql['sql'])
+        # print("which_sqlargs: ", which_sql['args'])
+
+        sql = which_one['sql']
+        args = which_one['args']
+        param = self.fd.strtuple_to_tuple(args)
+        # print("sql", sql)
+        # print("param", param)
+        result = self.od.execute_sql(method, sql, param)
+        val = which_one
+        return result
+
+        # 废弃代码，只考虑读取一个节点的情况
+        # for index, item in which_one:
+        #     # print("which_one_1", dict(which_one)['args'])
+        #     # print("which_one_sql", dict(which_one)['sql'])
+        #     # print("item: ", item)
+        #     param = self.fd.strtuple_to_tuple(item['args'])
+        #     sql = item
+        #     # print("type of param", type(param))
+        #     # print("param: ", param)
+        #     # print("sql: ", sql)
+        #     result = self.od.execute_sql(method, sql, param)
+        #     dict_result[index] = result
+        # # print("dict_result: ", dict_result)
+        # return dict_result
 
     def commit_sql(self):
         pass
@@ -48,5 +69,5 @@ class ReadSql(object):
 
 if __name__ == "__main__":
     rs = ReadSql()
-    select_result = rs.select_sql('select')
+    select_result = rs.select_sql("select", "query_condition")
     print(select_result)

@@ -17,7 +17,7 @@ class FormatData(object):
     @staticmethod
     def strtuple_to_tuple(a):
         # strtuple = args
-        print("type of a", type(a))
+        # print("type of a", type(a))
         temp = a.replace('(', '').replace(')', '')
         strtuple = tuple(
             [i for i in temp.split(',')]
