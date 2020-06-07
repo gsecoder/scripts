@@ -14,5 +14,5 @@ fi
 
 # 提交代码
 git add .
-git commit -m "配置mysql数据库"
+git commit -m "重新配置项目 requirements 和 env "
 git push origin "${current_branch}"

@@ -51,9 +51,10 @@ class TestArticleQuery(unittest.TestCase):
         )
         query_data_code = api_data.status_code
         query_data_text = json.loads(api_data.text.encode("utf-8").decode("unicode_escape"))
+        api_data_text = query_data_text["articles"]
 
         # print("query_data_code: ", query_data_code)
-        print("query_data_text: ", query_data_text["articles"])
+        print("query_data_text: ", api_data_text)
         # return api_data
 
         # 传参读取数据库中的数据
@@ -61,6 +62,9 @@ class TestArticleQuery(unittest.TestCase):
         sql_data_dict = sql_data["第一"]
         print("sql_data: ", type(sql_data))
         print("sql_data: ", sql_data_dict)
+
+        # 比较 api 返回数据与 sql 查询逻辑返回数据对比
+        self.cj.compare_json(api_data_text, sql_data_dict)
 
 
 
