@@ -7,6 +7,8 @@ mock_django_api/article_api/__pycache__/__init__.cpython-38.pyc mock_django_api/
 mock_django_api/mock_django_api/__pycache__/__init__.cpython-38.pyc mock_django_api/mock_django_api/__pycache__/settings.cpython-38.pyc mock_django_api/mock_django_api/__pycache__/urls.cpython-38.pyc mock_django_api/mock_django_api/__pycache__/wsgi.cpython-38.pyc
 util/__pycache__/*
 */__pycache__/*
-tools/__pycahe__/*
+tool/__pycahe__/*
 test/__pycache__/*
 data/mysql.ini
+mock_django_api/article_api/__pycache__/__init__.cpython-38.pyc mock_django_api/article_api/__pycache__/admin.cpython-38.pyc mock_django_api/article_api/__pycache__/apps.cpython-38.pyc mock_django_api/article_api/__pycache__/models.cpython-38.pyc mock_django_api/article_api/__pycache__/urls.cpython-38.pyc mock_django_api/article_api/__pycache__/views.cpython-38.pyc
+mock_django_api/mock_django_api/__pycache__/__init__.cpython-38.pyc mock_django_api/mock_django_api/__pycache__/settings.cpython-38.pyc mock_django_api/mock_django_api/__pycache__/urls.cpython-38.pyc mock_django_api/mock_django_api/__pycache__/wsgi.cpython-38.pyc

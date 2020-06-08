@@ -18,7 +18,8 @@ class CompareJson(object):
         with open(json_dst_file, 'r', encoding='utf-8') as fp:
             self.dst = json.load(fp)
 
-    def compare_json(self, src_data, dst_data):
+    @staticmethod
+    def compare_json(src_data, dst_data):
         # 比较的两个 json 的类型为 dict
         if isinstance(src_data, dict):
             for key in dst_data:
@@ -27,7 +28,7 @@ class CompareJson(object):
             for key in src_data:
                 if key in dst_data:
                     if src_data[key] == dst_data[key]:
-                        self.compare_json(src_data[key], dst_data[key])
+                        CompareJson.compare_json(src_data[key], dst_data[key])
                         # print("src_json[%s]=%s 【等于】 dst_json[%s]=%s" % (key, src_json[key], key, dst_json[key]))
                     else:
                         print("src_json[%s]=%s 【不等于】 dst_json[%s]=%s" % (key, src_data[key], key, dst_data[key]))
@@ -37,7 +38,7 @@ class CompareJson(object):
             if len(src_data) == len(dst_data):
                 for key in range(len(src_data)):
                     if src_data[key] == dst_data[key]:
-                        self.compare_json(src_data[key], dst_data[key])
+                        CompareJson.compare_json(src_data[key], dst_data[key])
                     else:
                         print("src_json[%s]=%s 【不等于】 dst_json[%s]=%s" % (key, src_data[key], key, dst_data[key]))
             else:
