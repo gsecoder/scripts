@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- encoding: utf-8 -*-
 """
-__file__    : test_article_query.py
+__file__    : test_article_query_devtest.py
 __time__    : 2020/6/6 10:19
 __author__  : crisimple
 __github__ :  https://crisimple.github.io/
@@ -40,8 +40,6 @@ class TestArticleQuery(unittest.TestCase):
 
         # 初始化比较返回结果的方法
         cls.cj = CompareJson
-
-
 
     def test_query_all(self):
 

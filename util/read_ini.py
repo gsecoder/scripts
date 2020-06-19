@@ -5,7 +5,7 @@ __file__   : read_ini.py
 __author__ : jiangheng
 __date__   : 2020-06-04 17:44
 __function__:
-
+    读取 ini 文件
 """
 import configparser
 

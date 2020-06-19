@@ -15,6 +15,7 @@ def user_auth(func):
         # 获取 Authorization 并读取用户名和密码
         print("=======request========: ", request.headers.get("Authorization"))
         try:
+            print("我进来了")
             authorization = request.headers.get("Authorization")
             username = decode_user_password(authorization)[0]
             print("username: ", username)
@@ -26,6 +27,7 @@ def user_auth(func):
                 print(JsonResponse({
                     "msg": "认证成功"
                 }))
+                print("<request>: ", request)
                 return func(request, *args, **kwargs)
             else:
                 return JsonResponse({
@@ -66,7 +68,28 @@ def index_detail(request, article_id):
 """
 @user_auth
 def query(request):
+    print("我已经通过了身份认证")
     if request.method == 'GET':
+<<<<<<< HEAD
+        articles = {}
+        articles_list = []
+        print(" articles ", articles)
+        # 查询所有文章
+        query_articles = Article.objects.all()
+        print("query_articles========: ", query_articles)
+        for article in query_articles:
+            articles[article.id] = article.id
+            articles[article.title] = article.title
+            article[article.content] = article.content
+            article[article.status] = article.status
+        articles_list.append(articles)
+        print("[[[[articles_list]]]]:", articles_list)
+        print("articles: --------", articles)
+        return JsonResponse(
+            {
+                "status": 200,
+                "articles": articles_list,
+=======
         article_list = []
         # articles_inlist = []
         # 查询所有文章
@@ -94,6 +117,7 @@ def query(request):
             {
                 "status": 200,
                 "articles": article_list,
+>>>>>>> 9195aa4c97d9c0804db903427b80055c54654196
                 "msg": "查询成功"
             }
         )

@@ -23,6 +23,7 @@ __function__:
 """
 import json
 
+
 def sorting_express():
 
     provinces = [
@@ -64,6 +65,7 @@ def sorting_express():
             indent=4,
             ensure_ascii=False
         ))
+
 
 if __name__ == "__main__":
     sorting_express()

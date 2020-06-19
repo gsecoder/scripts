@@ -1,4 +1,7 @@
 {
+  "文章查询":{
+      "sql": "SELECT * FROM article WHERE 1 = %s",
+      "args": "1"
   "query_all":{
       "sql": "SELECT * FROM article_api_article WHERE 1 = %s",
       "args": "(1)"
