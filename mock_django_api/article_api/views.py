@@ -70,32 +70,13 @@ def index_detail(request, article_id):
 def query(request):
     print("我已经通过了身份认证")
     if request.method == 'GET':
-<<<<<<< HEAD
         articles = {}
         articles_list = []
         print(" articles ", articles)
         # 查询所有文章
         query_articles = Article.objects.all()
         print("query_articles========: ", query_articles)
-        for article in query_articles:
-            articles[article.id] = article.id
-            articles[article.title] = article.title
-            article[article.content] = article.content
-            article[article.status] = article.status
-        articles_list.append(articles)
-        print("[[[[articles_list]]]]:", articles_list)
-        print("articles: --------", articles)
-        return JsonResponse(
-            {
-                "status": 200,
-                "articles": articles_list,
-=======
         article_list = []
-        # articles_inlist = []
-        # 查询所有文章
-        query_articles = Article.objects.all()
-        print("query_articles: ", query_articles)
-        print("type of query_articles: ", type(query_articles))
         i = 0
         for article in query_articles:
             articles = {}
@@ -117,7 +98,6 @@ def query(request):
             {
                 "status": 200,
                 "articles": article_list,
->>>>>>> 9195aa4c97d9c0804db903427b80055c54654196
                 "msg": "查询成功"
             }
         )

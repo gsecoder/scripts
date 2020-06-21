@@ -8,7 +8,7 @@ current_branch_info=`git status | grep branch`
 current_branch=${current_branch_info:10}
 
 # 定义要操作的分支
-choice_branch='unittest_api'
+choice_branch='test_api'
 
 # 判断当前分支是否在 ${choice_branch} 分支上，如果不在的话进行分支的切换
 if [ "${current_branch}" == "${choice_branch}" ]

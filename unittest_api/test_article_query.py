@@ -25,11 +25,11 @@ class TestArticleQuery(unittest.TestCase):
         # 初始化读取 ini 文件方法
         cls.ri = ReadIni(ini_file="../data/unittest_api.ini")
         # 获取要请求接口的 url 和 headers
-        cls.base_request_type = cls.ri.read_ini("article_api_query", "base_request_type")
+        cls.base_request_type = cls.ri.read_ini("localhost", "base_request_type")
         # print("base_request_type: ", self.base_request_type)
-        cls.base_url = cls.ri.read_ini("article_api_query", "base_url")
+        cls.base_url = cls.ri.read_ini("localhost", "base_url")
         # print("base_url: ", self.base_url)
-        cls.base_headers = cls.fd.strdict_to_dict(cls.ri.read_ini("article_api_query", "base_headers"))
+        cls.base_headers = cls.fd.strdict_to_dict(cls.ri.read_ini("localhost", "base_headers"))
 
         # 初始化综合请求接口方法
         cls.rm = RequestMethod()
@@ -59,13 +59,14 @@ class TestArticleQuery(unittest.TestCase):
 
         # 传参读取数据库中的数据
         sql_data = self.rs.select_sql("select", "query_all")
-        # sql_data_dict = sql_data["第一"]
+        sql_data_dict = sql_data
         # print("sql_data: ", type(sql_data))
         print("sql_data: ", sql_data)
+        # return sql_data
 
         # 比较 api 返回数据与 sql 查询逻辑返回数据对比
-        # self.cj.compare_json(api_data_text, sql_data_dict)
-        self.assertEqual(api_data_text, sql_data, "相等")
+        self.cj.compare_json(api_data_text, sql_data_dict)
+        # self.assertEqual(api_data_text, sql_data, "相等")
 
     def test_query_condition(self):
         # 接口传参获取接口数据，鉴于 article_query 接口不用传参，所以就不用获取参数了
