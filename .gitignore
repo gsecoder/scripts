@@ -1,0 +1,8 @@
+env/
+BasicPython.iml
+.ideapath
+.idea/
+path
+bash.exe.stackdump
+Python.iml
+venv/
