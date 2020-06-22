@@ -1,0 +1,6 @@
+2020-06-22 15:27:27,777 - get_log.py[line:43] - WARNING: warning
+2020-06-22 15:27:27,777 - get_log.py[line:44] - ERROR: error
+2020-06-22 15:33:17,251 - get_log.py[line:36] - CRITICAL: test
+2020-06-22 15:33:17,252 - get_log.py[line:37] - CRITICAL: test
+2020-06-22 15:33:17,252 - get_log.py[line:38] - ERROR: test
+2020-06-22 15:33:17,252 - get_log.py[line:39] - WARNING: test
