@@ -1,6 +1,0 @@
-env/
-venv/
-Flask.iml
-env/
-message_board/__pycache__/*
-quick_start/__pycache__/*
