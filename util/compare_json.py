@@ -10,7 +10,6 @@ __function__:
 import json
 
 class CompareJson(object):
-
     # 类初始化的时候读取json文件中的数据
     def __init__(self, json_src_file=None, json_dst_file=None):
         with open(json_src_file, 'r', encoding='utf-8') as fp:

@@ -2,3 +2,7 @@
 2020-06-22 15:33:39,965 - get_log.py[line:37] - CRITICAL: test
 2020-06-22 15:33:39,965 - get_log.py[line:38] - ERROR: test
 2020-06-22 15:33:39,965 - get_log.py[line:39] - WARNING: test
+2020-06-22 23:24:38,499 - get_log.py[line:36] - CRITICAL: test
+2020-06-22 23:24:38,499 - get_log.py[line:37] - CRITICAL: test
+2020-06-22 23:24:38,499 - get_log.py[line:38] - ERROR: test
+2020-06-22 23:24:38,499 - get_log.py[line:39] - WARNING: test
