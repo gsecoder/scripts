@@ -14,5 +14,5 @@ fi
 
 # 提交代码
 git add .
-git commit -m "tencet msg send"
+git commit -m "add *.pyc to .gitignore"
 git push origin "${current_branch}"
