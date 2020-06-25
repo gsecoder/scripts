@@ -22,5 +22,6 @@ os.environ.update({"DJANGO_SETTINGS_MODULE": "config.settings"})
 
 urlpatterns = [
     path('blog/', include('blog.urls')),
+    path('saas/', include('saas.urls')),
     path('admin/', admin.site.urls),
 ]

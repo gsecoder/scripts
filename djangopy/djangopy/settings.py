@@ -32,6 +32,7 @@ ALLOWED_HOSTS = ['*']
 
 INSTALLED_APPS = [
     'blog.apps.BlogConfig',
+    'saas.apps.SaasConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -121,6 +122,6 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 try:
-    from config.local_settings import *
+    from .local_settings import *
 except ImportError:
     pass
