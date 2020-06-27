@@ -14,5 +14,5 @@ fi
 
 # 提交代码
 git add .
-git commit -m "公告导航和注册页面显示"
+git commit -m "清理公告导航条和注册页面提交的__pycache__/*pyc"
 git push origin "${current_branch}"
