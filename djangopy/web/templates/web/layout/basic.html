@@ -1,0 +1,21 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}{% endblock %}</title>
+    <link rel="stylesheet" href={% static "web/plugin/bootstrap-3.3.7-dist/css/bootstrap-theme.min.css"%}>
+    <link rel="stylesheet" href={% static "web/plugin/font-awesome-4.7.0/css/font-awesome.min.css"%}>
+
+    {% block css %}{% endblock %}
+</head>
+<body>
+    <h1>头部菜单</h1>
+
+    {% block content %}{% endblock %}
+
+    <script src="{% static "web/js/jquery-3.4.1.min.js" %}"></script>
+    <script src="{% static "web/plugin/bootstrap-3.3.7-dist/js/bootstrap.min.js" %}"></script>
+    {% block js %}{% endblock %}
+</body>
+</html>

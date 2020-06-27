@@ -14,5 +14,5 @@ fi
 
 # 提交代码
 git add .
-git commit -m "add *.pyc to .gitignore"
+git commit -m "rebuilt djangopy web item structural"
 git push origin "${current_branch}"

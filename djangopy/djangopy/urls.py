@@ -21,7 +21,8 @@ from django.urls import include
 os.environ.update({"DJANGO_SETTINGS_MODULE": "config.settings"})
 
 urlpatterns = [
-    path('blog/', include('blog.urls')),
-    path('saas/', include('saas.urls')),
+    # 反向解析的时候根据 namespace 找到各自应用的路由，防止子路由的路由重名反向解析不到
+    path('blog/', include(('blog.urls', "blog"), namespace="blog")),
+    path('web/', include(('web.urls', "web"), namespace="web")),
     path('admin/', admin.site.urls),
 ]

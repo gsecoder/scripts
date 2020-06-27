@@ -32,7 +32,7 @@ ALLOWED_HOSTS = ['*']
 
 INSTALLED_APPS = [
     'blog.apps.BlogConfig',
-    'saas.apps.SaasConfig',
+    'web.apps.WebConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -77,8 +77,14 @@ WSGI_APPLICATION = 'djangopy.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        # 'ENGINE': 'django.db.backends.sqlite3',
+        # 'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.mysql',   # mysql 为mysql 数据库
+        'NAME': 'python_djangopy',             # 对应使用的数据库
+        'USER': 'root',                     # 对应数据库用户名
+        'PASSWORD': '159357',         # 对应数据库密码
+        'HOST': '129.28.170.125',            # 本地数据库
+        'PORT': 3306                  # 对应数据库端口
     }
 }
 
@@ -122,6 +128,6 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 try:
-    from .local_settings import *
+    from config.local_settings import *
 except ImportError:
     pass
