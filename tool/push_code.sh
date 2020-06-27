@@ -14,5 +14,5 @@ fi
 
 # 提交代码
 git add .
-git commit -m "rebuilt djangopy web item structural"
+git commit -m "公告导航和注册页面显示"
 git push origin "${current_branch}"

@@ -1,4 +1,5 @@
 from django.shortcuts import HttpResponse
+from django.shortcuts import render
 
 # Create your views here.
 import sys,os
@@ -6,6 +7,7 @@ from util.tencent_sms import send_sms_single
 import random
 from djangopy import settings
 from django_redis import get_redis_connection
+from web.forms.account import RegisterModelForm
 
 """
 模块功能：账号相关的功能
@@ -44,29 +46,6 @@ def send_sms(request):
     else:
         return HttpResponse(res["errmsg"])
 
-
-from django import forms
-from web import models
-from django.shortcuts import render
-from django.core.validators import RegexValidator
-from django.core.validators import ValidationError
-
-class RegisterModelForm(forms.ModelForm):
-    mobile_phone = forms.CharField(label="手机号", widget=forms.PasswordInput(), validators=[RegexValidator(r'^(1[3|4|5|6|7|8|9])\d{9}$', '手机号格式错误'), ])
-    password = forms.CharField(label="密码", widget=forms.PasswordInput())
-    confirm_password = forms.CharField(label="重复密码", widget=forms.PasswordInput())
-    code = forms.CharField(label="验证码", widget=forms.TextInput())
-
-    class Meta:
-        model = models.UserInfo
-        fields = ["username", "email", "mobile_phone", "code", "password", "confirm_password"]
-
-    def __init__(self, *args, **kwargs):
-        super().__init__(*args, **kwargs)
-        for name, field in self.fields.items():
-            field.widget.attrs["class"] = "form-control"
-            field.widget.attrs["placeholder"] = "请输入%s" % (field.label, )
-
 def register(request):
     form = RegisterModelForm()
-    return render(request, 'web/register.html', {"form": form})
+    return render(request, 'web/account.html', {"form": form})
