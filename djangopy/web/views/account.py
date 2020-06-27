@@ -3,19 +3,18 @@ from django.shortcuts import render
 
 # Create your views here.
 import sys,os
-from util.tencent_sms import send_sms_single
 import random
 from djangopy import settings
 from django_redis import get_redis_connection
 from web.forms.account import RegisterModelForm
+from web.forms.account import SendSmsForm
+from django.http import JsonResponse
 
 """
 模块功能：账号相关的功能
     注册
     登陆
 """
-
-sys.path.append(os.path.dirname(__file__) + os.sep )
 
 def index(request):
     return HttpResponse("sms")
@@ -27,6 +26,11 @@ def conn_redis():
     print("value: ", value)
     return HttpResponse("ok")
 
+def register(request):
+    """ 用户注册 """
+    form = RegisterModelForm()
+    return render(request, 'web/account.html', {"form": form})
+
 def send_sms(request):
     """
         发送短信
@@ -34,18 +38,11 @@ def send_sms(request):
             注册验证码：646235
             登陆验证码：646236
     """
-    tpl = request.GET.get('tpl')
-    template_id = settings.TENCENT_SMS_TEMPLATE.get(tpl)
-    if not template_id:
-        return HttpResponse("模板不存在")
-    code = random.randrange(100000, 1000000)
-    res = send_sms_single("17729291319", template_id, [code,])
-    print(res)
-    if res['result'] == 0:
-        return HttpResponse("成功")
-    else:
-        return HttpResponse(res["errmsg"])
+    form = SendSmsForm(request, data=request.GET)
+    if form.is_valid():
+        return JsonResponse({
+            "status": True
+        })
+    return JsonResponse({"status": False, "error": form.errors})
 
-def register(request):
-    form = RegisterModelForm()
-    return render(request, 'web/account.html', {"form": form})
+

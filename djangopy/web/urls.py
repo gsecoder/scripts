@@ -13,7 +13,7 @@ from web.views import account
 
 urlpatterns = [
     url(r'^$', account.index, name="index"),
-    url(r'^sms/$', account.send_sms, name="send_sms"),
-    url(r'^register/$', account.register, name="register")
+    url(r'^register/$', account.register, name="register"),
+    url(r'^send_sms/$', account.send_sms, name="send_sms")
 ]
 

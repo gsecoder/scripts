@@ -14,5 +14,5 @@ fi
 
 # 提交代码
 git add .
-git commit -m "清理公告导航条和注册页面提交的__pycache__/*pyc"
+git commit -m "发送短信验证码注册"
 git push origin "${current_branch}"
