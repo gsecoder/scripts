@@ -1,7 +1,6 @@
-Django==3.0.6
-PyMySQL==0.9.3
-pytz==2020.1
-asgiref==3.2.10
-qcloudsms-py==0.1.4
-sqlparse==0.3.1
-tencentcloud-sdk-python==3.0.203
+click==7.1.1
+Flask==1.1.2
+itsdangerous==1.1.0
+Jinja2==2.11.1
+MarkupSafe==1.1.1
+Werkzeug==1.0.1

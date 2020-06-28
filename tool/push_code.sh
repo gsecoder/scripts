@@ -9,10 +9,10 @@ if [ "${current_branch}" == "${choice_current}" ]
 then
   echo "当前分支为：${current_branch}"
 esle
-  git switch djangopy
+  git switch flaskpy
 fi
 
 # 提交代码
 git add .
-git commit -m "发送短信验证码注册"
+git commit -m "flaskpy branch init"
 git push origin "${current_branch}"
