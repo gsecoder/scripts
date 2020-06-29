@@ -6,3 +6,5 @@ path
 bash.exe.stackdump
 Python.iml
 venv/
+util/__pycache__/__init__.cpython-38.pyc util/__pycache__/format_data.cpython-38.pyc util/__pycache__/operate_database.cpython-38.pyc util/__pycache__/read_ini.cpython-38.pyc util/__pycache__/read_sql.cpython-38.pyc
+emailpy/__pycache__/send_email_args.cpython-38.pyc
