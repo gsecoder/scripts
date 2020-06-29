@@ -5,4 +5,14 @@ cryptography~=1.7.1
 lxml~=4.5.0
 keyring~=10.1
 setuptools~=46.0.0
-PyYAML~=5.3.1
+PyYAML~=5.3.1altgraph==0.17
+click==7.1.1
+Flask==1.1.2
+future==0.18.2
+itsdangerous==1.1.0
+Jinja2==2.11.1
+MarkupSafe==1.1.1
+pefile==2019.4.18
+PyInstaller==3.6
+pywin32-ctypes==0.2.0
+Werkzeug==1.0.1
