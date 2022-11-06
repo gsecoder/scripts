@@ -1,0 +1,15 @@
+server:
+  port: 8081
+
+person:
+  lastName: hello
+  age: 1
+  boss: true
+  birth: 2000/07/01
+  maps: {k1: v1, k2, v2}
+  lists:
+    - lisi
+    - liuwu
+  dog:
+    name: 狗子
+    age: 12

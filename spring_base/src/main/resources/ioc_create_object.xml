@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans 
+       http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- 无参构造类   -->
+    <bean id="user" class="ioc_create_object.User">
+        <property name="name" value="这是我的名字，你的名字呢？在ioc_create_object.xml中赋值的"/>
+    </bean>
+    
+    
+    <!--  有参构造类  -->
+    <!--  第一种根据index参数下标设置  -->
+    <bean id="userT1" class="ioc_create_object.UserT">
+        <constructor-arg index="0" value="xxxxx"/>
+    </bean>
+    <!--  第二种根据参数名字设置  -->
+    <bean id="userT2" class="ioc_create_object.UserT">
+        <constructor-arg name="name" value="yyyy"/>
+    </bean>
+    
+    <!-- 第三种根据参数类型设置 -->
+    <bean id="userT3" class="ioc_create_object.UserT">
+        <constructor-arg type="java.lang.String" value="zzzzz"/>
+    </bean>
+    
+</beans>

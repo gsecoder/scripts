@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans 
+                           http://www.springframework.org/schema/beans/spring-beans.xsd
+                           http://www.springframework.org/schema/context 
+                           http://www.springframework.org/schema/context/spring-context.xsd">
+
+        <!--
+            @Autowired是按类型自动转配的，不支持id匹配。
+            需要导入 spring-aop的包！ 
+        -->
+    <context:annotation-config/>
+    <bean id="dog" class="ioc_annotation.Dog">
+        <property name="name" value="xxxxxxx"/>
+    </bean>
+    <bean id="dog2" class="ioc_annotation.Dog"/>
+    <bean id="cat" class="ioc_annotation.Cat"/>
+    <bean id="user" class="ioc_annotation.User"/>
+    
+    <!-- 1、配置扫描哪些包下的注解   -->
+    <context:component-scan base-package="ioc_annotation"/>
+    <!-- 2、在指定包下编写类，增加注解   -->
+    
+    
+</beans>

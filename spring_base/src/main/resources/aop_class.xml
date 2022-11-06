@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aop="http://www.springframework.org/schema/aop"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/aop
+       https://www.springframework.org/schema/aop/spring-aop.xsd">
+
+    <!--注册bean-->
+    <bean id="aopService" class="aop.AopServiceImpl"/>
+    <bean id="aopClass" class="aop_class.AopClass"/>
+
+    <!--aop的配置-->
+    <aop:config>
+        <!--第二种方式：使用AOP的标签实现-->
+        <aop:aspect ref="aopClass">
+            <aop:pointcut id="aopClassPointCut" expression="execution(* aop.AopServiceImpl.*(..))"/>
+            <aop:before method="before" pointcut-ref="aopClassPointCut"/>
+            <aop:after method="after" pointcut-ref="aopClassPointCut"/>
+        </aop:aspect>
+    </aop:config>
+</beans>

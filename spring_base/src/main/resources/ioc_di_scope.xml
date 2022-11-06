@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- 1、Singleton单例范围   -->
+    <bean id="diScopeSingleton" class="ioc_di_scope.DiScopeSingleton" scope="singleton">
+        <property name="name" value="DiScopeSingleton的名字"/>
+    </bean>
+    
+    <!-- 2、Prototype 原型范围  -->
+    <bean id="diScopePrototype" class="ioc_di_scope.DiScopePrototype" scope="prototype"/>
+    <!--  也可以修改为下面  -->
+    <!--    <bean id="diScopePrototype" class="ioc_di_scope.DiScopePrototype" singleton="false"/>-->
+    
+    <!--  3.Request 范围  -->
+<!--    <bean id="diScopeRequest" class="ioc_di_scope.DiScopeWeb" scope="request"/>-->
+    
+    <!--  4.Session 范围  -->
+<!--    <bean id="diScopeSession" class="ioc_di_scope.DiScopeWeb" scope="session"/>-->
+</beans>

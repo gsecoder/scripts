@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.secode.spring_boot.mapper.EmployeeMapper">
+
+    <resultMap id="EmployeeMap" type="com.secode.spring_boot.pojo.Employee">
+        <result property="name" column="name"/>
+        <result property="email" column="email"/>
+        <result property="gender" column="gender"/>
+        <result property="department" column="department"/>
+    </resultMap>
+
+    <select id="getEmployees" resultMap="EmployeeMap">
+        SELECT name,email,gender,department
+        FROM employee
+    </select>
+
+    <select id="getEmployee" resultMap="EmployeeMap">
+        SELECT * FROM employee WHERE name = #{name}
+    </select>
+
+    <insert id="saveEmployee" parameterType="com.secode.spring_boot.pojo.Employee">
+        INSERT INTO employee (name,email,gender,department)
+        VALUES (#{name},#{email},#{gender},#{department});
+    </insert>
+
+    <delete id="deleteEmployee" parameterType="String">
+        DELETE FROM employee WHERE name = #{name}
+    </delete>
+
+</mapper>
