@@ -12,7 +12,7 @@ const (
 )
 
 func printX()  { // 导入内置 fmt 包
-	fmt.Println("Hello World!")  // 在终端打印 Hello World!
+	fmt.Println("base.Hello World!")  // 在终端打印 base.Hello World!
 	fmt.Println("a: ", a)
 	fmt.Println("b: ", b)
 	fmt.Println("c: ", c)

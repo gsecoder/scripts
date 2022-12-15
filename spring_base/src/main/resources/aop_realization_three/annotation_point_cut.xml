@@ -8,7 +8,7 @@
 	   http://www.springframework.org/schema/aop/spring-aop.xsd">
 
 	<!--注册bean-->
-	<bean id="userService" class="aop_realization_three.aop_annotation.UserServiceImpl"/>
+	<bean id="userService" class="aop_realization_three.aop_annotation.base.UserServiceImpl"/>
 	<bean id="annotationPointcut" class="aop_realization_three.aop_annotation.AnnotationPointcut"/>
 	<!--
 		通过aop命名空间的<aop:aspectj-autoproxy />声明自动为spring容器中那些配置@aspectJ切面的bean创建代理，织入切面。当然，spring 在内部依旧采用AnnotationAwareAspectJAutoProxyCreator进行自动代理的创建工作，但具体实现的细节已经被<aop:aspectj-autoproxy />隐藏起来了

@@ -63,7 +63,7 @@
 2022-04-15T11:52:03.163+0800 [INFO] [org.gradle.launcher.daemon.server.exec.LogAndCheckHealth] Starting build in new daemon [memory: 477.6 MB]
 2022-04-15T11:52:03.167+0800 [DEBUG] [org.gradle.launcher.daemon.server.exec.ExecuteBuild] The daemon has started executing the build.
 2022-04-15T11:52:03.167+0800 [DEBUG] [org.gradle.launcher.daemon.server.exec.ExecuteBuild] Executing build with daemon context: DefaultDaemonContext[uid=97f1f005-db07-4843-8a7f-9677fc993c4a,javaHome=/Library/Java/JavaVirtualMachines/jdk1.8.0_261.jdk/Contents/Home,daemonRegistryDir=/Users/sf/Library/Mobile Documents/com~apple~CloudDocs/Java/java_testng/ui/daemon,pid=1111,idleTimeout=10800000,priority=NORMAL,daemonOpts=-XX:MaxMetaspaceSize=256m,-XX:+HeapDumpOnOutOfMemoryError,-Xms256m,-Xmx512m,-Dfile.encoding=UTF-8,-Duser.country=CN,-Duser.language=zh,-Duser.variant]
-Hello Gradle!
+base.Hello Gradle!
 I'm First task, version=1.0-SNAPSHOT
 I'm Second task; release now.
 I'm task number 0

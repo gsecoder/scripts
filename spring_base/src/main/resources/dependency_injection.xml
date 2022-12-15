@@ -4,7 +4,7 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
     <!-- 1、常量注入   -->
-    <bean id="studentConst" class="ioc_dependency_injection.Student">
+    <bean id="studentConst" class="ioc_dependency_injection.base.Student">
         <property name="name" value="你的名字"/>
     </bean>
     
@@ -13,13 +13,13 @@
     <bean id="addr" class="ioc_dependency_injection.Address">
         <property name="address" value="北京"/>
     </bean>
-    <bean id="studentBean" class="ioc_dependency_injection.Student">
+    <bean id="studentBean" class="ioc_dependency_injection.base.Student">
         <property name="name" value="Bean的名字"/>
         <property name="address" ref="addr"/>
     </bean>
     
     <!-- 3、数组注入   -->
-    <bean id="studentArray" class="ioc_dependency_injection.Student">
+    <bean id="studentArray" class="ioc_dependency_injection.base.Student">
         <property name="name" value="ArrayInjection"/>
         <property name="address" ref="addr"/>
         <property name="books">
@@ -32,7 +32,7 @@
     </bean>
     
     <!-- 4、List注入   -->
-    <bean id="studentList" class="ioc_dependency_injection.Student">
+    <bean id="studentList" class="ioc_dependency_injection.base.Student">
         <property name="name" value="ListInjection"/>
         <property name="hobbies">
             <list>
@@ -44,7 +44,7 @@
     </bean>
     
     <!-- 5、Map注入   -->
-    <bean id="studentMap" class="ioc_dependency_injection.Student">
+    <bean id="studentMap" class="ioc_dependency_injection.base.Student">
         <property name="name" value="MapInjection"/>
         <property name="card">
             <map>
@@ -55,7 +55,7 @@
     </bean>
     
     <!--  6、set注入  -->
-    <bean id="studentSet" class="ioc_dependency_injection.Student">
+    <bean id="studentSet" class="ioc_dependency_injection.base.Student">
         <property name="name" value="SetInjection"/>
         <property name="games">
             <set>
@@ -67,7 +67,7 @@
     </bean>
     
     <!--  7、Null注入  -->
-    <bean id="studentNull" class="ioc_dependency_injection.Student">
+    <bean id="studentNull" class="ioc_dependency_injection.base.Student">
         <property name="name" value="NullInjection"/>
         <property name="wife">
             <null></null>
@@ -75,7 +75,7 @@
     </bean>
     
     <!--  8、Properties注入  -->
-    <bean id="studentProperties" class="ioc_dependency_injection.Student">
+    <bean id="studentProperties" class="ioc_dependency_injection.base.Student">
         <property name="name" value="PropertiesInjection"/>
         <property name="info">
             <props>

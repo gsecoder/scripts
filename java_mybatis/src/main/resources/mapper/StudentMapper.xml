@@ -13,7 +13,7 @@
            2. 根据获取的学生信息的老师ID->获取该老师的信息
            3. 思考问题，这样学生的结果集中应该包含老师，该如何处理呢，数据库中我们一般使用关联查询？
                1. 做一个结果集映射：StudentTeacher
-               2. StudentTeacher结果集的类型为 Student
+               2. StudentTeacher结果集的类型为 base.Student
                3. 学生中老师的属性为teacher，对应数据库中为tid。
                   多个 [1,...）学生关联一个老师=> 一对一，一对多
                4. 查看官网找到：association – 一个复杂类型的关联；使用它来处理关联查询
@@ -21,7 +21,7 @@
     <select id="getStudent1" resultMap="StudentTeacher">
         SELECT * FROM mybatis.student;
     </select>
-    <resultMap id="StudentTeacher" type="pojo.Student">
+    <resultMap id="StudentTeacher" type="pojo.base.Student">
         <!--association关联属性
             property属性名
             javaType属性类型
@@ -48,7 +48,7 @@
                       mybatis.teacher AS t
         WHERE s.tid = t.id
     </select>
-    <resultMap id="StudentTeacher2" type="pojo.Student">
+    <resultMap id="StudentTeacher2" type="pojo.base.Student">
         <id property="id" column="sid"/>
         <result property="studentName" column="sname"/>
         <!--关联对象property 关联对象在Student实体类中的属性-->

@@ -23,7 +23,7 @@
     </select>
     <resultMap id="TeacherStudent1" type="pojo.Teacher">
         <result property="teacherName" column="teacher_name"/>
-        <collection property="students" ofType="pojo.Student">
+        <collection property="students" ofType="pojo.base.Student">
             <result property="id" column="id"/>
             <result property="studentName" column="student_name"/>
             <result property="tid" column="tid"/>
@@ -36,7 +36,7 @@
     </select>
     <resultMap id="TeacherStudent2" type="pojo.Teacher">
         <!--column是一对多的外键 , 写的是一的主键的列名-->
-        <collection property="students" javaType="ArrayList" ofType="pojo.Student" column="id" select="getStudentByTeacherId"/>
+        <collection property="students" javaType="ArrayList" ofType="pojo.base.Student" column="id" select="getStudentByTeacherId"/>
     </resultMap>
     <select id="getStudentByTeacherId" resultType="pojo.Teacher">
         SELECT * FROM mybatis.student WHERE tid = #{id};

@@ -8,7 +8,7 @@
 	   http://www.springframework.org/schema/aop/spring-aop.xsd">
 
 	<!--注册bean-->
-	<bean id="userService" class="aop_realization_three.custom_class_aop.UserServiceImpl"/>
+	<bean id="userService" class="aop_realization_three.custom_class_aop.base.UserServiceImpl"/>
 	<bean id="diy" class="aop_realization_three.custom_class_aop.DiyPointcut"/>
 	
 	<!--aop的配置-->
@@ -16,7 +16,7 @@
 		<!--第二种方式：使用AOP的标签实现-->
 		<aop:aspect ref="diy">
 			<!--切入点 expression：表达式陪陪要执行的方法-->
-			<aop:pointcut id="diyPointcut" expression="execution(* aop_realization_three.custom_class_aop.UserServiceImpl.*(..))"/>
+			<aop:pointcut id="diyPointcut" expression="execution(* aop_realization_three.custom_class_aop.base.UserServiceImpl.*(..))"/>
 			<aop:before pointcut-ref="diyPointcut" method="before"/>
 			<aop:after pointcut-ref="diyPointcut" method="after"/>
 		</aop:aspect>

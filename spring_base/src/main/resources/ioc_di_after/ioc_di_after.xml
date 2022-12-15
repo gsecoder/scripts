@@ -7,7 +7,7 @@
         <bean id="UserDaoMysqlImpl" class="ioc_di_after.UserDaoMysqlImpl"></bean>
         <bean id="UserDaoOracleImpl" class="ioc_di_after.UserDaoOracleImpl"></bean>
         
-        <bean id="ServiceImpl" class="ioc_di_after.UserServiceImpl">
+        <bean id="ServiceImpl" class="ioc_di_after.base.UserServiceImpl">
                 <!--注意: 这里的name并不是属性 , 而是set方法后面的那部分 , 首字母小写-->
                 <!--引用另外一个bean , 不是用value 而是用 ref-->
                 <!--<property name="userDao" ref="UserDaoMysqlImpl"/>-->
