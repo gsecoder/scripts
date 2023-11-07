@@ -1,10 +1,5 @@
 package base;
 
-import com.sun.xml.internal.ws.api.model.wsdl.WSDLOutput;
-
-import javax.crypto.spec.PSource;
-import java.sql.SQLOutput;
-
 public class ProcessLoopSample {
 public static void main(String[] args) {
 	// 计算 0-100 之间的奇数和偶数的和
