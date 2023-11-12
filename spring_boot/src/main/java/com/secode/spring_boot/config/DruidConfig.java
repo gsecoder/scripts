@@ -60,7 +60,7 @@ public class DruidConfig {
 		initParams.put("allow", "");
 		
 		// 后台拒绝谁可以访问，禁止此IP访问
-		//initParams.put("test", "192.168.1.12")
+		//initParams.put("com.secoder.test", "192.168.1.12")
 		
 		// 设置初始化参数
 		servletRegistrationBean.setInitParameters(initParams);

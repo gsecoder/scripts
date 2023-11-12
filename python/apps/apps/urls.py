@@ -19,7 +19,7 @@ from app import views
 # from web import views 注意如果导入多个app时，需要重命名views名字，否则后面的会把前面的重名文件覆盖
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
+    path('com.secoder.admin/', admin.site.urls),
     path('app/', views.index),
     path('app/userlist/', views.user_list),
 ]

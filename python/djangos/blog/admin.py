@@ -8,5 +8,5 @@ from .models import Student
 # 告诉管理员在后台将我们编写的应用导入
 admin.site.register(Grades)
 admin.site.register(Student)
-# admin.site.register(StudentManage)
+# com.secoder.admin.site.register(StudentManage)
 

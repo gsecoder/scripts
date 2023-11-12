@@ -1,4 +1,4 @@
-package main // 声明 base 包，表明当前是一个可执行程序
+package main // 声明 com.secoder.base 包，表明当前是一个可执行程序
 
 /**
 	这是多行注释
@@ -12,7 +12,7 @@ const (
 )
 
 func printX()  { // 导入内置 fmt 包
-	fmt.Println("base.Hello World!")  // 在终端打印 base.Hello World!
+	fmt.Println("com.secoder.base.Hello World!")  // 在终端打印 com.secoder.base.Hello World!
 	fmt.Println("a: ", a)
 	fmt.Println("b: ", b)
 	fmt.Println("c: ", c)

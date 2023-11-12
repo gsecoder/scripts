@@ -3,7 +3,7 @@
 # 仓库说明
 
 ## 目录
-+ [doc - 文档](doc/)
++ [com.secoder.doc - 文档](com.secoder.doc/)
 + [mock - mock](mock/)
 + [pytest - pytest](pytest/)
 

@@ -28,7 +28,7 @@ public class SwaggerConfigController {
 	@Bean
 	public Docket docket(Environment environment){
 		// 设置要显示的Swagger的环境
-		Profiles profiles = Profiles.of("dev", "test");
+		Profiles profiles = Profiles.of("dev", "com.secoder.test");
 		// 判断当前是否处于该环境，通过enable()接收此参数是否要显示
 		boolean flag = environment.acceptsProfiles(profiles);
 		System.out.println("flag: " + flag);
