@@ -13,7 +13,7 @@
     <!-- 
         根据id查询得到一个user对象
      -->
-    <resultMap type="com.secoder.entity.User" id="userResultMap">
+    <resultMap type="com.secoder.entity.Users" id="userResultMap">
         
     </resultMap>
     <select id="getId" parameterType="int" resultMap="userResultMap">

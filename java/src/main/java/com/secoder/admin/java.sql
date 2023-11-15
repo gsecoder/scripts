@@ -1,7 +1,7 @@
 USE mybatis;
-DROP TABLE IF EXISTS `user`;
+DROP TABLE IF EXISTS `users`;
 
-CREATE TABLE `user`
+CREATE TABLE `users`
 (
     id BIGINT NOT NULL COMMENT '主键ID',
     name VARCHAR(30) NULL DEFAULT NULL COMMENT '姓名',
@@ -11,9 +11,9 @@ CREATE TABLE `user`
 );
 
 use mybatis;
-DELETE FROM `user`;
+DELETE FROM `users`;
 
-INSERT INTO `user` (id, name, age, email)
+INSERT INTO `users` (id, name, age, email)
 VALUES
 (1, 'Jone', 18, 'test1@baomidou.com'),
 (2, 'Jack', 20, 'test2@baomidou.com'),

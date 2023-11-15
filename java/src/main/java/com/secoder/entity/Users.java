@@ -1,22 +1,18 @@
 package com.secoder.entity;
 
-import com.baomidou.mybatisplus.annotation.TableName;
-import lombok.Data;
 
-@Data
-@TableName("user")
-public class User {
-
-    private Long id;
+public class Users {
+    
+    // 实体类的属性和表的字段名称一一对应
+    private int id;
     private String name;
-    private Integer age;
-    private String email;
+    private int age;
 
-    public Long getId() {
+    public int getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(int id) {
         this.id = id;
     }
 
@@ -28,20 +24,12 @@ public class User {
         this.name = name;
     }
 
-    public Integer getAge() {
+    public int getAge() {
         return age;
     }
 
-    public void setAge(Integer age) {
+    public void setAge(int age) {
         this.age = age;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
     }
 
     @Override
@@ -50,7 +38,6 @@ public class User {
                 "id=" + id +
                 ", name='" + name + '\'' +
                 ", age=" + age +
-                ", email='" + email + '\'' +
                 '}';
     }
 }
