@@ -35,10 +35,10 @@ public class MybatisTest {
         // 创建能执行映射文件中sql的sqlSession
         SqlSession session = sessionFactory.openSession();
 
-        /**
-         * 映射sql的标识字符串，
-         * me.gacl.mapping.userMapper是userMapper.xml文件中mapper标签的namespace属性的值，
-         * getUser是select标签的id属性值，通过select标签的id属性值就可以找到要执行的SQL
+        /*
+          映射sql的标识字符串，
+          com.secoder.mapping.userMapper是userMapper.xml文件中mapper标签的namespace属性的值，
+          getUser是select标签的id属性值，通过select标签的id属性值就可以找到要执行的SQL
          */
         String statement = "userMapper.getId"; // 映射sql的标识字符串
 
