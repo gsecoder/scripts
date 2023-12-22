@@ -1,0 +1,463 @@
+body,p,dl,dd{
+    margin: 0;
+}
+
+body{
+    color: #333333;
+    font-size: 13px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+ul{
+    margin: 0;
+    list-style: none;
+    padding: 0;
+}
+
+th,td{
+    padding: 0;
+}
+
+button{
+    padding: 0;
+    border: none;
+    cursor: pointer;
+    background: none;
+}
+
+i{
+    font-style: normal;
+}
+
+#calendar{
+    width: 600px;
+    height: 480px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin: 100px auto;
+    border-radius: 16px;
+
+    display: flex;
+}
+
+#calendar .left {
+    width: 480px;
+    padding: 15px 15px 0 15px;
+    border: 2px solid #4E98F2FF;
+    border-right: none;
+    border-radius: 16px 0 0 16px;
+}
+
+#calendar.active .left {
+    border-color: #eb3636;
+}
+
+#calendar .right {
+    width: 112px;
+    background: #4e98f2;
+    border-radius: 0 16px 16px 0;
+
+    /*文字颜色为白色 文字整体具中显示*/
+    color: #fff;
+    text-align: center;
+}
+
+#calendar.active .right {
+    background: #eb3636;
+}
+
+/*topBar的样式*/
+.topBar {
+    display: flex;
+    justify-content: space-between;
+}
+
+/*通用的选择框的样式*/
+.select {
+    height: 30px;
+    box-sizing: border-box;
+    border: 1px solid #d7d9e0;
+    border-radius: 6px;
+    cursor: pointer;
+    background: #ffffff;
+    user-select: none;  /*禁止用户选中文字*/
+    position: relative; /*相对定位*/
+}
+
+/*年份选择框的样式*/
+.yearSelect {
+    width: 96px;
+}
+/*选择的日期的样式*/
+.selected {
+    height: 28px;
+    padding: 0 7px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+/*选择的日期右侧箭头的样式*/
+.selected i{
+    font-size: 14px;
+    color: #9ba2a9;
+    font-family: 'YaHei', serif;
+    transform: scaleX(1.5) rotate(90deg);
+}
+.selected .active{
+    border-color: #a7aab5;
+}
+.select .active.selected i{
+    color: #767e87;
+    transform: scaleX(1.5) rotate(-90deg);
+}
+.selectBox {
+    width: 100%;
+    box-sizing: border-box;
+    box-shadow: 0 1px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 6px;
+    background: #ffffff;
+
+    padding: 9px 0 9px 16px;
+    position: absolute;
+    left: 0;
+    top: 38px;
+    z-index: 10;
+
+    display: none;
+}
+/*根据选择的年份来控制年份下拉的显示*/
+.select.active .selectBox {
+    display: block;
+}
+.yearSelect .selectBox {
+    max-height: 312px;
+    overflow: hidden;
+}
+.yearSelect li {
+    height: 27px;
+    line-height: 27px;
+    cursor: pointer;
+}
+/*选择下拉框后选择元素的样式*/
+.selectBox li:hover, .selectBox li.active {
+    color: #4e98f2;
+}
+/*年份选择框中右侧滚轮的样式*/
+.scroll {
+    width: 4px;
+    position: absolute;
+    top: 9px;
+    bottom: 9px;
+    right: 4px;
+    background: #ccc   ;
+}
+.scroll span {
+    width: 100%;
+    height: 30px;
+    background: #4e98f2;
+    position: absolute;  /*行内级别元素，需要改变下否则不生效显示*/
+    top: 0;
+    border-radius: 6px;
+}
+
+
+/*月份相关的样式*/
+.monthSelect {
+    width: 148px;
+    display: flex;
+    justify-content: space-between;
+}
+/*月份组件左右的箭头样式*/
+.arrow {
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    user-select: none;
+}
+.arrow span{
+    font-size: 18px;
+    color: #9d9a9a;
+    transform: scaleY(1.5);
+
+    font-family: 'YaHei', serif;
+
+    position: relative; /*相对定位*/
+    top: -2px;
+}
+.monthSelect .select {
+    width: 80px;
+}
+.monthSelect li {
+    height: 27px;
+    line-height: 21px;
+    cursor: pointer;
+}
+
+/*节假日的样式*/
+/**/
+.holidaySelect .select {
+    width: 96px;
+}
+.holidaySelect li {
+    height: 27px;
+    line-height: 21px;
+    cursor: pointer;
+}
+
+/*返回今天按钮的样式*/
+.topBar button {
+    width: 68px;
+    height: 30px;
+    background: #f5f5f5;
+    border-radius: 6px;
+    color: #333333;
+}
+
+
+/*日期表格的样式设置*/
+.dateWarp {
+    width: 100%;
+    margin-top: 14px;
+
+    border-spacing: 4px;
+}
+/*表格头部样式*/
+.dateWarp th {
+    height: 36px;
+    /*background: #cccccc;*/
+    /*font-weight: normal;*/
+}
+/*表格的样式*/
+.dateWarp td {
+    width: 60px;
+    height: 56px;
+    /*background: #cccccc;*/
+}
+/*表格内容的样式*/
+.dateWarp div {
+    height: 100%;
+    box-sizing: border-box;
+    border-radius: 6px;
+
+    /*设置单元格的边框*/
+    border: 2px solid transparent;
+    cursor: pointer;
+
+    /*设置为弹性盒模型，公历和农历的设置为竖排版*/
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+/*表格内容hover的样式*/
+.dateWarp div:hover, .dateWarp div:active {
+    border-color: #bdbfc8;
+}
+/*修饰公历和农历的字体样式*/
+.dateWarp div span:nth-child(1) {
+    font-size: 19px;
+    color: #000;
+}
+.dateWarp div span:nth-child(2) {
+    font-size: 10px;
+}
+/*修饰周六周天字体样式*/
+.dateWarp td:nth-child(n+6) span:nth-child(1) {
+    color: #f73131;
+}
+
+/*遇到调休情况的样式*/
+.dateWarp .holiday {
+    background: #fde3e4;
+}
+/*遇到调休情况的hover样式*/
+.dateWarp .holiday:hover {
+    background: #f38686;
+}
+/*遇到调休情况的hover和active一起样式*/
+.dateWarp .holiday:hover, .dateWarp .holiday.active {
+    border-color: #f38686;
+}
+/*用伪元素添加休息的标志*/
+.dateWarp .holiday::before, .dateWarp .weekDay::before {
+    content: "休";
+    font-size: 12px;
+    line-height: 12px;
+    color: #f73131;
+
+    position: absolute;
+    top: 4px;
+    left: 4px;
+}
+.dateWarp .holiday span:nth-child(1) {
+    color: #f73131;
+}
+
+/*调休的上班情况的样式*/
+.dateWarp .weekDay {
+    background: #f5f5f6;
+}
+.dateWarp .weekDay::before {
+    content: "班";
+    color: #626675;
+}
+/*修饰周六周天字体为上班情况的样式*/
+.dateWarp td .weekDay span:nth-child(1) {
+    color: #000;
+
+}
+
+
+/*通过修改透明度设置上个月和下个月的样式*/
+.prevMonth, .nextMonth {
+    opacity: 0.4;
+}
+
+/*今天的样式*/
+.today  {
+    border-color: #4e98f2!important;
+}
+
+.today div.today {
+    border-color: #4e98f2;
+}
+.today div.today .holiday{
+    border-color: #f73131;
+}
+
+/*************右侧的样式***************/
+/*date的样式*/
+#calendar .date{
+    line-height: 45px;
+}
+/*day的样式*/
+#calendar .day{
+    width: 80px;
+    height: 80px;
+    margin: 0 auto 6px;
+    line-height: 80px;
+    font-size: 52px;
+    background: rgba(255, 255, 255, 0.5);
+    border-radius: 12px;
+}
+/*lum*/
+#calendar .lunar {
+    line-height: 21px;
+}
+/*holidayList*/
+#calendar .holidayList li{
+    width: 112px;
+    box-sizing: border-box;
+
+    margin-top: 13px;
+    padding: 0 10px;
+    font-size: 12px;
+    line-height: 11px;
+    text-align: left;
+    position: relative;
+
+    /*长度溢出显示为省略号*/
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+/*holidayList显示小原点*/
+#calendar .holidayList li::before{
+    content: "";
+    width: 3px;
+    height: 3px;
+    background: #ffffff;
+
+    position: absolute;
+    left: 5px;
+    top: 6px;
+    border-radius: 50%;
+}
+
+/*suit的样式设置*/
+#calendar .suit{
+    position: relative;
+    background: rgba(255, 255, 255, 0.15);
+    margin: 12px 0 -100px;
+    padding: 12px 0 100px;
+}
+#calendar .suit .default{
+    display: flex;
+    justify-content: space-around; /*分散居中对齐*/
+}
+#calendar .suit .default dl{
+    max-height: 190px;
+    overflow: hidden;
+}
+#calendar .suit .default dt{
+    font-size: 24px;
+}
+#calendar .suit .default dd{
+    line-height: 20px;
+}
+/*宜和忌的hover框*/
+#calendar .suit .hover{
+    width: 190px;
+    background: #ffffff;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, .1);
+    color: #333333;
+    padding: 16px;
+
+    position: absolute;
+    top: 0;
+    right: -230px;
+    display: none;
+}
+#calendar .suit:hover .hover{
+    display: block;
+}
+#calendar .suit .hover dl{
+    display: flex;
+    justify-content: space-between;
+}
+#calendar .suit .hover dt{
+    width: 24px;
+    height: 24px;
+    line-height: 24px;
+    text-align: center;
+    color: #ffffff;
+    font-size: 18px;
+    background: #4e98f2;
+    border-radius: 6px;
+}
+#calendar .suit .hover dd{
+    width: 156px;
+    text-align: left;
+    line-height: 21px;
+}
+#calendar .suit .hover dl:nth-child(2){
+    margin-top: 15px;
+}
+#calendar .suit .hover dl:nth-child(2) dt{
+    background: #f73131;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
