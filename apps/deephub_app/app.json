@@ -1,0 +1,43 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/logs/logs",
+    "pages/attention/attention",
+    "pages/mine/mine",
+    "pages/redirect/redirect"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "DeepHub",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "selectedColor": "#1296db",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "static/tabBar/home.png",
+        "selectedIconPath": "static/tabBar/selectedHome.png"
+      },
+      {
+        "pagePath": "pages/attention/attention",
+        "text": "关注",
+        "iconPath": "static/tabBar/attention.png",
+        "selectedIconPath": "static/tabBar/selectedAttention.png"
+      },
+      {
+        "pagePath": "pages/mine/mine",
+        "text": "我的",
+        "iconPath": "static/tabBar/mine.png",
+        "selectedIconPath": "static/tabBar/selectedMine.png"
+      }
+    ]
+  },
+  "debug": true,
+  "navigateToMiniProgramAppIdList": [
+    "wx05f36a789921f0ac"
+  ],
+  "sitemapLocation": "sitemap.json"
+}

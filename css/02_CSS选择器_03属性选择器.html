@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>02_CSS选择器_03属性选择器</title>
+    <style>
+        /*1. E[arrt]  匹配所有具有attr属性的E元素*/
+        h3[my_ele1]{
+            color: yellowgreen;
+        }
+
+        /*2. E[arrt=val]  匹配所有具有attr=val属性的E元素*/
+        h3[my_ele1="attr2"]{
+            background: blueviolet;
+        }
+
+        /*3. E[arrt~=val]  匹配所有att属性具有多个空格分隔的值、其中一个值等于“val”的E元素*/
+        h3[my_ele3~='attr']{
+            color: orangered;
+        }
+
+        /*4. E[arrt^=val]  匹配属性值以指定值开头的每个元素*/
+        h3[my_ele4^='ttr']{
+            color: blue;
+        }
+
+        /*5. E[arrt$=val]  匹配属性值以指定值结尾的每个元素*/
+        h3[my_ele5$='tr']{
+            color: mediumvioletred;
+        }
+
+        /*6. E[arrt*=val]  匹配属性值中包含指定值的每个元素*/
+        h3[my_ele6*='special']{
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <h2>三、属性选择器</h2>
+        <h3 my_ele1="attr1">1. E[arrt]  匹配所有具有attr属性的E元素</h3>
+        <h3 my_ele1="attr2">2. E[arrt=val]  匹配所有具有attr=val属性的E元素</h3>
+        <h3 my_ele3="attr3 attr">3. E[arrt~=val]  匹配所有att属性具有多个空格分隔的值、其中一个值等于“val”的E元素</h3>
+        <h3 my_ele4="attr4">4. E[arrt^=val]  匹配属性值以指定值开头的每个元素</h3>
+        <h3 my_ele4="ttr4">4. E[arrt^=val]  匹配属性值以指定值开头的每个元素</h3>
+        <h3 my_ele5="attr5">5. E[arrt$=val]  匹配属性值以指定值结尾的每个元素</h3>
+        <h3 my_ele5="attr">5. E[arrt$=val]  匹配属性值以指定值结尾的每个元素</h3>
+        <h3 my_ele6="attr6">6. E[arrt*=val]  匹配属性值中包含指定值的每个元素</h3>
+        <h3 my_ele6="attr6 special">6. E[arrt*=val]  匹配属性值中包含指定值的每个元素</h3>
+</body>
+</html>

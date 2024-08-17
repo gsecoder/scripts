@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>day5-猜数字游戏</title>
+</head>
+<body>
+	<script>
+		/*
+		*   - 程序随机生成 1～10 之间的数字，用户输入一个数字
+        *   - 如果大于该数字，就提示：数字猜大了，请继续猜
+        *   - 如果小于该数字，就提示：数字猜小了，请继续猜
+        *   - 如果猜对了，就提示猜对了，程序结束
+		* */
+		function getRandom(N, M){
+            return Math.floor(Math.random() * (M - N + 1) + N)
+		}
+		let randomVal = getRandom(1, 10);
+        console.log(randomVal)
+        // document.write(randomVal)
+		
+		/*
+		while (true){
+            // 用户输入数字
+			let userNumber = +prompt("请输入猜的数字：")
+            
+            if (userNumber > randomVal){
+	            alert("数字猜大了，请继续猜")
+			} else if (userNumber < randomVal){
+	            alert("数字猜小了，请继续猜")
+			} else {
+	            alert("猜对了，程序结束")
+	            break;
+			}
+		}
+		 */
+        
+        // 升级，限制猜的次数
+		let flag = true;
+		for(let i=1; i<=3; i++){
+            // 用户输入数字
+			let userNumber = +prompt("请输入猜的数字：")
+            
+            if (userNumber > randomVal){
+	            alert("数字猜大了，请继续猜")
+			} else if (userNumber < randomVal){
+	            alert("数字猜小了，请继续猜")
+			} else {
+                flag = false;
+                alert("猜对了，程序结束")
+                break
+            }
+		}
+        if (flag) {
+            alert("猜的机会已经用完")
+        }
+		
+	</script>
+</body>
+</html>

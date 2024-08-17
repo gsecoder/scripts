@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>day7apis-其它事件页面加载事件</title>
+	<script>
+		
+		// 按页面加载顺序，下面代码执行会报错，点击也不会出现弹窗效果
+		/**
+		 * const btn = document.querySelector('button')
+		 * btn.addEventListener('click', function () {
+		 *		alert("button")
+	     *  })
+		 * */
+		
+		// 针对上面的问题，改进为下面的代码：
+		// 方法一：给 window 添加 load 时间，等待页面所有资源加载完毕，就回去执行回调函数
+		window.addEventListener('load', function () {
+            const btn = document.querySelector('button')
+			btn.addEventListener('click', function () {
+				alert("button")
+	        })
+        }) 
+		
+		// 方法二：给 document 添加 DOMContentLoaded事件
+		document.addEventListener('DOMContentLoaded', function () {
+			const btn2 = document.querySelector('.btn2')
+			btn2.addEventListener('click', function () {
+				alert("button2")
+	        })
+        })
+	</script>
+</head>
+<body>
+	<button>点击</button>
+	<button class="btn2">点击2</button>
+</body>
+</html>

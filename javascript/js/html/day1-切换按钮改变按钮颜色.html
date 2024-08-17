@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>切换按钮改变按钮颜色</title>
+	<style>
+		.pink {
+			background-color: pink;
+		}
+	</style>
+</head>
+<body>
+	<button class="pink">按钮一</button>
+	<button>按钮二</button>
+	<button>按钮三</button>
+	<button>按钮四</button>
+	<script>
+		alert("努力，奋斗～");
+		let bts = document.querySelectorAll("button");
+		for(let i=0; i < bts.length; i++){
+			bts[i].addEventListener('click', function(){
+				document.querySelector('.pink').className = ''
+				this.className = 'pink'
+			})
+		}
+	</script>
+</body>
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>03_CSS操作属性_08position属性</title>
+</head>
+<body>
+<!--
+	1.static：默认位置
+	2.fixed：完全脱离文档流，固定定位(以可视窗口为参照物)
+	3.relative:相对定位(参照的是自己本身的位置)，没有脱离文档流，没有顶上去，会保持自己的位置不动。可以使用top             left  进行定位
+	4.absolute:绝对定位：脱离了文档流（参照的是按已定位的父级标签定位，如果找不到会按body的去找）
+注意：将定位标签设置为absolute，将他的父级标签设置为定位标签 （relative）
+-->
+	<!--fixed的定位-->
+	<div class="c1"
+		 style="background-color: limegreen;
+                width:100%;
+                height: 200px;"
+	></div>
+	<div class="returnTop"
+		 style="width: 100px;
+                height: 40px;
+                background-color: gray;
+				/*透明度*/
+                /*opacity: 0.4;*/
+				color: white;
+				text-align: center;
+                line-height: 40px;
+                position: fixed;
+                bottom:500px;
+                right: 20px;
+			   "
+	>返回顶部>></div>
+
+	<!--绝对定位-->
+	<div class="box1"
+		 style="width: 200px;
+                height: 200px;
+				background-color: blueviolet;
+				position: relative;
+				"
+	></div>
+	<div class="box2"
+		 style="background-color: darksalmon;
+		        width: 200px;
+                height: 200px;
+                position: relative;
+                /*position: absolute;*/
+                left: 200px;
+                /*right: 200px;*/
+                top: 200px;"
+	></div>
+	<div class="box3"
+		 style="background-color: lime;
+				width: 200px;
+                height: 200px;
+				position: absolute;"
+	></div>
+
+	<br><br><br><br><br><br><br><br><br><br><br>
+	<h3 style="background: blueviolet">
+		float：半脱离文档流
+		position：全脱离文档流
+	</h3>
+</body>
+</html>

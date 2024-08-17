@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>10_DOM_03onkeydown事件</title>
+	<script>
+		/*
+		* Event对象：Event对象代表事件的状态，比如事件在其中发生的元素、键盘按键的状态、鼠标的位置、鼠标按钮的状态
+		* 事件通常与函数结合使用，函数不会在事件发生前被执行！
+		* Event对象在事件发生时系统已经创建好了，并且会在事件函数被调用时传给事件函数
+		* 我们获得仅仅需要接收一下即可，比如onkeydown，我们想知道哪个按键按下了，需要问下event对象的属性，这里就是KeyCode
+		*
+		* */
+
+	</script>
+</head>
+<body>
+	"Test": <input type="text" class="com.secoder.test"> <br><br>
+	"T1": <input type="text" id="t1">
+
+	<script>
+		var ele = document.getElementsByClassName('com.secoder.test')[0];
+		// event :每次触发事件时所有的状态信息
+		// event.keyCode ：保存着所有的状态信息
+		ele.onkeydown = function (event) {
+			// onkeydown按下键盘触发的事件
+			console.log(event);
+			console.log(event.keyCode);
+			if (event.keyCode == 13) {
+				// 按回车就会弹出
+				console.log('666666')
+			}
+		};
+	</script>
+
+	<script type="text/javascript">
+		var ele=document.getElementById("t1");
+		ele.onkeydown=function(e){
+			e=e||window.event;
+			var keyNum=e.keyCode;
+			var keyChar=String.fromCharCode(keyNum);
+       console.log(keyNum); //每次键盘敲下的状态信息
+       console.log(keyChar);  //输入的字符
+		};
+	</script>
+
+</body>
+</html>

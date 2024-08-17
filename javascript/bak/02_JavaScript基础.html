@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>02_JavaScript基础</title>
+</head>
+<body>
+    <h3>尽管 ECMAScript 是一个重要的标准，但它并不是 JavaScript 唯一的部分，当然，也不是唯一被标准化的部分。实际上，一个完整的 JavaScript 实现是由以下 3 个不同部分组成的：
+    </h3>
+    <p>核心（ECMAScript）:(语法
+        类型
+        语句
+        关键字
+        保留字
+        运算符
+        对象 (封装 继承 多态) 基于对象的语言.使用对象.)</p>
+    <p>文档对象模型（DOM） Document object model (整合js，css，html)</p>
+    <p>浏览器对象模型（BOM） Broswer object model（整合js和浏览器）</p>
+    <p>Javascript 在开发中绝大多数情况是基于对象的.也是面向对象的.</p>
+
+
+    <h3>JS的引入方式</h3>
+    <p>
+        1 直接编写
+        <script>
+            alert('hello JS')
+        </script>
+        2 导入文件
+        <script src="hello.js"></script>
+    </p>
+
+
+    <h3>JS的变量</h3>
+        1.声明变量时不用声明变量类型，全部使用var关键字
+        <script>
+            var a;
+            a = 3;
+        </script>
+
+        2. 一行可以声明多个变量.并且可以是不同类型
+        <script>
+            var name='js', age=20, job='IT';
+        </script>
+
+    　   3.一行可以声明多个变量.并且可以是不同类型
+
+         4.变量命名,首字符只能是字母,下划线,$美元符 三选一，余下的字符可以是下划线、美元符号或任何字母或数字字符且区分大小写，x与X是两个变量（区分大小写的）
+        <p>
+            Camel 标记法
+            首字母是小写的，接下来的字母都以大写字符开头。例如：
+            var myTestValue = 0, mySecondValue = "hi";
+            Pascal 标记法
+            首字母是大写的，接下来的字母都以大写字符开头。例如：
+            Var MyTestValue = 0, MySecondValue = "hi";
+            匈牙利类型标记法
+            在以 Pascal 标记法命名的变量前附加一个小写字母（或小写字母序列），说明该变量的类型。例如，i 表示整数，s 表示字符串，如下所示“
+            Var iMyTestValue = 0, sMySecondValue = "hi";
+        </p>
+
+
+    <h3>常量和标识符</h3>
+        标识符：
+            1.由不以数字开头的字母、数字、下划线(_)、美元符号($)组成 <br>
+            2.常用于表示函数、变量等的名称 例如：_abc,$abc,abc,abc123是标识符，而1abc不是 <br>
+            3.JavaScript语言中代表特定含义的词称为保留字，不允许程序再定义为标识符 <br>
+
+
+    <h3>JS的数据类型</h3>
+        <p>1. number............数值</p>
+            不区分整型数值和浮点型数值;
+
+        <p>2. boolean...........布尔值</p>
+            是由Unicode字符、数字、标点符号组成的序列；字符串常量首尾由单引号或双引号括起；JavaScript中没有字符类型；常用特殊字符在字符串中的表达；
+            字符串中部分特殊字符必须加上右划线\；常用的转义字符 \n:换行 \':单引号 \":双引号 \\:右划线
+
+        <p>3. string............字符串</p>
+            Boolean类型仅有两个值：true和false，也代表1和0，实际运算中true=1,false=0
+            布尔值也可以看作on/off、yes/no、1/0对应true/false
+
+        <p>4. undefined.........undefined</p>
+            1.Undefined 类型只有一个值，即 undefined。当声明的变量未初始化时，该变量的默认值是 undefined。
+            2.当函数无明确返回值时，返回的也是值 "undefined";
+
+        <p>5. null..............null</p>
+            另一种只有一个值的类型是 Null，它只有一个专用值 null，即它的字面量。值 undefined 实际上是从值 null 派生来的，因此 ECMAScript 把它们定义为相等的。
+            尽管这两个值相等，但它们的含义不同。undefined 是声明了变量但未对其初始化时赋予该变量的值，null 则用于表示尚未存在的对象（在讨论 typeof 运算符时，简单地介绍过这一点）。如果函数或方法要返回的是对象，那么找不到该对象时，返回的通常是 null。
+</body>
+</html>

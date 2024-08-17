@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>day8apis-BOMjs的执行机制</title>
+</head>
+<body>
+
+	<script>
+		/**
+		 * 下面的执行顺序结果为：1 2 4 3
+		 * */
+		console.log(1)
+		console.log(2)
+		setTimeout(function () {
+			console.log(3)
+        })
+		console.log(4)
+	</script>
+</body>
+</html>

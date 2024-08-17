@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>10_DOM_08事件委派</title>
+</head>
+<body>
+    <ul>
+        <li>111</li>
+        <li>222</li>
+        <li>333</li>
+    </ul>
+    <button class="addBtn">点我添加</button>
+
+    <script>
+        var ele_btn = document.getElementsByClassName('addBtn')[0];
+        var ele_ul = document.getElementsByTagName('ul')[0];
+        var ele_li = document.getElementsByTagName('li');
+
+        // 绑定事件
+        for (var i=0; i <= ele_li.length; i++) {
+            ele_li[i].onclick = function (ev) {
+                console.log(this.innerHTML)
+            }
+        };
+
+        // 事件委派
+        ele_btn.onclick = function () {
+            // 创建一个li标签
+            var ele_li = document.createElement('li');
+
+            ele_li.innerText = Math.round(Math.random()*1000);
+            ele_ul.appendChild(ele_li);     //把创建的li标签添加到ul标签
+
+            ele_ul.addEventListener('click',function (e) {
+                console.log(e.target); //当前点击的标签
+                console.log(e.target.tagName);//拿到标签的名字  LI
+                if (e.target.tagName =='LI'){
+                    console.log('ok');
+//                alert(ele_li.innerHTML)
+                }
+            })
+        };
+    </script>
+</body>
+</html>

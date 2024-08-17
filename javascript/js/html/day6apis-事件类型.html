@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>day6apis-事件类型</title>
+	<style>
+		.mouseEvent{
+            height: 100px;
+            width: 200px;
+            background-color: skyblue;
+		}
+		.result-list {
+			display: none;
+		}
+		
+		.textCount {
+			width: 100px;
+			transition: all .3s;
+		}
+		.textCount:focus{
+			width: 200px;
+		}
+		.textTotal{
+			opacity: 0;
+		}
+	</style>
+</head>
+<body>
+	<div class="mouseEvent"></div>
+	
+	<label>
+		<input type="text">
+	</label>
+	
+	<div class="mi">
+		<label for="">
+			<input type="search" placeholder="小米笔记本">
+			<ul class="result-list">
+				<li><a href="#">全部商品</a></li>
+				<li><a href="#">小米手机</a></li>
+				<li><a href="#">小米电脑</a></li>
+				<li><a href="#">小米汽车</a></li>
+				<li><a href="#">小米百货</a></li>
+			</ul>
+		</label>
+	</div>
+	
+	<div>
+		<label for="">
+			<input type="text" class="keyListener" placeholder="键盘事件">
+		</label>
+	</div>
+	
+	<div>
+		<label for="">
+			<input type="text" class="keyListener" placeholder="键盘事件">
+		</label>
+	</div>
+	
+	<div>
+		<label for="">
+			<input type="text" class="textEvent" placeholder="文本事件">
+		</label>
+	</div>
+	<div>
+		<label for="">
+			<input type="text" class="textCount" placeholder="文本数字统计" maxlength="200">
+		</label>
+		<div class="wrapper">
+			<span class="textTotal">0/200</span>
+		</div>
+	</div>
+	
+	<script>
+		/**
+		 * 鼠标事件
+		 * */
+		const div = document.querySelector('div')
+		div.addEventListener('mousemove', function () {
+			console.log('鼠标来了')
+        })
+		div.addEventListener('mouseleave', function () {
+			console.log('鼠标走了')
+        })
+		
+		/**
+		 * 焦点事件 
+		 * */
+        const input = document.querySelector('input')
+		input.addEventListener('focus', function () {
+			console.log('有焦点触发～')
+        })
+		input.addEventListener('blur', function () {
+			console.log('焦点失去～')
+        })
+		/** 小米搜索框案例 */
+        // 1、获取输入文本框元素
+        const inputMi = document.querySelector('[type=search]')
+        const resultList = document.querySelector('.result-list')
+		console.log(inputMi)
+		// 2、监听事件焦点
+		inputMi.addEventListener('focus', function () {
+			resultList.style.display = 'block'
+        })
+		inputMi.addEventListener('blur', function () {
+			resultList.style.display = 'none'
+        })
+		
+		/**
+		 * 键盘事件
+		 * */
+        const keyListener = document.querySelector('.keyListener')
+		keyListener.addEventListener('keydown', function () {
+			console.log('键盘按下了')
+        })
+		keyListener.addEventListener('keyup', function () {
+			console.log('键盘弹起了')
+        })
+		
+		/**
+		 * 用户输入文本事件
+		 * */
+        const textEvent = document.querySelector('.textEvent')
+		textEvent.addEventListener('input', function () {
+			console.log(textEvent.value)
+        })
+		/** 评论字数统计（用户输入文字，可以计算用户输入的字数） */
+        const textCount = document.querySelector('.textCount')
+        const textTotal = document.querySelector('.textTotal')
+		textCount.addEventListener('focus', function () {
+			textTotal.style.opacity = 1
+        })
+		textCount.addEventListener('blur', function () {
+			textTotal.style.opacity = 0
+        })
+		textCount.addEventListener('input', function () {
+			console.log(textCount.value.length)
+			textTotal.innerHTML = `${textCount.value.length}/200字`
+        })
+	</script>
+</body>
+</html>

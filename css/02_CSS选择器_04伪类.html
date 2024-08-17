@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>02_CSS选择器_04伪类</title>
+    <style>
+        /*1.没访问之前*/
+        a:link{
+            color: blue;
+        }
+
+        /*2.鼠标放在链接上的状态*/
+        a:hover{
+            color: yellowgreen;
+        }
+
+        /*3.链接被访问过*/
+        a:visited{
+            color: red;
+        }
+
+        /*4.鼠标点击时的*/
+        a:active{
+            color: aqua;
+        }
+
+        /*-------------------------------------*/
+        /*1.在所有的p标签的前面加上内容*/
+        p:before{
+            content: "👣🐎我是马前蹄🐎👣";
+            color: blue;
+            display: block;
+        }
+
+        /*2.在p标签属性为c2的后面加上内容*/
+        p.c22:after{
+            content: "‍🏍🐎我是马后炮🐎‍🏍";
+            color: blueviolet;
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <h2>一、anchor伪类：专用于控制链接的显示效果</h2>
+        <a href="#">02_CSS选择器_04伪类</a>
+
+    <h2>二、before after伪类</h2>
+        <p class="c21"> || 我是c21</p>
+        <p class="c22"> || 我是c22</p>
+        <p class="c23"> || 我是c23</p>
+</body>
+</html>

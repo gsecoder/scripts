@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>10_DOM_07onmouse事件</title>
+</head>
+<body>
+	<div class="box">
+		<div class="title">onmouse</div>
+		<div class="con hide">
+			<div><a href="" class="item">你好吗？</a></div>
+			<div><a href="" class="item">我好啊</a></div>
+			<div><a href="" class="item">好就好呗</a></div>
+		</div>
+	</div>
+
+	<script>
+		var ele_title = document.getElementsByClassName('title')[0];
+		var ele_box = document.getElementsByClassName('box')[0];
+
+		// 鼠标指上去的事件
+		// ele_title.onmouseover = function () {
+		// 	this.nextElementSibling.classList.remove('hide');
+		// };
+
+		// 鼠标移走的两种方式
+		// 方式一：
+		// onmouseout：不论鼠标指针离开被选元素还是任何子元素，都会触发onmouseout事件
+		// ele_title.onmouseleave = function () {
+		// 	this.nextElementSibling.classList.remove('hide');
+		// };
+
+		// 方式二：
+		// onmouseleave：只有在鼠标指针离开被选元素时，才会触发onmouseleave事件
+		ele_title.onmouseout = function () {
+			this.nextElementSibling.classList.remove('hide');
+		};
+	</script>
+</body>
+</html>

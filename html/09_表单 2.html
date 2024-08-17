@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>09_表单</title>
+</head>
+<body>
+    <h3>表单的作用：</h3>
+        1.表单用于搜集不同类型的用户输入（搜集用户信息）
+        2.用户提交表单时向服务器传输数据，从而实现用户与 Web 服务器的交互
+        3.表单是一个包含表单元素的区域
+        4.表单使用表单标签（form）定义
+
+    <hr>
+    <h3>from表单的常见属性：</h3>
+        1. action=“URL”：一个 URL 地址；指定 form 表单向何处发送数
+        2. name 作用是给表单起名，为了便于我们
+        3. enctype =“string”：规定在发送表单数据之前，如何对表单数据进行编码(multipart/form-data"，以二进制传输)
+        4. method =“get/post”：指定表单以何种方式发送到指定的服务器程
+
+    <hr>
+    <h3>一个完整的表单包含三个基本组成部：表单标签、表单域、表单按钮</h3>
+        1.表单标签：是指form标签本身，它是一个包含表单元素的区域，使用form /form
+        2.表单域：是form标签中用来收集用户输入的每一项，通常用 input 标签来定义，input 标签有不同的类型，对应用户不同的数据
+        3.表单按钮：用来提交from表单中的所有信息到服务器
+
+    <hr>
+    <h3>表单元素：</h3>
+        单行文本框: <input type="text"/>      <br>
+        密码框: <input type="password"/>     <br>
+        单选按钮: 单1 <input type="radio" name="single"/>   单2 <input type="radio" name="single"/>   <br>
+        复选框: <input type="checkbox"/>     <br>
+        隐藏域: <input type="hidden" />     <br>
+        文件上传: <input type="file" />      <br>
+        邮件: <input type="email" />        <br>
+        URL: <input type="url" />          <br>
+        number: <input type="number" />    <br>
+        range: <input type="range" max="10" min="0" value="5">  <br>
+        data: <input type="date">  <br>
+        search: <input type="search" />  <br>
+        color: <input type="color">  <br>
+
+        <hr>
+        <!-- 表单-->
+        <form action="https://127.0.0.1/index/?" method="post" enctype="multipart/form-data">
+            <!-- https://www.sogou.com/web?query=Test -->
+            <input type="text" name="query">
+            男：<input type="radio" name="gender" value="1">
+            女：<input type="radio" name="gender" value="0">
+            <p>运动：
+                足球：<input name="play" type="checkbox" value="ft">
+                篮球：<input name="play" type="checkbox" value="ba">
+            </p>
+            文件：<input name="filename" type="file">
+            <p>下拉项
+                <select name="city">
+                    <option value="bj">北京</option>
+                    <option value="sh">上海</option>
+                    <option value="gz">广州</option>
+                </select>
+            </p>
+            <p>备注
+                <textarea name="texart"></textarea>
+            </p>
+            <input type="submit" value="查询">
+        </form>
+
+    <hr>
+    <h3>下拉框：</h3>
+        <select name="地域选择" id="1">
+            <optgroup label="中国">
+                <option value="bj" selected="selected">北京</option>
+                <option value="tj">天津</option>
+                <option value="sh">上海</option>
+                <option value="cq">重庆</option>
+            </optgroup>
+            <optgroup label="食物">
+                <option value="ky">烤鸭</option>
+                <option value="bz">包子</option>
+                <option value="px">螃蟹</option>
+                <option value="hg">火锅</option>
+            </optgroup>
+        </select>
+
+    <hr>
+    <h3>多行文本框：</h3>
+        <!--
+            readonly 规定文本区为只读
+            required 规定文本区域是必填的，不能和 readonly 一起用
+        -->
+        <textarea placeholder="placeholder规定描述文本区域预期值的简短">
+
+        </textarea>
+
+    <hr>
+    <h3>标签label：</h3>
+        <label for="id" > </label>
+        <input type="radio" id=”MyId”> 测试
+
+    <hr>
+    <h3>元素集：</h3>
+        <fieldset>
+            <legend>健康信息</legend> <!--通过 legend 指定元素集的标题-->
+            身高：<input type="text" />
+            体重：<input type="text" />
+        </fieldset>
+
+    <hr>
+    <h3>按钮：</h3>
+        提交按钮：<input type="submit" />
+        普通按钮：<input type="button" />
+        重置按钮：<input type="reset" />
+        图片按钮：<input type="image" />
+</body>
+</html>

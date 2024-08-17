@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>03_CSS操作属性_05display属性</title>
+</head>
+<body>
+
+    <h2>display属性</h2>
+    <h3>1.将块级标签设置成内联标签：display：inline;</h3>
+        <div style="display: inline">div是块级元素</div><a href="#">a是内联元素</a>
+        <div>div是块级元素</div><a href="#">a是内联元素</a>
+
+    <h3>2.将内联标签设置成块级标签：display：block;</h3>
+        <a href="#" style="display: block">a是内联元素</a><a href="#">a是内联元素</a>
+        <a href="#">a是内联元素</a><a href="#">a是内联元素</a>
+
+    <h3>3.内联块级标签：像块级一样可设长宽，也可像内联一样在一行显示：display:inline-block;</h3>
+        内联块级标签: <input style="display: inline-block; height: 100px; width: 200px;">
+        将a标签转换为内联块级标签：<a style="display: inline-block; height: 100px; width: 200px; background-color: #FFF000; vertical-align: center">将a
+        标签转换为内联块级标签</a>
+
+    <h3>4.display:none; 不想让用户看到的给隐藏了（很重要的一个属性）</h3>
+        <p style="display: none">4.display:none; 不想让用户看到的给隐藏了（很重要的一个属性）</p>
+
+    <h3>5.visibility :hidden； 也是隐藏</h3>
+        <p style="visibility: hidden">5.visibility :hidden； 也是隐藏</p>
+
+    <h3>*注意 display:none 与 visibility:hidden 的区别：</h3>
+        <p>visibility:hidden：可以隐藏某个元素，但隐藏的元素仍需占用与未隐藏之前一样的空间。也就是说，该元素虽然被隐藏了，但仍然会影响布局。</p>
+        <p>display:none：可以隐藏某个元素，且隐藏的元素不会占用任何空间。也就是说，该元素不但被隐藏了，而且该元素原本占用的空间也会从页面布局中消失</p>
+    <div style="border: blueviolet dashed">
+        <div class="v1" style="background: red; width: 100px; height: 100px">我是V1</div>
+        <div class="v2" style="visibility: hidden;background: yellow; width: 100px; height: 100px">我是V2</div>
+        <div class="v3" style="background: blue; width: 100px; height: 100px">我是V3</div>
+
+        <hr style="border: orangered dashed">
+
+        <div class="d1"  style="background: red; width: 100px; height: 100px">我是D1</div>
+        <div class="d2"  style="display: none;background: yellow; width: 100px; height: 100px">我是D2</div>
+        <div class="d3"  style="background: blue; width: 100px; height: 100px">我是D3</div>
+    </div>
+
+</body>
+</html>

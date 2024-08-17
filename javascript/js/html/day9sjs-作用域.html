@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>day9sjs-作用域</title>
+</head>
+<body>
+	<script>
+		
+		/**作用域分类
+		 * */
+		// let / const声明的有块作用域
+        for (let i = 0; i < 5; i++) {
+	        console.log(i)
+        }
+        // 无法访问到块作用域里的 i,下面的代码会报错
+        // console.log(i)
+		
+		// var 声明的变量没有作用域
+		for (var j = 0; j < 5; j++) {
+	        console.log(j)
+        }
+        // var 声明的变量可以访问到块作用域里的 j
+         console.log(j)
+		
+		/**
+		 * 作用域链
+		 * */
+        let a = 1
+		let b = 11
+		// 局部作用域
+		function fn() {
+			// 局部作用域
+			function gn() {
+				a = 2
+				console.log(a)
+            }
+            console.log('---------')
+            gn() // 2
+        }
+        console.log('=========')
+        fn() // 
+	</script>
+</body>
+</html>

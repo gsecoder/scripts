@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>11_HTML语义化标签</title>
+</head>
+<body>
+    <h3>一</h3>
+        <p>1.header 页面头部  </p>
+        <p>2.footer 页脚  </p>
+        <p>3.article 定义页面独立的内容区域一般为文章  </p>
+        <p>4.aside 定义页面的侧边栏内容  </p>
+        <p>5.details 文档某个部分的细节  </p>
+        <p>6.summary 是 details 中的标题  </p>
+        <p>7.time 定义日期或时间  </p>
+        <p>8.ruby 标注拼音  </p>
+        <p>9.mark 标记  </p>
+        <p>10.nav 导航链接  </p>
+
+    <h3>二</h3>
+        <p>1.progress 进度标签 value 当前值 max 最大值 最小值默认为 0，不用设置
+        <p>2.section 文档当中的节或文章
+        <p>3.video 定义视频
+            <video controls>
+                <source src="/i/horse.ogg" type="video/ogg">
+                <source src="/i/horse.mp4" type="video/mp4">
+                你的浏览器不支持 audio 标签，即使是上面的视频都不能播也会显示个框，不支持是指浏览器不支持 video 标签
+            </video>
+        <p>4.audio 定义音频</p>
+        <p>5.source 资源</p>
+        <p>6.datalist 提示可能的值</p> <br>
+            <input type="text" list="MyId"/>
+            <datalist id="MyId">
+                <option value="苹果"></option>
+                <option value="橙子"></option>
+                <option value="梨"></option>
+            </datalist>
+        <p>7.embed 引入 flash 或插件
+            定义嵌入的内容，比如插件、flash。它中间不要加内容，和 video 不同，会显示出来。
+            <embed src="demo.swf" type="application/x-shockwave-flash" ></embed>
+        </p>
+        <p>8.canvas 画布</p>
+            <canvas height="200px" width="200px">ddd</canvas>
+</body>
+</html>

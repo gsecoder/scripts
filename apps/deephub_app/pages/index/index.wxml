@@ -1,0 +1,50 @@
+<!--index.wxml-->
+
+<view class="menu_hot_text">
+  <!-- https://www.thinkmoon.cn/amp/508.html -->
+  社交矩阵
+</view>
+<view class="menu_hot_detail">
+  <view class="menu_hot_detail_image" bindtap="clickMe" data-nid="123" data-nid2="456">
+    <image src="/static/index/weibo.png" class="weibo"></image>
+    <text>微博</text>
+  </view>
+
+  <view class="menu_hot_detail_image">
+    <image src="/static/mini1.jpg"></image>
+    <text>热点二</text>
+  </view>
+
+  <view class="menu_hot_detail_image">
+    <image src="/static/index/github.png"></image>
+    <text>GitHub</text>
+  </view>
+
+  <view class="menu_hot_detail_image">
+    <image src="/static/index/more.png"></image>
+    <text>更多</text>
+  </view>
+</view>
+
+<view class="division">
+  <image src="/static/index/division.png"></image>
+</view>
+<view class="auction">
+  <view class="item">
+    <view class="title">京东手机 - 稀缺新机购</view>
+    <view class="tips">
+      <view class="status">2020-05-05</view>
+      <view class="order_count">成交 11 笔</view>
+    </view>
+    <view class="big_image">
+      <image src="/static/mini1.jpg"></image>
+    </view>
+    <view class="small_image">
+      <image src="/static/mini1.jpg"></image>
+      <image src="/static/mini1.jpg"></image>
+      <image src="/static/mini1.jpg"></image>
+      <image src="/static/mini1.jpg"></image>
+    </view>
+  </view>
+</view>
+

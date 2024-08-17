@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>11_DOM实例_01表格示例</title>
+</head>
+<body>
+
+    <button class="select">全选</button>
+    <button class="reverse">反选</button>
+    <button class="cancel">取消</button>
+
+    <table border="1">
+        <tr>
+            <td><input type="checkbox" class="check"></td>
+            <td>111</td>
+            <td>222</td>
+            <td>333</td>
+        </tr>
+        <tr>
+            <td><input type="checkbox" class="check"></td>
+            <td>111</td>
+            <td>222</td>
+            <td>333</td>
+        </tr>
+        <tr>
+            <td><input type="checkbox" class="check"></td>
+            <td>111</td>
+            <td>222</td>
+            <td>333</td>
+        </tr>
+        <tr>
+            <td><input type="checkbox" class="check"></td>
+            <td>111</td>
+            <td>222</td>
+            <td>333</td>
+        </tr>
+    </table>
+
+    <script>
+        // 分别给每个button加事件
+        var ele_select = document.getElementsByClassName('select')[0];
+        var ele_cancel = document.getElementsByClassName('cancel')[0];
+        var ele_reverse = document.getElementsByClassName('reverse')[0];
+        var ele_input = document.getElementsByClassName('check');
+
+        // 全选
+        ele_select.onclick = function () {
+            for (var i=0; i<ele_input.length; i++){
+                ele_input[i].checked = 'checked';
+            };
+        };
+
+        // 取消
+        ele_cancel.onclick = function () {
+            for (var i=0; i<ele_input.length; i++){
+                ele_input[i].checked = '';
+            };
+        };
+
+        // 反选
+        ele_reverse.onclick = function () {
+            for (var i=0; i<ele_input.length; i++){
+                var ele = ele_input[i];
+
+                if (ele.checked){
+                    ele.checked = '';
+                }
+                else{
+                    ele.checked = 'checked';
+                };
+            };
+        };
+    </script>
+</body>
+</html>

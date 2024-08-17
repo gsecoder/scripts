@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>day6apis-事件进阶</title>
+	<style>
+		.displaySubmit{
+			display: none;
+		}
+	</style>
+</head>
+<body>
+	<button>点击</button>
+	<br>
+	<br>
+	<br>
+	<label for="">
+		<input type="text">
+	</label>
+	<br>
+	<br>
+	<br>
+	<div>评论回车发布信息
+		<br>
+		<label for="">
+			<textarea name="" id="ta" cols="" rows="" placeholder="发点评论吧" maxlength="100">
+				
+			</textarea>
+			<br>
+			<button class="submit">发布</button>
+			<br>
+		</label>
+		<div class="displaySubmit">???</div>
+	</div>
+
+	<script>
+		const btn = document.querySelector('button')
+		btn.addEventListener('click', function (ev) {
+			console.log(ev)
+        })
+		
+		const input = document.querySelector('input')
+		input.addEventListener('keyup', function (ev) {
+			if(ev.key === 'Enter'){
+                console.log("我按的是 Enter 键")
+			}
+        })
+		/** 评论回车发布信息 */
+        const submit = document.querySelector('.submit')
+        const displaySubmit = document.querySelector('.displaySubmit')
+        const ta = document.querySelector('#ta')
+		submit.addEventListener('keyup', function (ev) {
+			if (ev.key === "Enter"){
+                if(ta.value.trim() !== ''){
+                    displaySubmit.style.display = 'block'
+					displaySubmit.innerHTML = ta.value   
+                }
+				ta.value = ''
+			}
+        })
+	</script>
+</body>
+</html>

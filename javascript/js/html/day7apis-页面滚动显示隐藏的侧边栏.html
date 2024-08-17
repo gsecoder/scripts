@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>day7apis-页面滚动显示隐藏的侧边栏</title>
+	<style>
+		body{
+            height: 3000px;
+		}
+		.elevator{
+			opacity: 0;
+		}
+	</style>
+</head>
+<body>
+	<div class="elevator">
+		<ul class="ul-list">
+			<li><a href="javascript:" data-name="new">新鲜好物</a></li>
+			<li><a href="javascript:" data-name="popular">人气推荐</a></li>
+			<li><a href="javascript:" data-name="brand">热门品牌</a></li>
+			<li><a href="javascript:" data-name="topic">最新专题</a></li>
+			<li><a href="javascript:" id="backTop" ><i class="sprites">顶部</i></a></li>
+		</ul>
+	</div>
+
+	<script>
+		const elevator = document.querySelector('.elevator')
+		window.addEventListener('scroll', function () {
+			const n = document.documentElement.scrollTop
+			if (n>=300){
+                elevator.style.opacity = 1
+			} else {
+                elevator.style.opacity = 0
+			}
+        })
+	</script>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>day6apis-事件委托</title>
+</head>
+<body>
+    <ul>
+        <li>我是第1</li>
+        <li>我是第2</li>
+        <li>我是第3</li>
+        <li>我是第4</li>
+        <li>我是第5</li>
+	    <p>我不会被触发</p>
+    </ul>
+    <p>我不会被触发</p>
+    
+    <script>
+       const ul = document.querySelector('ul')
+       ul.addEventListener('click', function (ev) {
+	       console.log(ev.target)
+	       if (ev.target.tagName === "LI"){
+               ev.target.style.color = 'red'
+	       }
+       })
+    </script>
+</body>
+</html>

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>day6apis-操作DOM元素定时器间隔函数</title>
+</head>
+<body>
+
+	<label for="">
+		<textarea name="" id="" cols="30" rows="10">
+			用户注册协议
+			本协议系您与小米科技有限责任公司及其关联公司就小米账号的注册和使用而订立的。 
+			小米科技有限责任公司及其关联公司（如下简称“小米”或“我们”）在此特别提醒您认真阅读、充分理解本协议各条款，
+			特别是涉及服务费用条款，免除或者限制小米责任的条款，对您的权利限制条款，争议解决和法律适用条款等，
+			此类条款将以加粗的形式提示您注意。 
+			如果您是未成年人，请在监护人的陪同下阅读和判断是否同意本协议。 
+			创建账号或使用我们的服务，即表示您确认接受本协议，并同意接受本协议各项条款的约束。
+		</textarea>
+		<br>
+		<button class="btn" disabled>我已经阅读用户注册协议(5)</button>
+	</label>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<div class="slider">
+		<div class="slider-wrapper">
+			<img src="../img/1.png" alt="" />
+		</div>
+		<div class="slider-footer">
+			<p>对应 tittle 的文字</p>
+			<ul class="slider-indicator">
+				<li class="active"></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+			</ul>
+		</div>
+		<div class="toggle">
+			<button class="prev">&lt;</button>
+			<button class="next">&gt;</button>
+		</div>
+	</div> 
+
+	<script>
+		// 开启定时器
+		let timer1 = setInterval(function(){
+            console.log('一秒中执行一次');
+            // document.write('一秒中执行一次');
+		}, 1000)
+		console.log("timer1: " + timer1)
+		
+		function fn(){
+            console.log('2秒中执行一次');
+		}
+        let timer2 = setInterval(fn, 2000)
+		console.log("timer2: " + timer2)
+		
+		// 关闭定时器
+		clearInterval(timer1)
+		
+		
+		/**
+		 * 阅读注册协议，要求按钮 60s 后才可以使用
+		 * */
+        // 1、获取元素
+		const btn = document.querySelector('.btn');
+        btn.innerHTML
+        // 2、倒计时
+		let i = 5
+		let timer3 = setInterval(function(){
+            i--
+			btn.innerHTML = `我已经阅读用户注册协议(${i})`
+			if(i===0){
+                clearInterval(timer3)
+				btn.disabled = false
+				btn.innerHTML = '同意'
+			}
+		}, 1000)
+		
+		/**
+		 * 轮播图定时器版本（每隔一秒钟切换一个图片）
+		 * */
+        // 1、初始化轮播图数据
+		const togglePicArr = [
+            {url:'../img/1.png', title: '11111111', color:'rgb(100,67,68)'},
+            {url:'../img/2.png', title: '22222222', color:'rgb(43,35,26)'},
+            {url:'../img/3.png', title: '33333333', color:'rgb(78,64,29)'},
+            {url:'../img/4.png', title: '44444444', color:'rgb(100,100,100)'},
+            {url:'../img/5.png', title: '55555555', color:'rgb(67,67,68)'}
+		]
+		// 2、获取元素
+		const toggleImg = document.querySelector('.slider-wrapper img')
+		console.log(toggleImg)
+		const toggleFootP = document.querySelector('.slider-footer p')
+		console.log(toggleFootP)
+		// 3、开启定时器
+		let j = 0
+		setInterval(function() {
+            j++
+			console.log("j: " + j)
+			if(j >= togglePicArr.length){
+                j = 0
+			}
+			toggleImg.src = togglePicArr[i].url
+			toggleFootP.innerHTML = togglePicArr[i].title
+		}, 1000)
+	</script>
+
+</body>
+</html>

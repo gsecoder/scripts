@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>03_CSS操作属性_06外边距margin和内边距padding</title>
+</head>
+<body style="background: aqua; border: 1px solid; margin: 0px">
+	<h2>03_CSS操作属性_06外边距margin和内边距padding</h2>
+	<h3>1.盒子模型</h3>
+		<p>margin: 用于控制元素与元素之间的距离；margin的最基本用途就是控制元素周围空间的间隔，从视觉角度上达到相互隔开的目的。</p>
+		<p>padding: 用于控制内容与边框之间的距离；</p>
+		<p>Border(边框): 围绕在内边距和内容外的边框</p>
+		<p>Content(内容): 盒子的内容，显示文本和图像。</p>
+
+	<h3>2.margin(外边距)</h3>
+		<p style="background: #FFF000; margin-top: 100px">margin-top:10px;</p>
+		<p style="background: #FFF000; margin-bottom: 100px">margin-bottom: 10px</p>
+		<p style="background: #FFF000; margin-right: 100px">margin-right: 10px</p>
+		<p style="background: #FFF000; margin-left: 100px">margin-left: 10px</p>
+
+		<p style="margin: 50px 100px 50px 100px; background: blue">
+			上50px 右100px 下50px 左100px
+		</p>
+
+		<p style="margin: 0 auto; background: orangered">居中效果</p>
+
+	<h3>3.padding(内边距)</h3>
+		<p>单独使用填充属性可以改变上下左右的填充。缩写填充属性也可以使用，一旦改变一切都改变。</p>
+		<h4>问题一：body的外边距</h4>
+		<p>边框在默认情况下会定位于浏览器窗口的左上角，但是并没有紧贴着浏览器的窗口的边框，这是因为body本身也是一个盒子（外层还有html），在默认情况下，   body距离html会有若干像素的margin，具体数值因各个浏览器不尽相同，所以body中的盒子不会紧贴浏览器窗口的边框了，为了验证这一点，加上：style="background: aqua; border: 1px solid;"</p>
+		<p>
+			解决方案：body{
+				margin: 0px;
+			}
+		</p>
+
+		<h4>问题二：margin collapse(边界塌陷或者说边界重叠)</h4>
+		<p>(1)兄弟div: 上面div的margin-bottom和下面div的margin-top会塌陷，也就是会取上下两者margin里最大值作为显示值
+		</p>
+		<p>(2)父子div: if 父级div中没有border，padding，inline，content，子级div的margin会一直向上找，直到找到某个标签包括border，padding，inline
+			content中的其中一个，然后按此div 进行margin；</p>
+		<div style="background-color: bisque;width: 300px;height: 300px"></div>
+		<div class="div1"
+		     style="background: orange;
+			        width: 300px;
+			        height: 300px;
+			        overflow: hidden;
+				   ">div1
+
+			<div class="div2"
+				 style="background: blue;
+				        height: 100px;
+				        width: 100px;
+				        margin-top: 20px;
+				        margin-bottom: 40px;
+					   ">div2
+			</div>
+			<div class="div3"
+			     style="background: aqua;
+			            height: 100px;
+			            width: 100px;
+			            margin-top: 20px;
+						">div3
+
+			</div>
+		</div>
+
+	<h3>4. 解决溢出</h3>
+	<div class="c1"
+	     style="
+	        border: 1px solid;
+            background-color: blueviolet;
+            width: 100%;
+            height:200px;
+            /*text-align: center;*/
+            /*设置两端对齐*/
+            text-align: justify;
+            line-height: 200px;
+            /*如果你写的多了，会溢出来*/
+            /*第一种方法：overflow: hidden;*/
+            overflow: scroll;"
+	>啦啦啦啦啦绿绿绿
+		绿绿绿绿 绿绿绿绿绿绿 绿绿绿绿绿绿绿
+		啦啦啦啦啦 绿绿绿绿绿绿绿绿绿绿绿绿绿
+		绿绿绿绿绿 绿绿绿绿绿绿绿绿绿绿绿绿
+		绿绿绿 绿绿绿绿绿绿绿绿 绿绿绿绿绿
+		绿绿绿绿 绿绿绿绿绿绿 绿绿lllllllllllllllllllllll
+		绿绿绿绿绿</div>
+	<div class="btn"
+		    style="width: 45px;
+            height: 70px;
+            background-color: gray;
+             /*设置透明度*/
+            opacity: 0.4;
+            text-align: center;
+            line-height: 70px;
+            /*行高和高度对应*/"
+	> < </div>
+</body>
+</html>

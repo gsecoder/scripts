@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>07_对象_Function对象(重点)</title>
+</head>
+<body>
+    <h2>一、函数的定义</h2>
+    <script>
+        /*可以使用变量、常量或表达式作为函数调用的参数
+          函数由关键字function定义
+          函数名的定义规则与标识符一致，大小写是敏感的
+          返回值必须使用return
+          Function 类可以表示开发者定义的任何函数。*/
+        /*方法一：*/
+        function foo1(args) {
+            console.log(args)
+            return "com.secoder.base.Hello JS";
+        };
+
+        console.log(foo1(1));
+
+        /*方法二：*/
+        var foo2 = new Function('name', "console.log(\'com.secoder.base.Hello '\ + name)")
+        foo2('JavaScript')
+    </script>
+
+    <h2>二、Function对象的属性</h2>
+    <script>
+        function foo21(args) {
+            console.log(args)
+            return "com.secoder.base.Hello JS";
+        };
+        console.log(foo21('Test').length)
+    </script>
+
+    <h2>三、加个知识点</h2>
+    <script>
+        var d="yuan";
+        d=+d;
+        console.log(d);//NaN:属于Number类型的一个特殊值,当遇到将字符串转成数字无效时,就会得到一个NaN数据
+        console.log(typeof(d));//Number
+        /*NaN特点:*/
+                var n=NaN;
+        console.log(n>3);
+        console.log(n<3);
+        console.log(n==3);
+        console.log(n==NaN);
+        console.log(n!=NaN);//NaN参与的所有的运算都是false,除了!=
+    </script>
+
+    <h2>四、函数的内置对象arguments</h2>
+    <script>
+        console.log("**********4***********")
+        /*函数的内置对象arguments,相当于python中的动态参数*/
+        function foo41(a, b) {
+            console.log(a + b);
+            console.log(arguments.length);
+            console.log(arguments); // [1, 2]
+        };
+        foo41(1, 2);
+
+        /*arguments的用处1*/
+        function foo42() {
+            var sum = 0;
+            for(var i=0; i<arguments.length; i++){
+                console.log(arguments[i]);
+                sum += arguments[i];
+            }
+            return sum;
+        };
+        console.log(foo42(1, 2, 3, 4, 5, 6));
+
+        /*arguments的用处2*/
+        function foo43(a, b, c) {
+            if(arguments.length != 3){
+                throw new Error("Function foo43 called with" + arguments.length +
+                        " arguments,but it is need 3 arguments ");
+
+            } else{
+                console.log("success");
+            }
+
+        };
+        foo43(1, 2, 3)
+    </script>
+
+    <h2>五、匿名函数</h2>
+    <script>
+        /*匿名函数*/
+        var func = function(args){
+            console.log(args);
+        };
+
+        /*匿名函数的应用*/
+        (function(){
+            console.log("匿名函数已经执行了......");
+        })();
+        (function(args){
+            console.log(args);
+        })("传参数的匿名函数也已经执行了......");
+
+    </script>
+</body>
+</html>

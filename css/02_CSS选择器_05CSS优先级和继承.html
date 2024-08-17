@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>02_CSS选择器_05CSS优先级和继承</title>
+    <style>
+        /*CSS的继承*/
+        body{
+            color: crimson;
+            border: 2px solid sandybrown;
+        }
+
+        /*子类有自己的*/
+        p.p21{
+            color: blue;
+        }
+        #id21{
+            color: cornflowerblue;
+        }
+        .p23{
+            background: cornflowerblue;
+        }
+    </style>
+</head>
+<body>
+
+    <h3>CSS优先级</h3>
+    <p>所谓CSS优先级，即是指CSS样式在浏览器中被解析的先后顺序。样式表中的特殊性描述了不同规则的相对权重，它的基本规则是：</p>
+
+    <h4>1 内联样式表的权值最高               style=""－－－－－－－－－－－－ 1000；</h4>
+    <h4>2 统计选择符中的ID属性个数。          #id －－－－－－－－－－－－－－ 100；</h4>
+    <h4>3 统计选择符中的CLASS属性个数。       .class －－－－－－－－－－－－－ 10</h4>
+    <h4>4 统计选择符中的HTML标签名个数。       p －－－－－－－－－－－－－-－ 1</h4>
+    <p>按这些规则将数字符串逐位相加，就得到最终的权重，然后在比较取舍时按照从左到右的顺序逐位比较。</p>
+    <!--
+        1、文内的样式优先级为1,0,0,0，所以始终高于外部定义。
+　　    2、有!important声明的规则高于一切。
+　　    3、如果!important声明冲突，则比较优先权。
+       4、如果优先权一样，则按照在源码中出现的顺序决定，后来者居上。
+       5、由继承而得到的样式没有specificity的计算，它低于一切其它规则(比如全局选择符*定义的规则)。
+    -->
+
+
+    <h3>继承是CSS的一个主要特征，它是依赖于祖先-后代的关系的。继承是一种机制，它允许样式不仅可以应用于某个特定的元素，还可以应用于它的后代。例如一个BODY定义了的颜色值也会应用到段落的文本中。</h3>
+    <p >
+        然而CSS继承性的权重是非常低的，是比普通元素的权重还要低的0;
+        继承是CSS重要的一部分，我们甚至不用去考虑它为什么能够这样，但CSS继承也是有限制的。
+        有一些属性不能被继承，如：border, margin, padding, background等。
+    </p>
+    <p class="p21">P21P21P21
+        <em id="id21">ememememem</em>
+    </p>
+    <p class="p22">P22P22P22</p>
+    <p class="p23">P23P23P23</p>
+</body>
+</html>

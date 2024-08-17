@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>day5-随机点名案例</title>
+</head>
+<body>
+	<script>
+		let arr = ['周瑜','诸葛亮','刘备','张飞','曹操','关羽','鲁肃','夏侯渊','司马懿']
+		
+		function getRandom() {
+            return Math.floor(Math.random() * arr.length)
+		}
+        
+        // document.write(arr[getRandom()]);
+        
+        // 升级：将数组中的元素随机显示，但是要求显示过的元素不再重复显示
+		arr.splice(getRandom(), 1)
+		document.write(arr);
+        
+	</script>
+</body>
+</html>

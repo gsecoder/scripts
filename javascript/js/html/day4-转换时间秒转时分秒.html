@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>day4-转换时间秒转时分秒</title>
+</head>
+<body>
+	<script>
+		// 用户输入秒数，自动转换为时分秒
+		let seconds = +prompt("请输入秒数：");
+        function getTime(t){
+            let h = parseInt(t / 60 / 60 % 24)
+            let m = parseInt(t / 60 % 60)
+            let s = parseInt(t % 60)
+	        
+	        h = h < 10 ? '0' + h : h
+	        m = m < 10 ? '0' + m : m
+	        s = s < 10 ? '0' + s : s
+	        
+	        return `转换结果为${h}时${m}分${s}秒`
+        }
+        document.write(getTime(seconds))
+	</script>
+</body>
+</html>

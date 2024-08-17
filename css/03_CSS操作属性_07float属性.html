@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>03_CSS操作属性_07float属性</title>
+	<style>
+		.claerfix:after{
+			clear: both;
+			content: '';
+			display: block
+		}
+	</style>
+</head>
+<body style="margin: 0px">
+	<h2>03_CSS操作属性_07float属性</h2>
+	<p>
+		布局关键点：如何能够让可以调节长度的元素（标签）在一行显示
+		如果上一个是浮动的，那么就紧贴这
+		如果上一个不是浮动的，那么就保持垂直距离不变
+	</p>
+
+	<h3>基本浮动规则</h3>
+		<p>先来了解一下block元素和inline元素在文档流中的排列方式。</p>
+		<p>
+			block元素通常被现实为独立的一块，独占一行，多个block元素会各自新起一行，默认block元素宽度自动填满其父元素宽度。block元素可以设置width、height、margin、padding属性；常见的块级元素有 div、form、table、p、pre、h1～h5、dl、ol、ul 等。
+		</p>
+		<p>
+			inline元素不会独占一行，多个相邻的行内元素会排列在同一行里，直到一行排列不下，才会新换一行，其宽度随元素的内容而变化。inline元素设置width、height属性无效;常见的内联元素有span、a、strong、em、label、input、select、textarea、img、br等
+		</p>
+		<p><em>所谓的文档流</em>，指的是元素排版布局过程中，元素会自动从左往右，从上往下的流式排列。</p>
+		<p><em>脱离文档流</em>，也就是将元素从普通的布局排版中拿走，其他盒子在定位的时候，会当做脱离文档流的元素不存在而进行定位。</p>
+		<div class="div1"
+			 style="width: 300px;
+                    height: 100px;
+                    background-color: #7A77C8;
+                    float: left;"
+		>div1</div>
+		<div class="div2"
+		     style="width: 200px;
+                    height: 200px;
+                    background-color: wheat;
+                    /*float: left;*/"
+		>div2</div>
+		<div class="div3"
+		     style=" width: 100px;
+                     height: 200px;
+                     background-color: darkgreen;
+                     float: left;"
+		>div3</div>
+
+	<!------------------------------------------------------------------------------------->
+	<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+	<hr>
+	<h3>非完全脱离文档流</h3>
+	<p>左右结构div盒子重叠现象，一般是由于相邻两个DIV一个使用浮动一个没有使用浮动。一个使用浮动一个没有导致DIV不是在同个“平面”上，但内容不会造成覆盖现象，只有DIV形成覆盖现象。</p>
+	<div class="r1"
+		 style=" width: 100px;
+                 height: 100px;
+                 background-color: #7A77C8;
+                 float: left;"
+	></div>
+	<div class="r2"
+		 style="width: 200px;
+                height: 200px;
+                background-color: wheat;"
+	>region2</div>
+	<h3 style="background: orange">>>>>解决方法：要么都不使用浮动；要么都使用float浮动；要么对没有使用float浮动的DIV设置margin样式。</h3>
+
+
+
+	<!------------------------------------------------------------------------------------->
+	<h3>清除浮动</h3>
+	<p>clear语法：
+		　　<span>clear：none |  left  | right  | both</span>
+		<p>1.clear：left 清除的是左边的浮动</p>
+		<p>2.clear：both :保证左右两边都没有浮动</p>
+	</p>
+	<p>注意：
+		　  <p>排序的时候是一个标签一个标签的排</p>
+		　　<p>如果上一个是浮动的，就紧贴个上一个</p>
+		　　<p>如果上一个不是浮动的，就和上一个保持垂直不变</p>
+	</p>
+
+
+	<!------------------------------------------------------------------------------------->
+	<h3>float父级的塌陷问题</h3>
+	<p>float它不是完全脱离，它是半脱离的。像是文字环绕的就是用float实现的。float是不覆盖文字的半脱离的，吧文字给挤过去了。</p>
+	<!--方案一：-->
+	<div style="clear: both">
+		<div class="c1"
+			 style="width: 100px;
+	                height: 60px;
+	                background-color: blue;
+					float: left;
+				   "
+		>c1</div>
+		<div class="c2"
+		     style="width: 200px;
+	                height: 30px;
+	                background-color: aqua;
+	                float: left;"
+		>c2</div>
+		<div class="c3"
+		     style="width: 200px;
+	                height: 100px;
+	                background-color: crimson;
+	                float: left;"
+		>c3</div>
+	</div>
+
+	<div class="content"
+	     style="background: blueviolet;
+	            clear: both;
+		        width: 600px;
+				height: 200px">
+		content当三个盒子浮起来的时候，float是不会覆盖文字的，它把文字挤到后面去了。
+		如果我们不想让有文字的这个盒子上去，该怎么解决呢？方案一
+	</div>
+
+	<br><br><br><br>
+	<!--方案二：-->
+	<!--
+		2.用after
+            .header:after{
+            content:""; #内容为空
+            display:block; #块级标签
+            clear:both; #清楚浮动的功能
+            }
+
+        约定的名字：clearfix
+            .clearfix:after{
+            content:""; #内容为空
+            display:block; #块级标签
+            clear:both; #清楚浮动的功能（可以做到一个自动切换的功能）
+            }
+	-->
+	<div class="claerfix">
+		<div class="c1"
+		     style="width: 100px;
+	                height: 60px;
+	                background-color: blue;
+					float: left;
+				   "
+		>c1</div>
+		<div class="c2"
+		     style="width: 200px;
+	                height: 30px;
+	                background-color: aqua;
+	                float: left;"
+		>c2</div>
+		<div class="c3"
+		     style="width: 200px;
+	                height: 100px;
+	                background-color: crimson;
+	                float: left;"
+		>c3</div>
+	</div>
+
+	<div class="content"
+	     style="background: blueviolet;
+		        width: 600px;
+				height: 200px">
+		content当三个盒子浮起来的时候，float是不会覆盖文字的，它把文字挤到后面去了。
+		如果我们不想让有文字的这个盒子上去，该怎么解决呢？方案二
+	</div>
+</body>
+</html>

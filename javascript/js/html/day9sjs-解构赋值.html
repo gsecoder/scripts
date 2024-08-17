@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>day9sjs-解构赋值（Python 的解包)</title>
+</head>
+<body>
+
+	<script>
+		/**
+		 * 数组解构
+		 * */
+        // 旧的赋值方式
+        const arr1 = [1, 2, 3]
+		const arrMax = arr1[2]
+		const arrMin = arr1[0]
+		const arrAvg = arr1[1]
+		console.log(arrMax, arrMin, arrAvg)
+		// 数组解构
+		const [max, min, avg] = [3, 1, 2]
+		console.log(max, min, avg)
+		/**------变量值交换------*/
+        let a = 1
+		let b = 2;
+		[b, a] = [a, b]
+		console.log(`a是${a}, b是${b}`) 
+		const [d, e, ...args] = [1, 2, 3, 4, 5]
+		console.log("args: ", args)
+		const [j = '小猪', k = '小狗'] = ['小羊']
+		console.log(`j=${j}, k=${k}`)
+		/**数组的多维解构*/
+        const [i, o, p, [s, l]] = [1, [2, 3], [4, [5, 6]], [99, 0]]
+		console.log(`i=${i}, o=${o}, p=${p}, s=${s}, l=${l}`)
+		
+		
+		/**
+		 * 对象解构
+		 * */
+        // 旧的赋值方式
+        const obj = {
+            username: 'AAA',
+            age: 18
+		}
+        console.log(`username: ${obj.username} , age: ${obj.age}`)
+		// 对象解构
+		const {username2, age2} = {username2: 'AAA2', age2: 182}
+		console.log(`username2: ${username2} , age2: ${age2}`)
+		// 对象解构重命名变量名
+		const {username2: username3, age2: age3} = {username2: 'AAA2', age2: 182}
+		console.log(`username3: ${username3} , age3: ${age3}`)
+        // 数组对象解构
+		const pig = [
+            {
+                name: 'pig',
+	            age: 8
+            }
+		]
+		const [{name, age}] = pig
+		console.log("pig: ", pig)
+		console.log("pig.name: ", name)
+		console.log("pig.age: ", age)
+		// 多级对象解构
+		const pig2 = {
+            name2: 'pig2name',
+			family: {
+                father: "pig2Father",
+				mother: 'pig2Mother',
+				sister: 'pig2Sister'
+			},
+			page: 66
+		}
+        const {name2, family: {father, mother, sister}, page} = pig2
+		console.log(`name2: ${name2}, father: ${father}, mother: ${mother}, sister: ${sister}, page: ${page}`)
+	</script>
+</body>
+</html>

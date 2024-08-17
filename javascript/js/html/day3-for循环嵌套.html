@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>day3-for循环嵌套</title>
+	<style>
+		span {
+			display: inline-block;
+			padding: 5px 10px;
+			border: 1px solid pink;
+			margin: 2px 4px;
+			border-radius: 5px;
+			width: 70px;
+		}
+	</style>
+</head>
+<body>
+	<script>
+		// 打印 5 行 5 列的🌟
+		for(let i=1; i<=5; i++){
+            for(let j=1; j<=5; j++){
+                document.write("🌟");
+			}
+            document.write("<br/>");
+		}
+        document.write("===============<br/>");
+        
+        
+        // 打印 x 行 y 列的🌟
+		/**
+		let x = +prompt("请输入行：");
+		let y = +prompt("请输入列：");
+		for(let i=1; i<=x; i++){
+            for(let j=1; j<=y; j++){
+                document.write("🌟");
+			}
+            document.write("<br/>");
+		}
+		*/
+		
+		// 打印倒直角三角形
+		for(let i=1; i<=5; i++){
+            for(let j=1; j<=i; j++){
+                document.write("🌟");
+			}
+            document.write("<br/>");
+		}
+        document.write("===============<br/>");
+        
+        // 打印9*9乘法表
+		for(let i=1; i<=9; i++){
+            for(let j=1; j<=i; j++){
+                document.write(`<span>${i} * ${j} = ${i * j} </span>`);
+			}
+            document.write("<br/>");
+		}
+        
+	</script>
+</body>
+</html>

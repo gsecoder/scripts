@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>day2-判断年份是闰年还是平年</title>
+</head>
+<body>
+	<script>
+		/*
+		* 能被4整除但不能被100正除，或者被400整除的年份都是闰年，其余都是平年
+		* */
+		let yearNum = +prompt("请输入判断的年份：");
+        
+        if(yearNum % 4 ===0 && yearNum % 100 !== 0 || yearNum % 400 === 0){
+            alert(`${yearNum} 是闰年`);
+        } else {
+            alert(`${yearNum} 是平年`);
+        }
+	</script>
+</body>
+</html>

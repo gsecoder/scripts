@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>day6apis-鼠标经过事件</title>
+	<style>
+		.father{
+            width: 200px;
+            height: 200px;
+            background-color: grey;
+		}
+		.son{
+            width: 100px;
+            height: 100px;
+            background-color: pink;
+		}
+	</style>
+</head>
+<body>
+	<div class="father">
+		<div class="son"></div>
+	</div>
+	
+	
+	
+	
+	<script>
+		const father = document.querySelector('.father')
+		/**
+		father.addEventListener('mouseover', function () {
+			alert("鼠标经过")
+        }, true)
+		const son = document.querySelector('.son')
+		son.addEventListener('mouseout', function () {
+			alert("鼠标离开")
+        }, true)
+		*/
+		
+		father.addEventListener('mouseenter', function () {
+			alert("鼠标经过")
+        }, true)
+		const son = document.querySelector('.son')
+		son.addEventListener('mouseleave', function () {
+			alert("鼠标离开")
+        }, true)
+		
+	</script>
+</body>
+</html>

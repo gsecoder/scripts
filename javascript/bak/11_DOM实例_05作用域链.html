@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>11_DOM实例_05作用域链</title>
+</head>
+<body>
+	<script>
+		var s = 12;
+		function f() {
+		    // undefined
+			console.log(s);
+
+			var s = 13;
+			// 13
+			console.log(s);
+        };
+
+		f();
+	</script>
+</body>
+</html>

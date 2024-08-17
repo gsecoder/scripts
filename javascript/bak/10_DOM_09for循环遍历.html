@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>10_DOM_09for循环遍历</title>
+</head>
+<body>
+
+    <script>
+
+        /*
+        * 第一种：是有条件的那种，例如    for(var i = 0;i<ele.length;i++){}
+        * 第二种：for （var i in li ）{}
+        *
+        * */
+        var obj = {'username': 'pp', 'age':24};
+        var arr = [11, 22, 33, 44, 55];
+
+        for (var i in obj){
+            console.log(i);
+            console.log(obj[i]);
+        };
+
+        for (var a in arr){
+            console.log(a);
+            console.log(arr[a]);
+        };
+    </script>
+</body>
+</html>

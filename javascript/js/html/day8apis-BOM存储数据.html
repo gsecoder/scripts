@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>day8apis-BOM存储数据</title>
+</head>
+<body>
+
+	<script>
+		/**
+		 * 本地存储-localStorage存储
+		 * */
+		// 存储数据
+		localStorage.setItem('username', 'pink')
+		// 读取数据
+		console.log(localStorage.getItem('username'))
+		// 删除数据
+		localStorage.removeItem('username')
+		console.log(localStorage.getItem('username'))
+		// 修改数据
+		localStorage.setItem('username', 'pink')
+		localStorage.setItem('username', 'red')
+		console.log(localStorage.getItem('username'))
+		
+		
+		/**
+		 * 存储复杂数据类型
+		 * */
+        const objX = {
+            username: 'xiao ming',
+			sex: 'male',
+			age: 18
+		}
+        localStorage.setItem('objX', JSON.stringify(objX))
+		/**
+		 * JSON对象属性和值有引号，而且引号统一是双引号
+		 * {
+			    "username": "xiao ming",
+			    "sex": "male",
+			    "age": 18
+			}
+		 * */
+        console.log("objX", localStorage.getItem('objX'))
+
+		/**
+		 * 将 JSON 对象转换为对象
+		 * {
+			    username: 'xiao ming',
+			    sex: 'male',
+			    age: 18
+			}
+		 * */
+		console.log("objX", JSON.parse(localStorage.getItem('objX')))
+	</script>
+</body>
+</html>

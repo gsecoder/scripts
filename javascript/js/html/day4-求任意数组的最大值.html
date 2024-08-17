@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>day4-求任意数组的最大值</title>
+</head>
+<body>
+	<script>
+		function getArrVal(arr=[]){
+            // 先准备一个 maxVal 变量作为数组 arr 的第一个值
+			let maxVal = arr[0];
+			let minVal = arr[0];
+            // 遍历比较
+            for (let i=0; i<arr.length; i++){
+                if (maxVal < arr[i]) {
+                    maxVal = arr[i]
+                }
+                
+                if (minVal > arr[i]){
+                    minVal = arr[i]
+                }
+            }
+            // 返回值
+			return [maxVal, minVal]
+		}
+        let Val = getArrVal([45, 67, 23, 45, 69])
+        document.write("val是：" + Val)
+	</script>
+</body>
+</html>

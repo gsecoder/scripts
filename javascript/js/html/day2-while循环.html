@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>while 循环练习</title>
+</head>
+<body>
+    <script>
+	    //   - 页面输出 1～100
+	    let i = 1;
+        while (i <= 100) {
+            document.write(i + "<br/>");
+            i++;
+        }
+        
+        //   - 计算从 1 加到 100 的总和并输出
+	    let sum = 0;
+        let j = 1;
+        while (j <= 100) {
+            sum += j;
+            j++;
+        }
+        document.write("1 加到 100 的总为：" + sum + "<br/>")
+	    
+	    //   - 计算 1～100 之间的所有偶数和
+	    let oddSum = 0;
+        let z = 1;
+        while (z <= 100){
+            if ( z % 2 === 0){
+                oddSum += z;
+            }
+            z++;
+        }
+        document.write("1～100 之间的所有偶数和：" + oddSum);
+    </script>
+</body>
+</html>

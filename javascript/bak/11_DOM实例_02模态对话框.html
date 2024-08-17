@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>11_DOM实例_02模态对话框</title>
+	<style>
+		.back{
+			background-color: white;
+			height: 2000px;
+		}
+
+		.shade{
+			position: fixed;
+			top: 0px;
+			bottom: 0px;
+			left: 0px;
+			right: 0px;
+			background-color: gray;
+			opacity: 0.4;
+		}
+
+		.hide{
+			display: none;
+		}
+
+		.models{
+			position: fixed;
+			top: 50%;
+			bottom: 50%;
+			margin-left: -100px;
+			margin-top: -100px;
+			height: 200px;
+			width: 200px;
+			background-color: wheat;
+		}
+	</style>
+</head>
+<body>
+	<div class="back">
+		<input type="button" class="c" value="back">
+	</div>
+
+	<div class="shade hide handles"></div>
+
+	<div class="models hide handles">
+		<input type="button" class="c" value="cancel">
+	</div>
+
+	<script>
+
+
+        var eles=document.getElementsByClassName("c");
+        var handles=document.getElementsByClassName("handles");
+        for(var i=0;i<eles.length;i++){
+            eles[i].onclick=function(){
+
+                if(this.value=="click"){
+
+                    for(var j=0;j<handles.length;j++){
+
+                        handles[j].classList.remove("hide");
+
+                    }
+
+                }
+                else {
+                    for(var j=0;j<handles.length;j++){
+
+                        handles[j].classList.add("hide");
+                    }
+
+                }
+            }
+        }
+
+	</script>
+</body>
+</html>

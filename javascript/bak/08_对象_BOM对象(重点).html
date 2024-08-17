@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>08_对象_BOM对象(重点)</title>
+</head>
+<body>
+	<h2>Windows对象</h2>
+	<p>
+		所有浏览器都支持 window 对象。
+		概念上讲.一个html文档对应一个window对象.
+		功能上讲: 控制浏览器窗口的.
+		使用上讲: window对象不需要创建对象,直接使用即可.
+	</p>
+	<script>
+        // alert();            // 显示带有一段消息和一个确认按钮的警告框。
+		// confirm();            // 显示带有一段消息以及确认按钮和取消按钮的对话框。
+		// prompt("1213");       // 显示可提示用户输入的对话框。
+		// open()             // 打开一个新的浏览器窗口或查找一个已命名的窗口。
+		// close()            关闭浏览器窗口。
+		// setInterval()      按照指定的周期（以毫秒计）来调用函数或计算表达式。
+		// clearInterval()    取消由 setInterval() 设置的 timeout。
+		// setTimeout()       在指定的毫秒数后调用函数或计算表达式。
+		// clearTimeout()     取消由 setTimeout() 方法设置的 timeout。
+		// scrollTo()         把内容滚动到指定的坐标。
+		// window.open();
+		// window.close();
+
+		/*定时器简单示例*/
+		function f51() {
+			console.log(".....");
+        };
+		var ID = setInterval(f51, 1000);
+		clearInterval(ID);
+
+		/*定时器实例*/
+        //    定时器实例
+        // var date = new Date();  //Date 2017-09-25T12:20:25.536Z
+        // console.log(date);
+        // var date1 = date.toLocaleString();
+        //  console.log(date1); //2017/9/25 下午8:20:59
+
+        function foo() {
+            var date = new Date();
+            var date = date.toLocaleString();//吧日期字符串转换成字符串形式
+            var ele = document.getElementById('timer')  //从整个html中找到id=timer的标签，也就是哪个input框
+
+            ele.value = date;
+            console.log(ele)  //ele是一个标签对象
+//    value值是什么input框就显示什么
+        }
+        var ID;
+        function begin() {
+            if (ID==undefined){
+                foo();
+                ID = setInterval(foo,1000)
+            }
+        }
+
+        function end() {
+            clearInterval(ID);
+            console.log(ID);
+            ID = undefined
+        }
+
+	</script>
+</body>
+</html>

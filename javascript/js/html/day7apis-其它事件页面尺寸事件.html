@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>day7apis-其它事件页面尺寸事件</title>
+	<style>
+		body{
+			margin: 0 auto;
+			padding: 0 0;
+		}
+		div{
+            width: 200px;
+			height: 200px;
+			background-color: cornflowerblue;
+			padding: 10px;
+			border: 20px;
+		}
+	</style>
+</head>
+<body>
+
+	<div>121313qwqdfkdlfkdlfkdlfklddfkldkfl</div>
+	
+	<script>
+		/** resize 浏览器窗口发小发生变化的时候触发的事件*/
+        window.addEventListener('resize', function () {
+	        console.log('窗口尺寸发生了变化')
+        })
+		
+		/** clientWidth 检测屏幕宽度*/
+        const div = document.querySelector('div')
+		console.log("div.clientWidth: " + div.clientWidth)
+	</script>
+</body>
+</html>

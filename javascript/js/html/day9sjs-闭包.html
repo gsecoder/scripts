@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>day9sjs-闭包</title>
+</head>
+<body>
+	<script>
+		function outer() {
+			const  a = 10
+			function inner() {
+				console.log(a)
+            }
+            return inner
+        }
+        const fun = outer()
+		fun()
+		
+		/**
+		 * 闭包的应用：实现数据的私有，比如：我们要做统计函数调用次数，函数调用一次，就++
+		 * */
+        let i = 0
+		function f1() {
+			 i++
+			console.log("函数被调用的次数：", i)
+        }
+        f1()
+        // 上面的代码存在的问题为 i 为全局变量，容易被修改；下面使用闭包进行实现
+		function count() {
+			let i = 0
+			function fin() {
+				i++
+				console.log(`函数被调用${i}次`)
+            }
+            return fin
+        }
+        const fn = count()
+		fn()
+	</script>
+</body>
+</html>

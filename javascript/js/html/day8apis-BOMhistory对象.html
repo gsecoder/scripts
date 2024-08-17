@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>day8apis-BOMhistory对象</title>
+</head>
+<body>
+
+	<div>
+		<button>后退</button>
+		<button>前进</button>
+	</div>
+
+	<script>
+		const back = document.querySelector('button:first-child')
+		const forward = back.nextElementSibling
+		
+		back.addEventListener('click', function () {
+			history.back()
+        })
+		
+		back.addEventListener('click', function () {
+			history.forward()
+        })
+	</script>
+
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>day7apis-其它事件元素尺寸与位置</title>
+	
+	<style>
+		.div1{
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+			margin: 100px;
+		}
+		.p1{
+            width: 100px;
+            height: 100px;
+			background-color: coral;
+			margin: 50px;
+		}
+	</style>
+</head>
+<body>
+
+	<div class="div1">
+		<p class="p1"></p>
+	</div>
+	
+	<script>
+		const div1 = document.querySelector('.div1')
+		const p1 = document.querySelector('.p1')
+		console.log("div1.offsetLeft: " + div1.offsetLeft) // 108 body 自身带有 8px 的距离
+		console.log("p1.offsetLeft: " + p1.offsetLeft) // 158 body 自身带有 8px 的距离
+	</script>
+</body>
+</html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>10_DOM_11JS的作用域</title>
+</head>
+<body>
+	<script>
+
+		/*
+		*
+		* 作用域是JavaScript最重要的概念之一，想要学好JavaScript就需要理解JavaScript作用域和作用域链的工作原理。
+		* 作用域就是变量与函数的可访问范围，即作用域控制着变量与函数的可见性和生命周期。
+		* JavaScript中，变量的作用域有全局作用域和局部作用域两种。
+		* */
+
+		/*
+		* 一、全局作用域（在代码的任何地方都能访问到的对象拥有全局作用域）
+		* 以下几种场景拥有全局作用域
+		* */
+		// 1.最外层函数和在最外层函数外面定义的变量拥有全局作用域
+		var name = 'little';
+
+		function f() {
+			var age = 25;
+			function inner() {
+				console.log(age);
+            };
+
+			inner();
+        };
+
+		console.log(name);      // little
+		// console.log(age);   //  'age' is not defined
+		f();              // 25
+		// inner();          // 'inner' is not defined
+
+		// 2.所有未定义直接赋值的变量自动声明为拥有全局作用域
+		var name1 = 'name1';
+
+		function f1() {
+			age1 = 23;
+
+			var sex = 'male';
+        };
+
+		f1();
+		console.log(name1);     // name1
+		console.log(age1);       // 23
+		// console.log(sex);     // 'sex' is not defined
+
+		// 3.所有Window对象的属性拥有全局作用域
+		//    一般情况下，Window对象的内置属性都拥有全局作用域；例如，window.alert()、window.location等
+
+
+		/*
+		* 二、局部作用域（Local Scope）
+		*   和全局作用域相反，局部作用域一般只在固定的代码片段内可以访问到，常见的例如函数内部（函数作用域），js中if、for没有自己的作用域。
+		*
+		* */
+		/*
+		* 作用域链（Scope Chain）
+		*   在JavaScript中函数也是对象，实际上JavaScript中一切皆对象。
+		*   函数对象和其他对象一样，拥有可以通过代码访问的属性和一系列仅供JavaScript引擎访问的内部属性。其中一个内部属性是[[Scope]]，由ECMA-262标准第三版定义，该内部属性包含了函数被创建的作用域中对象的集合，这个集合被称为函数的作用域链，它决定了哪些数据能被函数访问。
+		*
+		* */
+		var s21 = 13;
+		function f2() {
+			console.log(s21);
+			var s = 12;
+			console.log(s);
+        };
+        f2();
+	</script>
+</body>
+</html>

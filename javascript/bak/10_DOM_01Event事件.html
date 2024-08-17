@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>10_DOM_01Event事件</title>
+</head>
+<body>
+
+	<script>
+		/*1.事件类型*/
+        // onclick        当用户点击某个对象时调用的事件句柄。
+		// ondblclick     当用户双击某个对象时调用的事件句柄。
+		// onfocus        元素获得焦点。               练习：输入框
+		// onblur         元素失去焦点。               应用场景：用于表单验证,用户离开某个输入框时,代表已经输入完了,我们可以对它进行验证.
+        // onchange       域的内容被改变。             应用场景：通常用于表单元素,当元素内容被改变时触发.（三级联动）
+		// onkeydown      某个键盘按键被按下。          应用场景: 当用户在最后一个输入框按下回车按键时,表单提交.
+		// onkeypress     某个键盘按键被按下并松开。
+		// onkeyup        某个键盘按键被松开。
+		// onload         一张页面或一幅图像完成加载。
+		// onmousedown    鼠标按钮被按下。
+		// onmousemove    鼠标被移动。
+		// onmouseout     鼠标从某元素移开。
+		// onmouseover    鼠标移到某元素之上。
+		// onmouseleave   鼠标从元素离开
+		// onselect       文本被选中。
+		// onsubmit       确认按钮被点击
+
+
+		/*2.绑定事件方式*/
+		/*
+		* <!--绑定事件的方式一-->
+		<div onclick="foo(this)">div</div>
+		<div class="c1">div2</div>
+		<script>
+		    function foo(self) {
+		        console.log(self); //<div onclick="foo(this)" style="color: red;">
+		        self.style.color = 'red';
+		    }
+		*
+		* */
+
+		/*
+		*
+		* //方式二
+		  // 事件的绑定方式2：标签对象.on事件 = function (){}
+	     var ele=document.getElementsByClassName("c1")[0];
+	     ele.onclick=function () {
+	        console.log(this); // this 代指： 当前触发时间的标签对象；
+	        this.style.fontSize="30px"
+	    };
+		*
+		* */
+
+		/*3. 事件介绍*/
+
+
+		/*4.事件传播*/
+	</script>
+</body>
+</html>

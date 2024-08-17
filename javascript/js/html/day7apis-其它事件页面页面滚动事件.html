@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>day7apis-其它事件页面页面滚动事件</title>
+	<style>
+		body{
+            height: 3000px;
+		}
+		div{
+			display: none;
+			overflow: scroll;
+            width: 200px;
+            height: 200px;
+			border: 2px solid chartreuse;
+		}
+	</style>
+</head>
+<body>
+	<div>
+		我是社会主义接班人
+		我是社会主义接班人
+		我是社会主义接班人
+		我是社会主义接班人
+		我是社会主义接班人
+		我是社会主义接班人
+		我是社会主义接班人
+		我是社会主义接班人
+		我是社会主义接班人
+		我是社会主义接班人
+		我是社会主义接班人
+		我是社会主义接班人2
+		我是社会主义接班人3
+		我是社会主义接班人4
+		我是社会主义接班人5
+		我是社会主义接班人6
+		我是社会主义接班人7
+		我是社会主义接班人8
+	</div>
+
+	<script>
+		window.addEventListener('scroll', function () {
+			// 获取滚动的页面卷去的像素
+			// 获取 html 元素的写法
+			const n = document.documentElement.scrollTop
+			console.log("document.documentElement.scrollTop: ", n)
+			if (n>=100){
+                div.style.display = 'block'
+			} else {
+                div.style.display = 'none'
+			}
+        })
+		
+		const div = document.querySelector('div')
+		div.addEventListener('scroll', function () {
+			console.log("div.scrollTop: ", div.scrollTop)
+        })
+	</script>
+</body>
+</html>

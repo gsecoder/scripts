@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>01_初始css</title>
+    <style>
+        /*body>p{*/
+            /*color: white;*/
+            /*background: blue;*/
+        /*}*/
+
+        /*4导入式*/
+        @import "css/.";
+    </style>
+    <link rel="stylesheet" href="" />
+</head>
+<body>
+    <h3>一、css概述</h3>
+    <p>CSS是Cascading Style Sheets的简称，中文称为层叠样式表，对html标签的渲染和布局</p>
+    <p>CSS 规则由两个主要的部分构成：选择器，以及一条或多条声明。</p>
+
+    <h3>二、css四种引入方式</h3>
+    <h4>1.行内样式</h4>
+        <span style="background: blueviolet">P1</span>
+
+    <h4>2.内嵌样式</h4>
+        <p>p2</p>
+
+    <h4>3.链接式</h4>
+    <h4>4.导入式</h4>
+    <hr>
+    <h3 style="color: red">
+        <p>导入式会在整个网页装载完后再装载CSS文件，因此这就导致了一个问题，如果网页比较大则会儿出现先显示无样式的页面，闪烁一下之后，再出现网页的样式。这是导入式固有的一个缺陷。</p>
+        <p>使用链接式时与导入式不同的是它会以网页文件主体装载前装载CSS文件，因此显示出来的网页从一开始就是带样式的效果的，它不会像导入式那样先显示无样式的网页，然后再显示有样式的网页，这是链接式的优点。</p>
+        <p>所以还是推荐用链接式。。。。。。。。。。</p>
+    </h3>
+
+    <hr>
+    <h3>嵌套规则：</h3>
+    <p style="color: red">1. 块级元素可以包含内联元素或某些块级元素，但内联元素不能包含块级元素，它只能包含其它内联元素。</p>
+    <p style="color: blueviolet">2. 有几个特殊的块级元素只能包含内联元素，不能包含块级元素。如h1,h2,h3,h4,h5,h6,p,dt</p>
+    <p style="color: blue">3. li内可以包含div</p>
+    <p style="color: brown">4. 块级元素与块级元素并列、内联元素与内联元素并列。</p>
+</body>
+</html>

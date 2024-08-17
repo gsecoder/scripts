@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>组件注册</title>
+	<script src="vue.js" type="text/javascript" charset="UTF-8"></script>
+</head>
+<body>
+	<div id="app">
+		<button-counter></button-counter>
+		<com.secoder.test></com.secoder.test>
+	</div>
+
+	<script type="text/javascript">
+		/*全局组件定义*/
+		Vue.component(
+			'button-counter',{
+				props: ['title'],
+				data: function () {
+					return {}
+				},
+				template: '<div><h1>hi vue</h1></div>',
+				methods:{
+				
+				}
+			}
+		)
+		const vm = new Vue({
+			el: "#app",
+			data: {
+			
+			},
+			methods: {
+				clicknow: function (e) {
+					console.log(e)
+				}
+			},
+			/*局部组件定义*/
+			components:{
+				com.secoder.test:{
+					template: "<h2>h2...vue</h2>"
+				}
+			}
+		});
+	</script>
+</body>
+</html>

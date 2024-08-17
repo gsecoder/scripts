@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>day6apis-全文本框案例</title>
+</head>
+<body>
+
+	<h4>用户点击全选，则下面的复选框全部选择，取消全选则全部取消</h4>
+	<table>
+		<tr>
+			<th class="allCheck">
+				<label for="">
+					<input type="checkbox" name="" id="checkAll"> <span class="all">全选</span>
+				</label>
+			</th>
+			<th>商品</th>
+			<th>商家</th>
+			<th>价格</th>
+		</tr>
+		<tr>
+			<td>
+				<label for="">
+					<input type="checkbox" name="check" class="ck">
+				</label>
+			</td>
+			<td>小米手机</td>
+			<td>小米</td>
+			<td>¥1999</td>
+		</tr>
+		<tr>
+			<td>
+				<label for="">
+					<input type="checkbox" name="check" class="ck">
+				</label>
+			</td>
+			<td>华为手机</td>
+			<td>华为</td>
+			<td>¥2999</td>
+		</tr>
+		<tr>
+	 		<td>
+				<label for="">
+					<input type="checkbox" name="check" class="ck">
+				</label>
+			</td>
+			<td>苹果手机</td>
+			<td>苹果</td>
+			<td>¥5999</td>
+		</tr>
+	</table>
+
+	<script>
+		// 1、获取总复选框元素
+		const checkAll = document.querySelector('#checkAll')
+		// 2、获取所有子复选框
+		const cks = document.querySelectorAll('.ck')
+		
+		checkAll.addEventListener('click', function (ev) {
+			// 遍历子复选框，让其状态与总复选框的状态一致
+            for (let i = 0; i < cks.length; i++) {
+				cks[i].checked = this.checked
+            }
+        })
+	</script>
+</body>
+</html>

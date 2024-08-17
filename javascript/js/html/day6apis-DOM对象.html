@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>day6apis-DOM对象</title>
+	<style>
+		.box{
+			width: 200px;
+			height: 200px;
+		}
+	</style>
+</head>
+<body>
+	<div class="box">123</div>
+	<div class="box">456</div>
+	<p id="nav">导航栏</p>
+	<ul class="nav">
+		<li>第1个 li</li>
+		<li>第2个 li</li>
+		<li>第3个 li</li>
+	</ul>
+	<script>
+		const box = document.querySelector('div');
+        document.write(box);
+        console.log(box);
+		
+		const nav = document.querySelector('#nav');
+        console.log(nav);
+		
+		const li1 = document.querySelector('ul li:first-child');
+        console.log(li1);
+        
+        const lis = document.querySelectorAll('.nav li');
+        console.log(lis);
+        for(let i=0; i<lis.length; i++){
+            console.log(lis[i])
+        }
+	</script>
+
+</body>
+</html>

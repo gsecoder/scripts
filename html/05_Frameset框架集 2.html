@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>05. Frameset 框架集</title>
+</head>
+<frameset rows="200px, *">
+    和框架集相关的三个标签 frameset 标签、frame 标签、iframe 标签。使用 frameset 时不可以和 body 同时使用，因为它们是同级的。一个 frame 引导 了一个 html 文档。一个框架集可包含多个 html 文档
+    <frame src="http://www.baidu.com">
+    <frameset cols="30%, *">
+        <!--「Frameset 的一些属性」
+            cols="" 把一个浏览器窗口按列进行切割，也就是把浏览器竖着切分
+            cols="20%,200,*"左边部分占 20%，中间部分占 200px，剩下的为第三部分。
+            rows="20%,200,*"以行方式分割，横着划分
+            border="1" 通过值来设置
+            bordercolor=”red” 框架边的颜色
+        -->
+        <frame src="http://so.com">
+        <!--「Frame 的常用属」
+            ①name 设置框架名称。
+            ②src 设置此框架要显示的网页名称或路径。此为必须设置的属性
+            ③scrolling="" 设置是否要显示滚动条。设定值为 yes, n
+            ④noresize="noresize" noresize="noresize" 设置了noresize 的frame会影响其它两旁的frame，如果当前frame在最边上，则只影响它本身。chrome可设置在 frameset 中，这样全局都不可拖动，而火狐要设置在具体的 frame 上
+        -->
+        <frame src="http://163.com" name="Tester">
+    </frameset>
+
+    <!--iframe 内联框架
+        可以包含在 body 中，和普通的元素一样
+        相关属性
+        ①width 可设置内联框架的宽
+        ②height 可设置内联框架的高
+        ③name 设置框架名称
+        ④src 设置页面的路径
+        ⑤scrolling="" yes/no 滚动条
+    -->
+</frameset>
+<noframes>
+    <p>如果不支持 framset 框架集的话，要使用 noframes 标签来替代</p>
+    <body>您的浏览器无法处理框架！</body>
+</noframes>
+</html>

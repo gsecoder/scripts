@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>day5-遍历学生对象渲染信息表</title>
+</head>
+<body>
+	<table>
+		<caption>学生信息表</caption>
+		<tr>
+			<th>序号</th>
+			<th>姓名</th>
+			<th>年龄</th>
+			<th>性别</th>
+			<th>地址</th>
+		</tr>
+		<script>
+			// 学生信息数据
+			let students = [
+	            {name: "小明", age: 18, gender: 'm', address: "北京市"},
+	            {name: "小红", age: 19, gender: 'w', address: "上海市"},
+	            {name: "小王", age: 20, gender: 'w', address: "广州市"},
+	            {name: "小张", age: 21, gender: 'm', address: "深圳市"}
+			]
+			
+			// 循环遍历学生信息数组
+			for(let i=0; i<students.length; i++){
+	            document.write(`
+	                <tr>
+	                    <td>${i+1}</td>
+	                    <td>${students[i].name}</td>
+	                    <td>${students[i].age}</td>
+	                    <td>${students[i].gender}</td>
+	                    <td>${students[i].address}</td>
+	                </tr>
+	            `)
+			}
+		</script>
+	</table>
+	
+</body>
+</html>

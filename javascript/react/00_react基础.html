@@ -1,0 +1,890 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>00_react基础</title>
+
+    <!-- react底层的核心库 -->
+    <script src="https://unpkg.com/react@17/umd/react.development.js"></script>
+    <!-- React操作DOM的核心库，类似于jquery -->
+    <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+    <!-- 用于解析ES6语法 -->
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+    <style>
+        .danger {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <!-- ～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～ -->
+    <!--
+     React渲染三步走：
+        - 定义一个容器用于存放虚拟DOM
+        - 创建虚拟DOM元素
+        - 把虚拟DOM元素渲染到页面上
+    -->
+    <div id="root1"></div>
+    <div id="root2"></div>
+    <script>
+        // ES5创建方式
+        let element = React.createElement('li', {}, "hello react");
+        ReactDOM.render(element, document.getElementById("root1"))
+        // 如果有多层嵌套关系
+        let li1 = React.createElement('li', null, "A")
+        let li2 = React.createElement('li', {className: 'list-li'}, "B")
+        let _ul = React.createElement('ul', {id: 'list'}, li1, li2)
+        ReactDOM.render(_ul, document.getElementById("root2"))
+    </script>
+
+
+   <!-- ～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～ -->
+   <!-- es6 -->
+   <div id="root3"></div>
+   <div id="root4"></div>
+   <div id="root5"></div>
+   <script type="text/babel">
+        ReactDOM.render(
+            <ul>
+                <li className="li11">AA</li>
+                <li>BB</li>
+            </ul>,
+            document.getElementById("root3")
+        )
+
+        let div = <div className="hello"><h2>Hello React</h2></div>
+        ReactDOM.render(div, document.getElementById("root4"))
+
+        // jsx是js的语法扩展，jsx可以嵌套表达式。在编译之后，jsx表达式会被转为普通的js函数调用，并且对其取值后得到js对象
+        // jsx特定属性：可以使用引导将属性值指定为字符串字面量，也可以用大括号来给属性中插入一个表达式
+        let name = "secoder"
+        let flag = false
+        let id = "a"
+        let div2 = <div className="jsxs">
+            <h2 id={id}>hello {name}</h2>
+            <p>{name}</p>
+            <p>{flag ? "hello" : "react"}</p>
+        </div>
+        ReactDOM.render(div2, document.getElementById("root5"))
+   </script>
+
+
+    <!-- ～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～ -->
+    <!-- React元素渲染 -->
+    <div id="root6"></div>
+    <script type="text/babel">
+        function tick() {
+            let currentTime = new Date().toLocaleTimeString()
+            let author = "secoder"
+            let template = <div>
+                <h2>hello {author}</h2>
+                <p>现在的时间是：{currentTime}</p>
+            </div>
+            ReactDOM.render(template, document.getElementById("root6"))
+        }
+        // 定时器
+        setInterval(tick, 1000)
+    </script>
+
+    <!-- ～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～ -->
+    <!-- 条件判断
+        - 三目运算
+        - if...else...
+     -->
+    <div id="root7"></div>
+    <script type="text/babel">
+        let flag7 = true
+        let login7 = <div><h2>登陆7</h2></div>
+        let logout7 = <div><h2>退出7</h2></div>
+        ReactDOM.render(flag7 ? login7 : logout7, document.getElementById("root7"))
+    </script>
+    <div id="root8"></div>
+    <script type="text/babel">
+        // 上面的登陆的例子，使用函数式组件实现
+        function APP8() {
+            let flag8 = false
+            let login8 = <div><h2>登陆8</h2></div>
+            let logout8 = <div><h2>退出8</h2></div>
+            return flag8 ? login8 : logout8
+        }
+        ReactDOM.render(<APP8 />, document.getElementById("root8"))
+    </script>
+   <div id="root9"></div>
+   <script type="text/babel">
+       // 上面的登陆的例子，使用if...else...语法实现
+       function APP9() {
+           let flag9 = false
+           if (flag9) {
+               return <div><h2>登陆9</h2></div>
+           } else {
+               return <div><h2>登出9</h2></div>
+           }
+       }
+       ReactDOM.render(<APP9 />, document.getElementById("root9"))
+   </script>
+
+
+    <!-- ～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～ -->
+    <!-- class详解
+    - es5的写法
+    - es6的写法
+    - 类方法和原型方法
+      - 构造函数的prototype属性，在es类上面继续存在，类所有的方法都定义在prototype上面
+      - constructor()、add()其实都是定义在Persons.prototype上；所以类的实例上调用方法，其实就是调用原型上的方法
+    - 定义类
+      - b.constructor === B.prototype.constructor
+      - b是B实例，它的constructor方法就是B类原型的constructor方法
+      - 定义类,跟ES5一样，实例的属性除非显式定义在其本身(即定义在this上）否则都是定义在原型上(即定义在calss上)
+     -->
+     <div id="root10"></div>
+     <script type="text/babel">
+        // es5语法生成实例对象的传统方法是通过构造函数
+        function Person10(x, y) {
+            this.x = x
+            this.y = y
+        }
+        Person10.prototype.add = function () {
+            console.log("x + y = ", this.x + this.y)
+        }
+        let p10 = new Person10(1, 2)
+
+        // 上面的代码改成es6语法改写
+       class Person11{
+            constructor(a, b) {
+                this.a = a
+                this.b = b
+            }
+            add() {
+                console.log(this.a + this.b)
+            }
+       }
+       let p11 = new Person11(2, 3)
+
+
+        // 类方法和原型方法：构造函数的prototype属性，在es类上面继续存在，类所有的方法都定义在prototype上面
+        console.log("typeof Person11: " , typeof Person11)  // function
+
+        // constructor()、add()其实都是定义在Persons.prototype上；所以类的实例上调用方法，其实就是调用原型上的方法
+        console.log("Person10 === Person10.prototype.constructor", Person10 === Person10.prototype.constructor) // true
+
+        // 定义类
+        // b.constructor === B.prototype.constructor
+        // b是B实例，它的constructor方法就是B类原型的constructor方法
+        class B{}
+        let b = new B()
+        console.log("b.constructor", b.constructor)  // class B{}
+        console.log("B.prototype.constructor", B.prototype.constructor)  // class B{}
+        console.log("b.constructor === B.prototype.constructor", b.constructor === B.prototype.constructor)  // true
+
+        // 定义类,跟ES5一样，实例的属性除非显式定义在其本身(即定义在this上）否则都是定义在原型上(即定义在calss上)
+        class Hello{
+            __proto__;
+            constructor(c, d) {
+                this.c = c
+                // 在constructor中改变this指向的话，这里就是true
+                this.delete = this.delete.bind(this)
+            }
+            add() {
+                console.log(this.c)
+            }
+            delete() {
+                console.log("")
+            }
+        }
+        let hello = new Hello(2)
+        hello.add() // 2
+        console.log("hello: ", hello) // Hello {x:2}
+        // hasOwnProperty指示对象自身属性中是否具有指定的属性
+        console.log("hello.hasOwnProperty('x'): ", hello.hasOwnProperty('x')) // true
+        console.log("hello.hasOwnProperty('y'): ", hello.hasOwnProperty('y')) // false
+        console.log("hello.hasOwnProperty('delete'): ", hello.hasOwnProperty('delete')) // true
+        console.log("hello.hasOwnProperty('add'): ", hello.hasOwnProperty('add')) // false
+        console.log("hello.__proto__.hasOwnProperty('add'): ", hello.__proto__.hasOwnProperty("add")) // true
+     </script>
+
+
+    <!-- ～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～ -->
+    <!-- 组件状态：无状态、有状态 -->
+    <div id="root11"></div>
+    <div id="root12"></div>
+    <script type="text/babel">
+        // class组件（有状态组件）
+        class Hello12 extends React.Component {
+            constructor() {
+                // 子类必须在constructor构造器中调用super()方法
+                // 从而得到父类的this对象，否则会报错。super是把属性传递给父级的构造类对象
+                super()
+                this.state = {
+                    name: "nameA",
+                    age: "ageA",
+                    job: "jobA"
+                }
+
+                // super(加不加props的区别
+                // 需要在构造西数中使用this.props/props则在构造器和super()中添加props参数
+                // 如果不需要传值的话就不用在super中接受props
+                console.log(props)
+            }
+
+
+            // render是生命周期里面非常基础和底层的方法，一定要用它来进行渲染
+            render() {
+                return <div>
+                    <h1>我是一个有状态的组件</h1>
+                    <p>姓名：{this.state.name}</p>
+                    <p>年龄：{this.state.age}</p>
+                    <p>职业：{this.state.job}</p>
+                    <p>传进来的姓名：{this.props.name}</p>
+                    <p>传进来的年龄：{this.props.age}</p>
+                    <p>传进来的职业：{this.props.job}</p>
+                </div>
+            }
+        }
+
+        ReactDOM.render(<Hello12 name="React" age="18" job="QA"/>, document.getElementById("root12"))
+    </script>
+
+    <!-- ～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～ -->
+    <!-- 事件处理 -->
+    <div id="root13"></div>
+    <script type="text/babel">
+        class Hello13 extends React.Component {
+            constructor() {
+                super();
+                this.state = {
+                    name: "事件处理",
+                    age: 18,
+                    flag: true
+                }
+                this.updateAge = this.updateAge.bind(this)
+                this.updateFlag = this.updateFlag.bind(this)
+            }
+
+            updateAge() {
+                this.setState({age: this.state.age + 1})
+            }
+            updateFlag() {
+                this.setState({flag: !this.state.flag})
+            }
+
+            render() {
+                return <div>
+                    <h3>事件处理</h3>
+                    <p>姓名：{this.state.name}</p>
+                    <p>年龄：{this.state.age}</p>
+                    <button onClick={this.updateAge}>长大</button>
+                    <button onClick={this.updateFlag}>{this.state.flag ? "Yes" : "No"}</button>
+                </div>
+            }
+        }
+
+        ReactDOM.render(
+            <Hello13 />,
+            document.getElementById("root13")
+        )
+    </script>
+
+    <!-- 默认事件处理 -->
+    <div id="root14"></div>
+    <script type="text/babel">
+        class Hello14 extends React.Component {
+            constructor() {
+                super();
+                this.state = {
+                    name: "事件处理",
+                    age: 18,
+                    flag: true
+                }
+                // 如果不在constructor绑定this，打印出来的值是undefined
+                // this.updateAge = this.updateAge.bind(this)
+                this.updateFlag = this.updateFlag.bind(this)
+            }
+
+            updateName() {
+                this.setState({name: "事件处理update"})
+            }
+            // 箭头函数的变种【比较建议这种方式来绑定this对象】
+            resetName = () => {
+                this.setState({name: "事件处理"})
+            }
+            
+            updateAge() {
+                this.setState({age: this.state.age + 1})
+            }
+            updateFlag() {
+                this.setState({flag: !this.state.flag})
+            }
+            
+            handleClick(e){
+                e.preventDefault()
+                console.log("preventDefault")
+            }
+
+            render() {
+                console.log(this)
+                return <div>
+                    <h3>事件处理--我是一个有状态的组件</h3>
+                    <p>姓名：{this.state.name}</p>
+                    <p>年龄：{this.state.age}</p>
+                    <a href="#" onClick={this.updateAge.bind(this)}>click+1【bind方法】</a>
+                    <p></p>
+                    <button onClick={() => this.updateName()}>更改姓名【箭头函数方法】</button>&nbsp;
+                    <button onClick={this.resetName}>姓名复原【箭头函数方法】</button>&nbsp;
+                    <button onClick={this.updateFlag}>{this.state.flag ? "Yes" : "No"}</button>
+                </div>
+            }
+        }
+
+        ReactDOM.render(
+            <Hello14 />,
+            document.getElementById("root14")
+        )
+    </script>
+
+    <!-- 事件&条件处理（子组件与父组件的状态更改） -->
+    <div id="root15"></div>
+    <script type="text/babel">
+        function LoginSon() {
+            return <button>【LoginSon】</button>
+        }
+        function LogoutSon() {
+            return <button>【LogoutSon】</button>
+        }
+        
+        function LoginChangeFather(props) {
+            return <button onClick={props.update}>【LoginChangeFather】</button>
+        }
+        function LogoutChangeFather(props) {
+            return <button onClick={props.update}>【LogoutChangeFather】</button>
+        }
+        class FatherApp extends React.Component {
+            state = {
+                isLogin: false
+            }
+            updateState = () => {
+                this.setState({isLogin: !this.state.isLogin})
+            }
+            render() {
+                console.log(this)
+                const {isLogin} = this.state
+                return <div>
+                    <h3>事件&条件处理，父组件获取状态更新子组件</h3>
+                    {isLogin ? <LoginSon /> : <LogoutSon />}
+                    <button onClick={this.updateState}>父组件更新状态</button>
+                    
+                    <h3>事件&条件处理，子组件自行改变父组件状态）</h3>
+                    <p>jsx无法直接渲染布尔值，需要转为字符串String：{String(isLogin)}</p>
+                    <p>jsx无法直接渲染布尔值，需要转为字符串JSON.stringify：{JSON.stringify(isLogin)}</p>
+                    {isLogin ? <LoginChangeFather update={this.updateState} /> : <LogoutChangeFather update={this.updateState} />}
+                </div>
+            }
+        }
+
+        ReactDOM.render(
+            <FatherApp />,
+            document.getElementById("root15")
+        )
+    </script>
+
+
+    <!-- =========================================================================================================== -->
+    <!-- 02_表单处理 -->
+    <!-- ～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～ -->
+    <div><h2>021_相关概念</h2></div>
+    
+    <!-- root0211.受限组件和非受限组件 
+       结论，我们发现页面input输入框里的值是制毒不可编辑状态；如果需要改变值，需要进行双向数据绑定来改变值
+    -->
+    <div id="root0211"></div>
+    <script type="text/babel">
+        class App0211 extends React.Component {
+            render() {
+                return <div>
+                    <h3>root0211.受限组件和非受限组件</h3>
+                    <p></p>
+                    <input type="text" value="123" />
+                </div>
+            }
+        }
+        
+        ReactDOM.render(
+            <App0211 />, document.getElementById("root0211")
+        )
+    </script>
+
+    <!-- root0212.双向数据绑定 
+       结论，我们发现页面input输入框里的值是制毒不可编辑状态；如果需要改变值，需要进行双向数据绑定来改变值
+    -->
+    <div id="root0212"></div>
+    <script type="text/babel">
+        class App0212 extends React.Component {
+            state = {
+                value: "默认值"
+            }
+            changeInputValue = (e) => {
+                console.log(e)
+                this.setState({value: e.target.value})
+            }
+            
+            render() {
+                return <div>
+                    <h3>root0212.受限组件和非受限组件</h3>
+                    <p></p>
+                    
+                    <h4>input-text受限组件</h4>
+                    <input type="text" value={this.state.value} onChange={this.changeInputValue} />
+                    <p>双向数据绑定：{this.state.value}</p>
+                    
+                    <h4>input-textarea受限组件</h4>
+                    <input type="textarea" value={this.state.value} onChange={this.changeInputValue} />
+                    <p>双向数据绑定：{this.state.value}</p>
+                    
+                    <h4>input-radio受限组件&不受限组件</h4>
+                    <label>
+                        <input type="radio" name="person" checked />吃饭
+                        <input type="radio" name="person" />睡觉
+                        <input type="radio" name="person" />工作
+                    </label>
+                    <br/>
+                    <label>
+                        <input type="radio" name="person" defaultChecked />吃饭
+                        <input type="radio" name="person" />睡觉
+                        <input type="radio" name="person" />工作
+                    </label>
+                    
+                    <h4>input-checkbox受限组件&不受限组件</h4>
+                    <label>input-checkbox受限组件:
+                        <input type="checkbox" checked />苹果
+                        <input type="checkbox" />香蕉
+                        <input type="checkbox" />葡萄
+                        <input type="checkbox" checked />荔枝
+                    </label>
+                    <br/>
+                    <label>input-checkbox不受限组件
+                        <input type="checkbox" defaultChecked />苹果
+                        <input type="checkbox" />香蕉
+                        <input type="checkbox" />葡萄
+                        <input type="checkbox" />荔枝
+                    </label>
+                    
+                    <h4>select受限组件&不受限组件</h4>
+                    <label> select受限组件：
+                        <select value="B">
+                            <option value="A1">A1</option>
+                            <option value="B1">B1</option>
+                            <option value="C1">C1</option>
+                        </select>
+                    </label><br/>
+                    <label> select不受限组件：
+                        <select multiple={true} defaultValue={["A2", "D2"]}>
+                            <option value="A2">A2</option>
+                            <option value="B2">B2</option>
+                            <option value="C2">C2</option>
+                            <option value="D2">D2</option>
+                        </select>
+                    </label>
+                    
+                </div>
+            }
+        }
+        
+        ReactDOM.render(
+            <App0212 />, document.getElementById("root0212")
+        )
+    </script>
+
+    <!-- ～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～ -->
+    <div><h2>022_表单提交</h2></div>
+    <div id="root02210"></div>
+    <script type="text/babel">
+        class App02210 extends React.Component {
+            state = {
+                name: "姓名",
+                sex: "1",
+                itemi: "B",
+                itemx: "E",
+                city: "",
+                defaultCity: "上海",
+                text: "文本框",
+                info: ""
+            }
+            
+            nameChange = (e) => {
+                this.setState({name: e.target.value})
+            }
+            handleSelect = (e) => {
+                this.setState({item: e.target.value})
+            }
+            handleSelectCity = (e) => {
+                this.setState([e.target.name], e.target.value)
+            }
+            textChange = (e) => {
+                this.setState({text: e.target.value})
+            }
+            handleSubmit = () => {
+                alert(JSON.stringify(this.state))
+                console.log("App02210: ", this.state)
+            }
+            
+            render() {
+                // 解构属性值
+                let {name, sex, itemi, itemx, city, defaultCity, info, text} = this.state
+                let items1 = ["D", "E", "F"]
+                city = [{"id": 1, "cityName": "北京"},
+                        {"id": 2, "cityName": "上海"},
+                        {"id": 3, "cityName": "广州"},
+                        {"id": 4, "cityName": "深圳"}]           
+                return <div>
+                    <form>
+                        <label>姓名：<input type="text" defaultValue={name} onChange={this.nameChange} /></label>
+                        <br/>
+                        <label>性别：
+                            <input type="radio" name="sex" value="1" defaultChecked={sex === '1' ? true : false} />男
+                            <input type="radio" name="sex" value="2" defaultChecked={sex === '2' ? true : false}/>女
+                        </label>
+                        <br/>
+                        <label>写死的选项：
+                            <select defaultValue={itemi} onChange={this.handleSelect}>
+                                <option value="A">A</option>
+                                <option value="B">B</option>
+                                <option value="C">C</option>
+                            </select>
+                        </label>
+                        <br/>
+                        <label>循环的选项：
+                           <select defaultValue={itemx} onChange={this.handleSelect}>
+                               {
+                                   items1.map((item, index) => 
+                                       <option key={index} value={item}>{item}</option>
+                                   )
+                               }
+                           </select>
+                        </label>
+                        <br/>
+                        <label>循环数组项city：
+                           <select defaultValue={defaultCity} onChange={this.handleSelect}>
+                               {
+                                   city.map((item) => 
+                                       <option key={item.id} value={item.id}>{item.cityName}</option>
+                                   )
+                               }
+                           </select>
+                        </label>
+                        <br/>
+                        <label>备注：
+                            <textarea defaultValue={text} onChange={this.textChange}></textarea>
+                        </label>
+                        <br/>
+                        <button onClick={this.handleSubmit}>【提交】</button>
+                    </form>
+                </div>
+            }
+        }
+        ReactDOM.render(<App02210 />, document.getElementById("root02210"))
+    </script>
+
+    <!-- ～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～ -->
+    <div><h2>023_表单封装</h2></div>
+    <div id="root02212"></div>
+    <script type="text/babel">
+        class App02212 extends React.Component {
+            state = {
+                name: "",
+                password: "",
+                sex: "",
+                address: ""
+            }
+            
+            handleChange = (e) => {
+                // e.target.name 动态获取表单元素的name属性的值:name、password、address
+                this.setState({[e.target.name]: e.target.value})
+                
+                // 写法二
+                // let target_name = e.target.name
+                // this.setState({[target_name]: e.target.value})
+                
+            }
+            handleSubmit = () => {
+                alert(JSON.stringify(this.state))
+                console.log("App02210: ", this.state)
+            }
+            
+            render() {
+                // 解构属性值
+                let {name, password, sex, address, text} = this.state
+                let city = [
+                        {"id": 1, "cityName": "北京"},
+                        {"id": 2, "cityName": "上海"},
+                        {"id": 3, "cityName": "广州"},
+                        {"id": 4, "cityName": "深圳"}
+                ]
+                
+                return <div>
+                    <form>
+                        <label>姓名：<input type="text" name="name" defaultValue={name} onChange={this.handleChange} /></label>
+                        <br/>
+                        
+                        <label>密码：<input type="text" name="password" defaultValue={password} onChange={this.handleChange} /></label>
+                        <br/>
+                        
+                        <label>性别：
+                            <input type="radio" name="sex" value="1" defaultChecked={sex === '1' ? true : false} onChange={this.handleChange} />男
+                            <input type="radio" name="sex" value="2" defaultChecked={sex === '2' ? true : false} onChange={this.handleChange} />女
+                        </label>
+                        <br/>
+                        
+                        <label>循环数组项city：
+                           <select name="address" defaultValue={address} onChange={this.handleChange}>
+                               {
+                                   city.map((item) => 
+                                       <option key={item.id} value={item.id}>{item.cityName}</option>
+                                   )
+                               }
+                           </select>
+                        </label>
+                        <br/>
+                        
+                        <label>备注：
+                            <textarea name="text" defaultValue={text} onChange={this.handleChange}></textarea>
+                        </label>
+                        <br/>
+                        
+                        <button onClick={this.handleSubmit}>【提交】</button>
+                    </form>
+                </div>
+            }
+        }
+        ReactDOM.render(<App02212 />, document.getElementById("root02212"))
+    </script>
+
+    <!-- ～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～ -->
+    <div><h2>0241_表单校验</h2></div>
+    <div id="root0241"></div>
+    <script type="text/babel">
+        class App0241 extends React.Component {
+            state = {
+                name: "",
+                nameTips: "",
+                password: "",
+                passwordTips: "",
+                sex: "",
+                phone: "",
+                address: ""
+            }
+            
+            handleChange = (e) => {
+                // e.target.name 动态获取表单元素的name属性的值:name、password、address
+                this.setState({[e.target.name]: e.target.value})
+            }
+            handleSubmit = () => {
+                alert(JSON.stringify(this.state))
+                console.log("App02210: ", this.state)
+            }
+
+            // 姓名输入规则校验
+            nameChange = (e) => {
+                let nameValue = e.target.value
+                // console.log("xxxx: ", nameValue)
+                let tips = ''
+                let nameRule = /^[0-9a-zA-Z_-]{4, 10}/
+                if (!nameValue) {
+                    tips = "请输入姓名"
+                } else if (!nameRule.com.secoder.test(nameValue)) {
+                    tips = "请输入4-10位的字符"
+                } else {
+                    tips = ''
+                }
+
+                this.setState({
+                    name: nameValue,
+                    nameTips: tips
+                })
+            }
+
+            // 密码输入规则校验
+            passwordChange = (e) => {
+                let passwordValue = e.target.value
+                let tips = ''
+                let passwordRule = /^\S*(?=\S{6,})(?=\S*\d)(?=\S*[A-Z])(?=\S*[a-z])(?=\S*[!@#$%^&*? ])\S*$/
+                if (!passwordValue) {
+                    tips = "请输入密码"
+                } else if (!passwordRule.com.secoder.test(passwordValue)) {
+                    tips = "请输入至少6位，包含数字、字母的字符"
+                } else {
+                    tips = ''
+                }
+
+                this.setState({
+                    password: passwordValue,
+                    passwordTips: tips
+                })
+            }
+            
+            render() {
+                // 解构属性值；如果不解构的话，需要在每次引用的时候this.state.name
+                let {name, nameTips, password, passwordTips, sex, phone, address} = this.state
+                let city = [
+                        {"id": 1, "cityName": "北京"},
+                        {"id": 2, "cityName": "上海"},
+                        {"id": 3, "cityName": "广州"},
+                        {"id": 4, "cityName": "深圳"}
+                ]
+                
+                return <div>
+                    <form>
+                        <label>姓名：<input type="text" name="name" defaultValue={name} onChange={this.nameChange} /></label>
+                        &nbsp;<span className="danger">{nameTips}</span>
+                        <br/>
+                        
+                        <label>密码：<input type="text" name="password" defaultValue={password} onChange={this.passwordChange} /></label>
+                        &nbsp;<span className="danger">{passwordTips}</span>
+                        <br/>
+                        
+                        <label>性别：
+                            <input type="radio" name="sex" value="1" defaultChecked={sex === '1' ? true : false} onChange={this.handleChange} />男
+                            <input type="radio" name="sex" value="2" defaultChecked={sex === '2' ? true : false} onChange={this.handleChange} />女
+                        </label>
+                        <br/>
+
+                        <label>手机：<input type="text" name="phone" defaultValue={phone} onChange={this.handleChange} /></label>
+                        <br/>
+                        
+                        <label>地址：
+                           <select name="address" defaultValue={address} onChange={this.handleChange}>
+                               {
+                                   city.map((item) => 
+                                       <option key={item.id} value={item.id}>{item.cityName}</option>
+                                   )
+                               }
+                           </select>
+                        </label>
+                        <br/>
+                        
+                        <button onClick={this.handleSubmit}>【提交】</button>
+                    </form>
+                </div>
+            }
+        }
+        ReactDOM.render(<App0241 />, document.getElementById("root0241"))
+    </script>
+
+    <!-- ～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～ -->
+    <div><h2>0242_表单校验（精简优化）</h2></div>
+    <div id="root0242"></div>
+    <script type="text/babel">
+        class App0242 extends React.Component {
+            state = {
+                name: "",
+                nameTips: "",
+                password: "",
+                passwordTips: "",
+                sex: "",
+                phone: "",
+                phoneTips: "",
+                address: ""
+            }
+
+            // 需要校验的方法封装
+            handleValidate (e, info1, info2) {
+                let {name, value} = e.target
+                let rule = new RegExp(e.target.getAttribute('rule'))
+                let tips = ''
+                // let nameRule =
+                if (!value) {
+                    tips = info1
+                } else if (!rule.com.secoder.test(value)) {
+                    tips = info2
+                } else {
+                    tips = ''
+                }
+
+                this.setState({
+                    [name]: value,
+                    [name + 'Tips']: tips
+                })
+            }
+
+            // 无需校验的方法封装
+            handleChange = (e) => {
+                // e.target.name 动态获取表单元素的name属性的值:name、password、address
+                this.setState({[e.target.name]: e.target.value})
+            }
+            handleSubmit = () => {
+                // 提交我们想要的值，可以按照下面的方法处理
+                let {name, password, sex, phone, address} = e.target.value
+                let data = {name, password, sex, phone, address}
+                alert(JSON.stringify(data))
+                console.log("App02210: ", data)
+            }
+
+            render() {
+                // 解构属性值；如果不解构的话，需要在每次引用的时候this.state.name
+                let {name, nameTips, password, passwordTips, sex, phone, phoneTips, address} = this.state
+                let city = [
+                    {"id": 1, "cityName": "北京"},
+                    {"id": 2, "cityName": "上海"},
+                    {"id": 3, "cityName": "广州"},
+                    {"id": 4, "cityName": "深圳"}
+                ]
+
+                return <div>
+                    <form>
+                        <label>姓名：
+                            <input type="text" name="name" defaultValue={name} onChange={(e) => this.handleValidate(e, '请输入姓名', '请输入4-10位的字符')}
+                                   rule="^[0-9a-zA-Z_-]{4, 10}"
+                            />
+                        </label>
+                        &nbsp;<span className="danger">{nameTips}</span>
+                        <br/>
+
+                        <label>密码：
+                            <input type="text" name="password" defaultValue={password} onChange={(e) => this.handleValidate(e, '请输入密码', '请输入至少6位，包含数字、字母的字符')}
+                                   rule="^\S*(?=\S{6,})(?=\S*\d)(?=\S*[A-Z])(?=\S*[a-z])(?=\S*[!@#$%^&*? ])\S*$"
+                            />
+                        </label>
+                        &nbsp;<span className="danger">{passwordTips}</span>
+                        <br/>
+
+                        <label>手机：
+                            <input type="text" name="phone" defaultValue={phone} onChange={(e) => this.handleValidate(e, '请输入手机', '请输入开头位1的11位手机号')}
+                                   rule="^(?:(?:\+|00)86)?1[3-9]\d{9}$" />
+                        </label>
+                        &nbsp;<span className="danger">{phoneTips}</span>
+                        <br/>
+
+                        <label>性别：
+                            <input type="radio" name="sex" value="1" defaultChecked={sex === '1' ? true : false} onChange={this.handleChange} />男
+                            <input type="radio" name="sex" value="2" defaultChecked={sex === '2' ? true : false} onChange={this.handleChange} />女
+                        </label>
+                        <br/>
+
+
+                        <label>地址：
+                            <select name="address" defaultValue={address} onChange={this.handleChange}>
+                                {
+                                    city.map((item) =>
+                                        <option key={item.id} value={item.id}>{item.cityName}</option>
+                                    )
+                                }
+                            </select>
+                        </label>
+                        <br/>
+
+                        <button onClick={this.handleSubmit}>【提交】</button>
+                        <br/>
+
+                        {/* 如果对应的值为空，我们设置提交为禁用状态*/}
+                        <button disabled={!name || !password || !phone} onClick={this.handleSubmit}>【提交】</button>
+                    </form>
+                </div>
+            }
+        }
+        ReactDOM.render(<App0242 />, document.getElementById("root0242"))
+    </script>
+
+
+    <!-- =========================================================================================================== -->
+    <!-- 03_React项目搭建 -->
+
+</body>
+</html>

@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>day8apis-DOM节点删除</title>
+</head>
+<body>
+	<ul>
+		<li>没用了删除</li>
+		<li>有用不能删除</li>
+	</ul>
+
+	<script>
+		const ul = document.querySelector('ul')
+		ul.removeChild(ul.children[0])
+	</script>
+</body>
+</html>

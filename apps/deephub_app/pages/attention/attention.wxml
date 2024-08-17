@@ -1,0 +1,19 @@
+<!--pages/attention.wxml-->
+<view class="attention">
+    <view class="attention_title">你的关注</view>
+    <view class="attention_item" wx:for="{{ attention_ups }}" wx:for-index="up_id" wx:for-item="up_nickname">
+        {{ up_id }} -- {{ up_nickname }}
+    </view>
+    <view>UP详细信息</view>
+    <view class="up_detail">
+        {{up_xiaoming.name}}
+        {{up_xiaoming.age}}
+    </view>
+
+    <view bindtap="upload_image">请上传图片</view>
+    <view class="iamge_container">
+        <image wx:for="{{imageList}}" src="{{item}}"></image>
+    </view>
+</view>
+
+

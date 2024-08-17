@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>10_DOM_06onchange事件</title>
+</head>
+<body>
+	<!--这里面还有个BUG未解决：选择第二个省份时第一个省份的城市未清除-->
+	<select name="" id="s1">
+		<option value="">请选择省份</option>
+		<option value="shanxi">陕西省</option>
+		<option value="beijing">北京市</option>
+		<option value="sichuan">四川省</option>
+	</select>
+	<select name="" id="c1">
+		<option value="city">请选择城市</option>
+	</select>
+	<script>
+		/*
+		var ele1 = document.getElementById('s1');
+		// 下拉菜单，和你当前事件不同的时候触发事件
+		ele1.onchange = function () {
+		    console.log('1213')
+		}
+		*/
+		var data = {
+		    'shanxi':[
+		        '西安市', '汉中市', '宝鸡市'
+            ],
+			'beijing':[
+			    '朝阳区', '海淀区', '西城区'
+			],
+			'sichuan':[
+			    '青羊区', '武侯区', '成华区'
+			]
+		};
+		var ele_select = document.getElementById('s1');
+		var ele_citys = document.getElementById('c1');
+
+		ele_select.onchange = function () {
+		    var ele_province = this.value;
+		    var citys = data[ele_province];
+			console.log(citys);
+
+			for(var i=0; i<citys.length; i++){
+                // <option></option>
+                var ele_option = document.createElement('option');
+                // 得到有文本的option标签
+                ele_option.innerHTML = citys[i];
+                // 设置属性值
+                ele_option.value = i + 1;
+                console.log(ele_option);
+                ele_citys.appendChild(ele_option);
+			}
+		}
+	</script>
+</body>
+</html>

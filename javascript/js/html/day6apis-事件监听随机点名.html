@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>day6apis-事件监听随机点名</title>
+</head>
+<body>
+	<h4>随机点名</h4>
+	<div class="box">
+		<span>名字是：</span>
+		<div class="qs">随机显示的问题</div>
+	</div>
+	<br>
+	<div class="btns">
+		<button class="start">开始</button>
+		<button class="end">结束</button>
+	</div>
+
+	<script>
+		let arr = ['周瑜','诸葛亮','刘备','张飞','曹操','关羽','鲁肃','夏侯渊','司马懿']
+		let startTimer = 0;
+        let randomVal = 0;
+		// 开始按钮的相关操作
+		const start = document.querySelector('.start')
+		const qs = document.querySelector('.qs')
+		start.addEventListener('click', function(){
+            startTimer = setInterval(function(){
+                randomVal = parseInt(Math.random() * arr.length)
+				qs.innerHTML = arr[randomVal];
+            }, 35)
+			
+			// 如果数组只有一个值，禁用按钮
+			if(arr.length===1){
+                start.disabled = true
+                end.disabled = true
+			}
+		})
+		
+		const end = document.querySelector('.end')
+		end.addEventListener('click', function(){
+            clearInterval(startTimer)
+			// 结束了删除掉抽取到的元素
+			arr.splice(randomVal, 1)
+		})
+	</script>
+</body>
+</html>

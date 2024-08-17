@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>10_DOM_05事件传播</title>
+    <style>
+        .box1 {
+            width: 300px;
+            height: 300px;
+            background-color: rebeccapurple;
+        }
+        .box2{
+            width: 150px;
+            height: 150px;
+            background-color: yellow;
+        }
+    </style>
+
+</head>
+<body>
+    <div class="box1">
+        <div class="box2"></div>
+    </div>
+
+    <script>
+        /*
+        * 因为box1是box2的的父亲，所以给父亲一个绑定事件，就相当于给儿子一个绑定事件。
+        * 所以如果运行box2的绑定事件，就会把自己和父亲box1的事件都执行了
+        * 如果只想让儿子执行自己的事件，那么就得阻止事件传播
+        * */
+        var ele1 = document.getElementsByClassName('box1')[0];
+        var ele2 = document.getElementsByClassName('box2')[0];
+
+        ele1.onclick = function () {
+            console.log('box1');
+        };
+
+        ele2.onclick = function (event) {
+            console.log('box2');
+            console.log(event);
+            console.log(event.keyCode);
+            // 阻止事件的传播
+            event.stopPropagation();
+        };
+    </script>
+</body>
+</html>

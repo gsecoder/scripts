@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>10_DOM_10获取value属性值</title>
+</head>
+<body>
+    <input class="text" id="c1">
+    <select name="pro" id="s1">
+        <option value="1">河北省</option>
+        <option value="2">河南省</option>
+        <option value="3">北京市</option>
+    </select>
+    <button>show</button>
+
+    <script>
+        var ele_btn = document.getElementsByTagName('button')[0];
+
+        ele_btn.onclick = function () {
+            var ele_input = document.getElementById('c1');
+            var ele_select = document.getElementById('s1');
+
+            console.log(ele_select.value)
+            console.log(ele_input.value)
+        }
+    </script>
+</body>
+</html>

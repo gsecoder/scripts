@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>day6apis-冒泡阻止默认行为</title>
+</head>
+<body>
+	<form action="http://www.baidu.com">
+		<input type="submit" value="免费注册">
+	</form>
+	<br>
+	<a href="http://www.baidu.com">百度一下</a>
+
+	<script>
+		const form = document.querySelector('form')
+		form.addEventListener('submit', function (ev) {
+			ev.preventDefault()
+        })
+		
+		const a = document.querySelector('a')
+		a.addEventListener('click', function (ev) {
+			ev.preventDefault()
+        })
+	</script>
+</body>
+</html>

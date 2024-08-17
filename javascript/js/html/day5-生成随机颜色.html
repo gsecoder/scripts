@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>day5-生成随机颜色</title>
+	<style>
+		div {
+			width: 300px;
+			height: 300px;
+		}
+	</style>
+</head>
+<body>
+	<div></div>
+	<script>
+		// 自定义一个随机颜色函数
+		function getRandomColor(flag=true){
+            if (flag){
+                let str = '#';
+	            let arr = ['0', '1', '2', '3',  '4', '5', '6', '7', '8', '9', 'a', 'b', 'c', 'd', 'e', 'f']
+	            // for 循环 6 次累加到 str
+	            for (let i=1; i<=6; i++){
+                    let randomVal = Math.floor(Math.random() * arr.length);
+                    str += arr[randomVal]
+	            }
+                return str
+            } else {
+                let red = Math.floor(Math.random() * 256)
+                let green = Math.floor(Math.random() * 256)
+                let blue = Math.floor(Math.random() * 256)
+                return `rgb(${red}, ${green}, ${blue})`
+            }
+		}
+        
+        const div = document.querySelector('div');
+        div.style.backgroundColor = getRandomColor(true)
+	</script>
+</body>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>生命周期钩子</title>
+    <scritp src="vue.js" type="text/javascript" charset="utf-8"></scritp>
+</head>
+<body>
+    <div id="app">
+        {{ msg }}
+    </div>
+
+    <script>
+        /*const data = {
+            "msg": "com.secoder.base.Hello Vue",
+        };*/
+        const vm = new Vue({
+            el: "#app",
+            data: {
+                msg: 'Hi Vue!',
+            },
+            /*
+            * 在实例初始化之后，数据观测（data abserver） 和 event/watcher
+            * */
+            beforeCreate: function() {
+                console.log("beforeCreate");
+            },
+            /*
+            * 在实例创建完成后被立即调用
+            * 这一步，实例已完成以下的配置：数据观测 (data observer)，属性和方法的运算，watch/event 事件回调。
+            * 然而，挂载阶段还没开始，$el 属性目前不可见
+            */
+            created: function() {
+                console.log("created");
+            },
+            /*
+            * 在挂载开始之前被调用，相关的渲染函数首次被调用
+            */
+            beforeMount: function() {
+                console.log("beforeMount");
+            },
+            /*
+            * el 被新创建的 vm.$el 替换, 挂在成功
+            */
+            mounted: function() {
+                console.log("mounted");
+            },
+            /*
+            * 数据更新时调用
+            */
+            beforeUpdate: function() {
+                console.log("beforeUpdate");
+            },
+            /*
+            * 组件 Dom 已经更新，组件更新完毕
+            */
+            updated: function() {
+                console.log("updated");
+            }
+        });
+
+        setTimeout(function(){
+            vm.msg = "change ......";
+        }, 3000);
+    </script>
+</body>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>11_DOM实例_03搜索框</title>
+</head>
+<body>
+
+	<input type="text" placeholder="username" id="submit">
+	<input type="text" value="username" id="submit1">
+
+	<script>
+		var ele = document.getElementById('submit1');
+		ele.onfocus = function () {
+            //先获取焦点，点击输入框就获取到焦点，光标一上去就把值设成空
+		    this.value = '';
+		};
+
+		ele.onblur = function () {
+		    /*
+		    * 当光标不点击那个输入框的时候就失去焦点了
+		    * 当失去焦点的时候，判断当前的那个值是不是为空，是否含有空格
+		    * 如果为空或者有空格，用trim()去掉空格。然后赋值为username
+		    * */
+			if(this.value.trim()==''){
+			    this.value = 'username'
+			}
+        }
+
+
+	</script>
+</body>
+</html>

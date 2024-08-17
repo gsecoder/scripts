@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>day9sjs-函数进阶</title>
+</head>
+<body>
+
+	<script>
+		/**
+		 * 函数提升
+		 *  1、会把所有函数声明提升到当前作用域的最前面
+		 *  2、只提升函数声明，不提升函数调用
+		 * */
+        fn()
+		function fn() {
+			console.log("函数提升")
+        }
+		// 注意：函数表达式不存在提升的现象
+		// fnx()
+		var fnx = function () {
+			console.log("函数表达式不存在提升的现象")
+        }
+        
+        
+        
+        /**
+         * 函数的参数-动态参数
+         * */
+        // 求和参数
+        function getSum() {
+	        console.log("arguments: ", arguments)
+	        let sum = 0
+            for (let i = 0; i < arguments.length; i++) {
+	            sum += arguments[i]
+            }
+            console.log("sum: ", sum)
+        }
+        getSum(2, 3, 4, 5)
+		/**
+         * 函数的参数-剩余参数
+         * */
+        function getCount(a,b,...arr) {
+			let sum = 0
+			console.log("arr: ", arr)
+            for (let i = 0; i < arr.length; i++) {
+	            sum += arr[i]
+            } 
+            console.log("sum2: ", sum)
+        }
+        getCount(2, 3, 4, 5)
+		
+		
+		/**
+         * 拓展-展开运算符
+         * */
+        const arrX = [1, 2, 3]
+		console.log("arrX: ", ...arrX)
+		// 求数组的最大值
+		console.log(Math.max(...arrX))
+		// 合并数组
+		const arrY = [4, 5]
+		const  arrZ = [...arrX, ...arrY]
+		console.log("arrZ: ", ...arrZ)
+	</script>
+</body>
+</html>

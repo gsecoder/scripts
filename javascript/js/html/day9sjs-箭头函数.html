@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>day9sjs-箭头函数</title>
+</head>
+<body>
+	<script>
+		/**
+		 * 箭头函数
+		 * */
+		/**原来的写法*/
+        const fn1 = function () {
+			console.log('fn1')
+        }
+        fn1()
+        /**箭头函数的写法
+         * => 相当于是 function
+         * */
+        const fn2 = () => {
+            console.log('fn2')
+        }
+        fn2()
+		const fn3 = (a, b) => {
+            console.log('a + b = ', (a+b))
+        }
+        fn3(1, 2)
+		// 只有一个形参的时候可以省略掉()
+		const fn4 = a => {
+            console.log('a: ', a)
+        }
+        fn4(1)
+		// 只有一行代码的时候可以省略掉{}
+		const fn5 = b => console.log('b: ', b)
+        fn5(1111)
+		// 只有一行代码的时候可以省略掉return
+		const fn6 = c => {
+            return c + c
+		}
+        console.log("c: ", fn6(7))
+		const fn7 = d => d + d
+		console.log("d: ", fn7(7))
+		// 加括号的函数体返回对象字面量表达式
+		const fn8 = uname => ({ uname: uname})
+		console.log("uname: ", fn8("我是 coder"))
+		
+		
+		/**
+		 * 箭头函数参数
+		 * */
+        const getSum = (...args) => {
+            let sum = 0
+            for (let i = 0; i < args.length; i++) {
+	            sum += args[i]
+            }
+            return sum
+		}
+        console.log("getSum: ", getSum(2, 3))
+		
+		/**
+		 * 箭头函数this
+		 * */
+        /**以前的 this 指向回顾*/
+        console.log("this1: ", this) // window
+		// 普通函数
+		function fx1() {
+			console.log("this2: ", this) // window
+        }
+        fx1()  // 等价写法为：window.fx1() ， 所以输出为：window
+		// 对象方法里的 this
+		const obj = {
+            name: 'obj',
+			sayHi: function () {
+				console.log("this3: ", this)
+            }
+		}
+        obj.sayHi()   // obj
+		
+		/**箭头函数的 this*/
+        const fy1 = () =>{
+            console.log("y-this1: ", this)
+		}
+        fy1() // window
+		const objY = {
+            name: 'obj',
+			sayHi: () => {
+				console.log("y-this2: ", this)
+            }
+		}
+        objY.sayHi() // window
+		const objY2 = {
+            name: 'obj',
+			sayHi: function() {
+                 console.log("y-this31: ", this)
+				let i = 10
+				const count = () =>{
+                    console.log("y-this32: ", this)
+				}
+                count()
+            }
+		}
+        objY2.sayHi()
+	</script>
+</body>
+</html>

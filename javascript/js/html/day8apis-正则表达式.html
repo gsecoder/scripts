@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>day8apis-正则表达式</title>
+	<style>
+		span{
+			display: inline-block;
+			width: 200px;
+            height: 30px;
+			vertical-align: middle;
+			line-height: 30px;
+            padding-left: 15px;
+		}
+		.error{
+			color: red;
+            background-color: crimson;
+		}
+		.right{
+			color: green;
+            background-color: greenyellow;
+		}
+	</style>
+</head>
+<body>
+	<input type="text">
+	<span></span>
+	<br>
+	<br>
+	<br>
+	<textarea name="" id="" cols="30" rows="10"></textarea>
+	<button>发布</button>
+	<div>123</div>
+	
+	<script>
+		/**
+		 * 正则表达式语法规则
+		 * */
+        /**方法一*/
+        const str1 = '我们在学习前端，希望能找到满意的工作'
+        const str2 = '我们在学习后端，希望能找到满意的工作'
+		// 1、定义正则表达式匹配规则
+		const regObj = /前端/
+		// 2、根据规则测试是否匹配
+		console.log("str1Result:", regObj.test(str1))
+		console.log("str2Result:", regObj.test(str2))
+		// 3、检索字符串
+		console.log("str1ExecResult:", regObj.exec(str1))
+		console.log("str2ExecResult:", regObj.exec(str2))
+		
+		
+		/**
+		 * 元字符
+		 * */
+        /**边界符*/
+        console.log("21", /哈/.test('哈哈哈哈哈～'))    // true
+        console.log("22", /^哈/.test('二哈哈哈哈哈～')) // false
+        console.log("23", /哈$/.test('哈哈哈哈哈～'))   // false
+        console.log("24", /^哈$/.test('哈'))          // false
+		/**量词
+		 *    - *：重复 0 次或更多次
+		 *    - +：重复 1 次或更多次
+		 *    - ?：重复 0 次或 1 次
+		 *    - {n}：重复 n 次
+		 *    - {n,}：重复 n 次或更多次
+		 *    - {n,m}：重复 n 到 m 次
+		 * 
+		 * */
+        // - *：重复 0 次或更多次
+        console.log("311", /哈/.test('哈'))        // true
+        console.log("312", /^哈*$/.test('哈'))     // true
+        console.log("313", /^哈*$/.test('哈哈'))     // true
+        console.log("314", /^哈*$/.test(''))       // true
+        console.log("315", /^哈*$/.test('二哈很可爱'))       // false
+		// - +：重复 1 次或更多次
+        console.log("321", /^哈+$/.test(''))       // false
+		// - ?：重复 0 次或 1 次
+		console.log("331", /^哈?$/.test(''))       // true
+		console.log("332", /^哈?$/.test('哈'))       // true
+		console.log("333", /^哈?$/.test('哈哈'))       // false
+		// - {n}：重复 n 次
+		console.log("341", /^哈{4}$/.test(''))       // false
+		console.log("342", /^哈{4}$/.test('哈哈哈哈去问问'))       // false
+		console.log("343", /^哈{4}$/.test('哈哈哈哈'))       // true
+		// - {n,}：重复 n 次或更多次
+		console.log("351", /^哈{4,}$/.test('哈哈哈哈去问问'))       // false
+		console.log("352", /^哈{4,}$/.test('哈哈哈哈哈'))       // true
+		// - {n,m}：重复 n 到 m 次
+		console.log("361", /^哈{4,6}$/.test('哈哈哈哈去问问'))  // false
+		console.log("362", /^哈{4,6}$/.test('哈哈哈哈'))  // true
+		console.log("363", /^哈{4,6}$/.test('哈哈哈哈哈'))  // true
+		console.log("364", /^哈{4,6}$/.test('哈哈哈哈哈哈'))  // true
+		console.log("365", /^哈{4,6}$/.test('哈哈哈哈哈哈哈'))  // true
+		
+		/**
+		 * 字符类
+		 * */
+        // []匹配任意一个字符
+		console.log('411: ', /[abc]/.test('and')) // true
+		console.log('412: ', /^[abc]$/.test('ab')) // false
+		console.log('413: ', /^[abc]{2}$/.test('ab')) // true
+		console.log('414: ', /^[abc]$/.test('b')) // true
+		console.log('415: ', /^[abc]$/.test('c')) // true
+		console.log('416: ', /[abc]/.test('tnd')) // false
+		console.log('417: ', /[a-z]/.test('a')) // true
+		console.log('418: ', /[a-zA-Z]/.test('Z')) // true
+		console.log('419: ', /[a-zA-Z0-9]/.test('7')) // true
+		console.log('4110: ', /^[1-9][0-9]{4,}$/.test('10000')) // true
+		console.log('4111: ', /[^1-9]$/.test('1')) // true
+		console.log('4112: ', /[^1-9]$/.test('100')) // true
+		
+		
+		/**
+		 * 用户名验证案例：用户名要求用户英文字母、数字、下划线或者短横线组成，并且用户名长度为 6～16位
+		 * */
+        // console.log('anLi: ', /^[a-zA-Z0-9-_](6, 16)$/.test('A2132-'))
+		const reg = /^[a-zA-Z0-9-_](6, 16)$/
+		const input = document.querySelector('input')
+		const span = input.nextElementSibling
+		input.addEventListener('blur', function () {
+			if(reg.test(this.value)){
+                console.log("anLi1: ", reg.test(this.value))
+                span.innerHTML = '输入正确'
+				span.classList.add('right')
+			} else {
+                console.log("anLi2: ", reg.test(this.value))
+                span.innerHTML = '请输入 6-16的字符'
+				span.classList.add('error')
+			}
+        })
+		
+		/**
+		 * 修饰符
+		 * */
+        console.log(/^java$/.test('java'))
+        console.log(/^java$/.test('JAVA'))
+        console.log(/^java$/i.test('JAVA'))
+		const str = 'java 是门编程语言，学习完 JAVA 工资更高'
+		console.log(str.replace(/java/i, 'javascript'))
+		console.log(str.replace(/java/ig, 'javascript'))
+		/**过滤敏感词：要求用户不能输入敏感字*/
+        const tx = document.querySelector('textarea')
+        const btn = document.querySelector('button')
+        const div = document.querySelector('div')
+		btn.addEventListener('click', function () {
+			console.log(tx.value)
+			// 过滤敏感词
+			div.innerHTML = tx.value.replace(/激情|基情/g, '***')
+        })
+	</script>
+</body>
+</html>

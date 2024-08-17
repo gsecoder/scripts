@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>day6apis-事件监听关闭广告</title>
+	<style>
+		.box {
+			position: relative;
+			width: 100px;
+			height: 200px;
+			background-color: coral;
+			margin: 100px auto;
+			text-align: center;
+			font-size: 50px;
+			line-height: 200px;
+			font-weight: 700;
+		}
+		.closeBox {
+			position: absolute;
+			right: 20px;
+			top: 10px;
+			width: 20px;
+			height: 20px;
+			background-color: skyblue;
+			text-align: center;
+			line-height: 20px;
+			font-size: 16px;
+			display: none;
+		}
+	</style>
+</head>
+<body>
+	<div class="box">我是广告
+		<div class="closeBox">x</div>
+	</div>
+
+	<script>
+		// 获取元素
+		const box = document.querySelector('.box');
+        box.addEventListener('click', function(){
+            box.style.display = 'none'
+        })
+	</script>
+</body>
+</html>

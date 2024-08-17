@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>day8apis-BOMnavigation对象</title>
+	<script>
+		/**
+		 * 检测是 pc 还是 m 端，并且检测浏览器的类型
+		 * */
+        // 立即执行函数
+        !(function () {
+	        const userAgent = navigator.userAgent
+	        
+	        // 验证是 Android 还是 ios
+	        const android = userAgent.math(/(Android);?[\s\/]]+([\d.]]+)?/)
+	        const ios = userAgent.math(/(iPhone\sOS)\s([\d_]+)/)
+	        
+	        // 跳转到移动端站点
+	        if(android || ios){
+                location.href = "https://www.mobile.com"
+	        }
+        })()
+	</script>
+</head>
+<body>
+	这是 pc 端的页面
+	<script>
+		console.log(navigator.userAgent)
+	</script>
+</body>
+</html>

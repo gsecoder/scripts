@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>day3-数组</title>
+</head>
+<body>
+	<script>
+       // 声明数组
+        let arr1 = ["刘德华", "张学友", "黎明", "郭富城"]
+        
+        // 使用数组，数组名[索引号]，索引号从0开始
+        document.write(arr1[0]);    // 刘德华
+       document.write("<br/>");
+        
+        // 获取数组的长度
+        document.write(arr1.length);
+        document.write("<br/>");
+        
+        // 遍历数组
+       for(let i=0; i<=arr1.length - 1; i++){
+           document.write(arr1[i]);
+           document.write("<br/>");
+       }
+       
+       // 数组的求和以、平均值、最大值、最小值
+       let arr2 = [1, 21, 3, 14, 25, 26]
+       let sum2 = 0
+       let maxValue = arr2[0]
+       let minValue = arr2[0]
+       for(let i=0; i <= arr2.length-1; i++){
+           sum2 += arr2[i]
+	       if (maxValue < arr2[i]) {
+               maxValue = arr2[i]
+	       }
+           
+           if (minValue > arr2[i]) {
+               minValue = arr2[i]
+	       }
+       }
+       document.write("arr2的和：" + sum2)
+       document.write("<br/>");
+       document.write("arr2的平均值：" + sum2 / arr2.length)
+       document.write("<br/>");
+       document.write("arr2的最大值：" + maxValue)
+       document.write("<br/>");
+       document.write("arr2的最小值：" + minValue)
+       
+       document.write("<br/>");
+       document.write("<br/>");
+       document.write("------------------------------");
+       document.write("<br/>");
+       
+       
+       // 操作数组，数组的增删改查
+       let arr3 = [1, 21, 3, 14, 25, 26]
+       arr3[0] = [11]
+       document.write(arr3);
+       document.write("<br/>");
+       
+       // 添加
+       arr3.push(12, 222);
+       document.write(arr3);
+       document.write("<br/>");
+       arr3.unshift(333, 444);
+       document.write(arr3);
+       document.write("<br/>");
+       
+       // 数组筛选
+       let newArr = []
+       for(let i=0; i<arr3.length; i++){
+           if (arr3[i] >= 10) {
+               newArr.push(arr3[i])
+           }
+       }
+       document.write(newArr);
+       document.write("<br/>");
+       
+       // 删除
+       document.write(arr3.pop());
+       document.write("<br/>");
+       document.write(arr3);
+       document.write("<br/>");
+       document.write(arr3.shift());
+       document.write("<br/>");
+       document.write(arr3);
+       document.write("<br/>");
+       document.write(arr3.splice(0, 5));
+       document.write("<br/>");
+       document.write(arr3);
+       document.write("<br/>");
+       
+       
+       
+       
+    </script>
+</body>
+</html>

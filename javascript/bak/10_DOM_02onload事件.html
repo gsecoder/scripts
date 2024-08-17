@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>10_DOM_02onload事件</title>
+	<script>
+        function fun() {
+            var ele = document.getElementById('ppp');
+            ele.onclick = function () {
+                console.log('ppppppppppppppp')
+            }
+        }
+	</script>
+</head>
+<body onload="fun()">
+	<!--
+		onload属性开发中只给body元素加，这个属性的出发标志着页面内容被加载完成。
+		应用场景：当有些事情我们希望页面加载完立刻执行，那么可以使用该事件属性。
+		什么时候加载完什么时候触发（如果你想把script放在body上面去，就用到onload事件了）
+	-->
+	<p id="ppp">hello p</p>
+</body>
+</html>

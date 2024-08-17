@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>day8apis-DOM节点操作</title>
+</head>
+<body>
+	<div class="grandFather">
+		<div class="father">
+			<div class="son"></div>
+		</div>
+	</div>
+	
+	<ul>
+		<li>第一</li>
+		<li>第二</li>
+		<li>第三</li>
+		<li>第四</li>
+	</ul>
+
+	<script>
+		// 获取子节点的父节点
+		const son = document.querySelector('.son')
+		console.log("son: ", son)
+		
+		console.log("son.parentNode: ", son.parentNode)
+		console.log("son.parentNode.parentNode: ", son.parentNode.parentNode)
+		
+		// 获取父节点的子节点
+		const ul = document.querySelector('ul')
+		console.log(ul.children)
+		
+		// 获取节点的兄弟节点（应用于自定义排序场景）
+		const li2 = document.querySelector('ul li:nth-child(2)')
+		console.log("li2: ", li2)
+		console.log("li2p: ", li2.previousElementSibling)
+		console.log("li2n: ", li2.nextElementSibling)
+	</script>
+</body>
+</html>

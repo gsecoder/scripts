@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>06_表格布局</title>
+</head>
+<body>
+    <table border="1">
+    <!-- table的相关属性
+        边 border，定义 border 边框
+        跨行 rowspan=“2”
+        跨列 colspan=“3”
+        宽 width
+        高 height
+        排列属性 align ，可居中显示表格
+        用 html 的方式改变 table 的边，变为单线
+            cellspacing="0" cellpadding="0"
+    -->
+        <caption>这是表格的标题</caption>
+
+        <tr><th colspan="5">课程表</th></tr>     <!--th 是加粗居中的 td，代表了表头-->
+        <tr>
+            <td>星期一</td>
+            <td>星期二</td>
+            <td>星期三</td>
+            <td>星期四</td>
+            <td rowspan="2">星期五</td>
+        </tr>
+        <tr>
+            <td>上课</td>
+            <td>上课</td>
+            <td>上课</td>
+            <td>上课</td>
+        </tr>
+        <hr>
+
+        <!--对于结构复杂的表格，可以将表格分割成三个部分：题头、正文和脚注。而这三部分分别用: thead, tbody, tfoot 来标注。-->
+        <tbody>这是复杂表格的头部，可以用来放置标题
+            <capation>这是复杂表格标题</capation>
+        </tbody>
+        <tbody>
+            <tr><th colspan="5">课程表</th></tr>     <!--th 是加粗居中的 td，代表了表头-->
+            <tr>
+                <td>星期一</td>
+                <td>星期二</td>
+                <td>星期三</td>
+                <td>星期四</td>
+                <td rowspan="2">星期五</td>
+            </tr>
+            <tr>
+                <td>上课</td>
+                <td>上课</td>
+                <td>上课</td>
+                <td>上课</td>
+            </tr>
+        </tbody>
+        <tfoot>
+        tfoot 表格的脚 放表格的脚注之类
+        </tfoot>
+    </table>
+</body>
+</html>

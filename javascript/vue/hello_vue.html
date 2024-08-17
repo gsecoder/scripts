@@ -1,0 +1,30 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>com.secoder.base.Hello Vue</title>
+        <script src="vue.js"></script>
+    </head>
+    <body>
+        <div id="app">
+            <p>{{ message }}</p>
+            <p>{{ name }}</p>
+            <p>{{ a }}</p>
+        </div>
+
+        <script type="text/javascript">
+            var data = {
+                "message": "com.secoder.base.Hello Vue",
+                "name": "crisimple",
+                "a": 1
+            };
+            var vm = new Vue({
+                el: '#app',
+                data: data
+            })
+            vm.$watch('a', function(newVal, oldVal){
+                console.log(newVal, oldVal);
+            });
+            vm.$data.a = " change 2"
+        </script>
+    </body>
+</html>

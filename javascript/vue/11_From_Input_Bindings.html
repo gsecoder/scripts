@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>表单输入绑定</title>
+	<script src="vue.js" type="text/javascript" charset="utf-8"></script>
+</head>
+<body>
+	<div id="app">
+		<!--文本框-->
+		<div id="example-1">
+			<input type="text" v-model="message" placeholder="edit me">
+			<p>Message is: {{ message }}</p>
+			
+			<textarea v-model="message2" placeholder="add multiple lines"></textarea>
+			<p style="white-space: pre-line">{{ message2}}</p>
+		</div>
+		
+		<!--单选框和复选框-->
+		<div style="margin-top: 20px">
+			<input type="checkbox" id="jack" value="jack" v-model="checkedNames">
+			<label for="jack">Jack</label>
+			<input type="checkbox" id="john" value="jack" v-model="checkedNames">
+			<label for="john">Jack</label>
+			<input type="checkbox" id="" value="mike" v-model="checkedNames">
+			<label for="mike">Mike</label>
+			<span>Checked names: {{ checkedNames }}</span>
+		</div>
+		
+		<!--音频数据绑定-->
+		<div style="margin-top: 20px">
+			<input type="radio" id="one" value="One" v-model="picked">
+			<label for="one">One</label>
+			<input type="radio" id="two" value="Two" v-model="picked">
+			<label for="two">Two</label>
+			<span>Picked: {{ picked }}</span>
+		</div>
+		
+		<button type="button" @click="submit">提交</button>
+	</div>
+	
+	<script>
+		const vm = new Vue({
+			el: "#app",
+			data: {
+				message: "默认值",
+				message2: "默认值2",
+				checkedNames: ['jack', 'John'],
+				picked: "Two"
+				
+			},
+			methods:{
+				submit: function () {
+					console.log(this.message)
+				}
+			}
+		})
+	</script>
+
+</body>
+</html>

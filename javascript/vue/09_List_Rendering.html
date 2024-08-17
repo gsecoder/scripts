@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>列表渲染</title>
+	<script src="vue.js" type="text/javascript" charset="utf-8"></script>
+</head>
+<body>
+	<div id="app">
+		<!--遍历列表-->
+		<ul>
+			<li v-for="student, index in students" v-bind:key="index">
+				{{ index }} -- {{ student.name }}
+			</li>
+		</ul>
+		
+		<!--遍历字典-->
+		<ul>
+			<li v-for="value, key in person" v-bind:key="key">
+				{{ key }} == {{ value }}
+			</li>
+		</ul>
+	</div>
+	
+	<script type="text/javascript">
+		const vm = new Vue({
+			el: "#app",
+			data: {
+				students: [
+					{'name': 'A'},
+					{'name': 'B'},
+				],
+				
+				person: {
+					name: 'crisimple',
+					age: 25,
+					sex: 'male'
+				}
+			}
+		});
+	</script>
+</body>
+</html>

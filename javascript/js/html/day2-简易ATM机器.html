@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>day2-简易 ATM 机器</title>
+</head>
+<body>
+	<script>
+		// 总金额
+		let money = 100;
+		
+		while (true) {
+            // 输入框写到循环里面
+            let re = +prompt("请你选择操作：" +
+	            "1、存钱" +
+	            "2、取钱" +
+	            "3、查看余额" +
+	            "4、退出")
+			
+			// 用户选择
+			if(re === 4){
+                break
+			}
+            
+            switch (re){
+	            case 1: // 存钱
+		            let cun = +prompt("请输入存入的金额：");
+		            money += cun;
+                    break;
+                case 2: // 存钱
+		            let qu = +prompt("请输入取出的金额：");
+		            money -= qu;
+                    break;
+	            case 3: // 查看余额
+		            alert(`您的余额为${money}`);
+                    break;
+            }
+		}
+	</script>
+</body>
+</html>

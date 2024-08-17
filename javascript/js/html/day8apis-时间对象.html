@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>day8apis-时间对象</title>
+	<style>
+		div{
+            width: 300px;
+            height: 40px;
+			border: 2px solid deeppink;
+			text-align: center;
+			line-height: 40px;
+		}
+	</style>
+</head>
+<body>
+
+	<div>显示指定日期格式时间：</div>
+	
+	<div class="container"> 案例：毕业倒计时效果
+		<p class="next">今天是 2024年 03月 06日</p>
+		<p class="title">倒计时</p>
+		<p class="clock">
+			<span id="hour">00</span>
+			<i>:</i>
+			<span id="min">00</span>
+			<i>:</i>
+			<span id="second">00</span>
+		</p>
+	</div>
+	<script>
+		/**
+		 * 日期对象实例化
+		 * */
+		// 1、得到当前时间
+		const date = new Date()
+		console.log("date: " + date)
+		
+		// 2、指定时间
+		const date1 = new Date('2024-03-06 13:00:00')
+		console.log("date1: " + date1)
+		
+		/**
+		 * 日期对象方法
+		 * */
+        const date3 = new Date()
+		console.log("dat31: " + date3.getFullYear())
+		console.log("dat32: " + (date3.getMonth() + 1))
+		console.log("dat33: " + (date3.getDay()))
+		/** 显示指定日期格式时间 */
+        const div = document.querySelector('div')
+        function getMyDate() {
+			const date1 = new Date()
+	        let h = date1.getHours()
+	        h = h < 10 ? '0' + h : h
+	        let m = date1.getMinutes()
+	        m = m < 10 ? '0' + m : m
+			return `指定的时间是：${date1.getFullYear()}年${(date1.getMonth()+1)}月${date1.getDate()}日 ${h}:${m}`
+        }
+        div.innerHTML = getMyDate()
+		
+		/**
+		 * 时间戳
+		 * */
+        // 方法一：
+		const timer1 = new Date()
+		console.log(timer1.getTime())
+		// 方法二：
+		console.log(+new Date())
+		// 方法三：
+		console.log(Date.now())
+		
+		/**
+		 *   - 案例：毕业倒计时效果 
+		 * */
+        function getCountTime() {
+			// 得到现在的时间戳
+			const now = +new Date()
+			// 得到将来的的时间戳
+			const last = +new Date('2024-05-01 00:00:00')
+			const count = (last-now)/1000
+			 // 获取时分秒
+			// let d = parseInt(count / 60 / 60 / 24)
+			let h = parseInt(count / 60 / 60 % 24)
+			h = h < 10 ? '0' + h : h
+			let m = parseInt(count / 60 % 60 )
+			m = m < 10 ? '0' + m : m
+			let s = parseInt(count % 60 )
+			s = s < 10 ? '0' + s : s
+			// 把时分秒写到对应的盒子中去
+			/**
+			const hour = document.querySelector('#hour')
+			const min = document.querySelector('#min')
+			const second = document.querySelector('#second')
+			hour.innerHTML = h
+			min.innerHTML = m
+			second.innerHTML = s
+			 */
+	        document.querySelector('#hour').innerHTML = h
+	        document.querySelector('#min').innerHTML = m
+	        document.querySelector('#second').innerHTML = s
+        }
+        getCountTime()
+        // 开启定时器
+		setInterval(getCountTime, 1000)
+	</script>
+</body>
+</html>

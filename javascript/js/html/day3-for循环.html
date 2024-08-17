@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>day3-for循环</title>
+</head>
+<body>
+    <script>
+         for(let i=1; i<=3; i++){
+             document.write("月薪过万～");
+         }
+         document.write("<br/>");
+         
+         // 利用 for 循环输出 1～100之间的数
+         for(let i=1; i<=100; i++){
+             document.write(i+"<br/>")
+         }
+         
+         // 求 1～100之间所有偶数的和
+         let oddSum = 0;
+         for(let i=1; i<=100; i++){
+             if(i % 2 === 0){
+                 oddSum += i
+             }
+         }
+         document.write("1～100之间所有偶数的和：" + oddSum);
+         document.write("<br/>");
+         
+         // 页面中打印 5 个小星星
+         for(let i=1; i<=5; i++){
+             document.write("🌟");
+         }
+         document.write("<br/>");
+         
+         // 将数组中的元素打印输出
+         let arr = ['马超', '赵云', '张飞', '关羽', '黄忠'];
+         for (let i=0; i<=arr.length-1; i++){
+             document.write(arr[i] + "---");
+         }
+         
+    </script>
+</body>
+</html>

@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>03.基本标签_body里的标签</title>
+</head>
+<body bgcolor="pink">
+    <!--1.<h1>~<h6>标题-->
+    <h1 align="center">h1</h1>
+    <h2 align="left">h2</h2>
+    <h3 align="right">h3</h3>
+    <h4 align="justify">h4</h4>
+    <h5>h5</h5>
+    <h6>h6</h6>
+
+    <hr>
+    <!--2.<p>标签-->
+    <p>
+        标签定义段落。 元素会自动在其前后创建一些空白。浏览器会自动添加这些空间，您也可以在样式表中规定。你在编辑器中敲的空格，浏览器是会忽略的。
+    </p>
+
+    <hr>
+    <!--3.<span>标签-->
+    <span>
+        它用来组合文档中的行内元素，<span style="background: blueviolet">以便通过样式来格式化它们</span>。如果不对 span 应用样式，那么 span 元素中的文本与其他文本不会任何视觉
+上的差异。
+    </span>
+
+    <!--4.<div>标签-->
+    <hr>
+    <div>可定义文档中的分区或节，标签可以把文档分割为独立的、不同的部分。它可以作为元素的组织工</div>
+
+    <!--5.<br>标签可插入一个简单的换行符-->
+    <hr>
+    <br>
+
+    <!--6.<hr>标签
+    在 HTML 页面中创建一条水平线。可以在视觉上将文档分隔成各个部分。
+    -->
+
+    <!--
+    7.注释标签 注释标签用于在源代码中插入注释，注释不会显示在浏览器中。这
+    -->
+
+    <h2>格式类的基本标签</h2>
+    <!--8.<address> 标签-->
+    <address>
+        标签定义文档或文章的作者联系信息。定义在 body 内则表示文档联系信息.
+    </address>
+
+    <!--9.<b> 标签-->
+    <hr>
+    <b>呈现粗体文本效果。它属于字体样式元素；但是建议用样式表</b>
+
+    <!--10.<del> 标签-->
+    <hr>
+    <del>定义被删除文本，用它包含的内容会显示一道中划线。</del>
+
+    <!--11.<em>标签-->
+    <hr>
+    <em>用它包裹的内容是告诉浏览器要强调的内容。用 em 包裹的这段文字用斜体来显示。如淘宝会用来强调价格、成效量等。</em>
+
+    <!--12. <i>标签-->
+    <hr>
+    <i>标签显示斜体文本效果。它的显示和 em 显示的一样，不过它对于浏览器来说没有强调的意思</i>
+
+    <!--13.<pre> 预格式化文本标签-->
+    <hr>
+    hhhhhhhh<pre>被包围在 pre 元素中的文本通常会保留空格和换行符</pre>
+    <a name="aBottom">(通过 name 属性来定义锚点名字 )</a> <br>
+
+    <!--14.<small> 标签-->
+    <hr>
+    <small>标签呈现小号字体效果。它将字体缩小，如果被包裹的字已经是最小了，就不会有任何效果。它和 big 标签对</small>
+
+    <!--15.<big> 标签-->
+    <hr>
+    <bi>big 标签呈现大号字体效果。它和 small 都是有语义化的标签</bi>
+
+    <!--16.<strong>标签-->
+    <hr>
+    <strong>对比em标签</strong>
+
+    <!--17.<u>标签-->
+    <hr>
+    <u>为文本添加下划线</u>
+
+    <!--18.<sup>标签-->
+    <hr>
+    <p>(a + b)<sup>2</sup> = a<sup>2</sup> + 2ab + b<sup>2</sup></p>
+
+    <!--19.<sub>标签-->
+    <hr>
+    <p>(a + b)<sub>2</sub></p>
+
+    <!--20. <img>标签-->
+    <hr>
+    <img src="./images/imageAttribute.png"
+         alt="alt如果无法显示图像，浏览器将显示替代文本"
+         title="title鼠标放上时显示的文字"
+         width="800px"
+         height="800px"
+         border="5px"
+         align="top"
+    >
+
+    <!--21. <a>标签-->
+    <hr>
+    <!-- _blank 在新标签中打开
+         _parent 在父标签中打开，如果本身已经是顶级，那么就是在自身窗口打开
+         _self 默认就是在自己窗口打开
+         _top 清除所有框架，载入到浏览器窗口
+     -->
+    <a href="#aBottom">请点击这里(通过#和锚点名字找到 aName 这个名字的标签所在位置)</a> <br>
+    <a name="com.secoder.test">(通过 name 属性来定义锚点名字 )</a> <br>
+    <a href="#"
+       target="_blank"
+       target="_parent"
+       target="_self"
+       target="_top"
+    >点击返回顶部</a> <br>
+
+
+    <hr>
+    <h2>列表相关的标签</h2>
+    <!--1. 无序列表-->
+    <ul>
+        <li>默认</li>
+        <li type="disc">Disc</li>
+        <li type="circle">Circle</li>
+        <li type="square">Square</li>
+    </ul>
+
+    <!--2.有序列表-->
+    <hr>
+    <ol>
+        <li type="">默认</li>
+        <li type="">默认</li>
+        <li type="A">A</li>
+        <li type="B">B</li>
+        <li type="a">a</li>
+        <li type="b">b</li>
+        <li type="I">I</li>
+        <li type="i">i</li>
+    </ol>
+
+    <!--3.自定义列表-->
+    <hr>
+    <dl>
+        <dt>支付列表</dt>
+        <dd>支付宝</dd>
+        <dd>微信</dd>
+        <dd>信用卡</dd>
+    </dl>
+</body>
+</html>

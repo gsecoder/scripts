@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>day6apis-操作DOM元素属性</title>
+	<style>
+		.styleCss{
+            width: 200px;
+            height: 200px;
+			background-color: chocolate;
+		}
+		body{
+			{#background: cornsilk;#}
+			background-image: url('../img/1.png');
+		}
+		.styleClassName{
+            width: 200px;
+            height: 200px;
+            background-color: black;
+		}
+		.styleClassName2{
+			width: 100px;
+            height: 100px;
+            background-color: deepskyblue;
+			border: 2px solid crimson;
+		}
+		.styleClassList{
+			width: 200px;
+            height: 200px;
+            background-color: whitesmoke;
+		}
+		.styleClassListAdd{
+			width: 100px;
+            height: 100px;
+            background-color: lightpink;
+		}
+	</style>
+</head>
+<body>
+	<img src="../img/feishu.png" alt="旧图片的 alt" title="旧图片的 title">
+	<br/>
+	<br/>
+	<br/>
+	<br/>
+	<br/>
+	<img src="../img/1.png" alt="1" title="1" class="img2">
+	<br/>
+	<br/>
+	<br/>
+	<br/>
+	<br/>
+	<div class="styleCss"></div>
+	<br/>
+	<br/>
+	<br/>
+	<br/>
+	<br/>
+	<div class="styleClassName"></div>
+	<br/>
+	<br/>
+	<br/>
+	<br/>
+	<br/>
+	<div class="styleClassList"></div>
+	<br/>
+	<br/>
+	<br/>
+	<br/>
+	<br/>
+	<div class="togglePic">刷新页面，页面中的轮播图会显示不同图片和样式</div>
+	<div class="slider">
+		<div class="slider-wrapper">
+			<img src="../img/1.png" alt="" />
+		</div>
+		<div class="slider-footer">
+			<p>对应 tittle 的文字</p>
+			<ul class="slider-indicator">
+				<li class="active"></li>
+			</ul>
+		</div>
+		<div class="toggle"></div>
+	</div>
+	<br/>
+	<br/>
+	<br/>
+	<br/>
+	<br/>
+	<label>
+		<input type="text" value="电脑">
+	</label>
+	<br/>
+	<br/>
+	<br/>
+	<br/>
+	<br/>
+	<label>
+		<input type="checkbox" class="input2" name="" id="">
+		<button disabled>点击</button>
+	</label>
+	<br/>
+	<br/>
+	<br/>
+	<br/>
+	<br/>
+	<div class="div1" data-id="1" data-spm="不知道是啥">1</div>
+	<div class="div2" data-id="2">2</div>
+	<div class="div3" data-id="3">3</div>
+	<script>
+		/** 
+		 * 操作元素常用属性
+		 * */
+		// 获取图片元素
+		const img = document.querySelector('img');
+        // 修改图片对象的属性
+		img.src = '../img/whiste.png'
+		img.alt = '新图片的 alt'
+		img.title = '新图片的 title'
+		
+		// 刷新页面页面随机展示不同的图片
+		// 获取 N～M 之间的随机数
+		function getRandom(N, M){
+            return Math.floor(Math.random() * (M - N + 1)) + N;
+		}
+        // 获取图片对象
+		const img2 = document.querySelector('.img2')
+		console.log(img2)
+		const randomVal = getRandom(1, 5)
+		img2.src = `../img/${randomVal}.png`
+        
+		/**
+		 * 操作元素样式属性
+		 * */
+        // 1、获取元素
+		const styleCss =  document.querySelector('.styleCss')
+		// 2、修改样式属性；对象.style.样式属性 = 值
+		styleCss.style.width = '100px';
+		styleCss.style.height = '100px';
+		styleCss.style.backgroundColor = 'hotpink';
+		styleCss.style.border = '2px solid blue';
+		styleCss.style.borderTop = '4px solid red';
+        
+        // 页面刷新，页面随机更换背景图片/背景颜色
+		const backgroundColorArr = ['red', 'black', 'blue', 'green', 'yellow', 'pink']
+		function getRandomVal(){
+            return Math.floor(Math.random() * backgroundColorArr.length)
+		}
+        // 更换页面背景颜色
+		console.log(backgroundColorArr[getRandomVal()])
+		// document.body.style.backgroundColor = backgroundColorArr[getRandomVal()]
+		const randomBackVal = getRandom(1, 5)
+		// document.body.style.backgroundImage = `url('../img/${randomBackVal}.png')`
+		
+		
+		/**
+		 *   - 操作类名（className）操作 css
+		 * */
+        // 1、获取元素
+		const styleClassName = document.querySelector('.styleClassName')
+		// 2、更改元素新的 css 类
+		styleClassName.className = 'styleClassName2'
+		
+		/**
+		 *   - 通过 classList 操作类控制 css
+		 * */
+        // 1、获取元素
+        const styleClassList = document.querySelector('.styleClassList')
+		// 2、修改样式
+		// styleClassList.classList.add('styleClassListAdd')
+		// styleClassList.classList.remove('styleClassList')
+		styleClassList.classList.toggle('styleClassListAdd')
+		
+		
+		/**
+		 * 随机轮播图
+		 * */
+        // 1、初始化轮播图数据
+		const togglePicArr = [
+            {url:'../img/1.png', title: '11111111', color:'rgb(100,67,68)'},
+            {url:'../img/2.png', title: '22222222', color:'rgb(43,35,26)'},
+            {url:'../img/3.png', title: '33333333', color:'rgb(78,64,29)'},
+            {url:'../img/4.png', title: '44444444', color:'rgb(100,100,100)'},
+            {url:'../img/5.png', title: '55555555', color:'rgb(67,67,68)'}
+		]
+		// 2、获取随机数
+		const randomPicVal = parseInt(Math.random() * togglePicArr.length)
+        console.log(togglePicArr[randomPicVal])
+		// 把对应的属性渲染到标签里面
+		const toggleImg = document.querySelector('.slider-wrapper img')
+		toggleImg.src = togglePicArr[randomPicVal].url
+		const toggleFootP = document.querySelector('.slider-footer p')
+        toggleFootP.innerHTML = togglePicArr[randomPicVal].title
+		const toggleFootBack = document.querySelector('.slider-footer')
+		toggleFootBack.style.backgroundColor = togglePicArr[randomPicVal].color
+		// 小圆点
+		const li = document.querySelector(`.slider-indicator li:nth-child(${randomPicVal + 1})`)
+		console.log(li)
+		// li.classList.toggle('active')
+		
+		
+		/**
+		 * - 操作表单元素属性
+		 * */
+        // 1、获取元素
+		const input = document.querySelector('input')
+		// 2、获取值
+		console.log(input.value)
+		input.value = "我要买电脑"
+		console.log(input.value)
+		console.log(input.type)
+		input.type = 'password'
+		console.log(input.type)
+		
+		// 1、获取元素
+		const input2 = document.querySelector('.input2')
+		const button = document.querySelector(' button')
+		console.log(input2)
+		// 2、设置元素属性
+		input2.checked = true
+		button.disabled = false
+		
+		
+		/**
+		 * - 自定义属性
+		 * */
+        const div1 = document.querySelector('.div1')
+		console.log(div1.dataset.id)
+		console.log(div1.dataset.spm)
+	</script>
+</body>
+</html>

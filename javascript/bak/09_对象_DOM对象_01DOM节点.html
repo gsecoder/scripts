@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>09_对象_DOM对象_01DOM节点</title>
+</head>
+<body>
+	<h2>一、什么是HTML  DOM</h2>
+		<p>HTML  Document Object Model（文档对象模型）</p>
+		<p>HTML DOM 定义了访问和操作HTML文档的标准方法</p>
+		<p>HTML DOM 把 HTML 文档呈现为带有元素、属性和文本的树结构（节点树)</p>
+
+	<h2>二、DOM树</h2>
+		<p>
+			document --- 根元素"html" --- 元素 "head" --- 元素 "title"
+									 --- 元素 "body" --- 元素 "h1"
+									 				 --- 元素 "a" --- 属性 "href"
+			画dom树是为了展示文档中各个对象之间的关系，用于对象的导航。
+		</p>
+
+	<h2>三、DOM节点</h2>
+	<h3>1.节点类型</h3>
+		<p>HTML 文档中的每个成分都是一个节点。</p>
+		<p>DOM是这样规定：
+			整个文档是一个文档节点
+			每个HTML标签是一个元素节点
+			包含在HTML元素中的文本是文本节点
+			每一个HTML属性是一个属性点
+		</p>
+
+	<h3>2.节点关系</h3>
+		<P>在节点树中，顶端节点被称为根（root）</P>
+		<P>每个节点都有父节点、除了根（它没有父节点）</P>
+		<P> 一个节点可拥有任意数量的孩子</P>
+		<P> 同胞是拥有相同父节点的节点</P>
+
+	<h3>3.节点查找</h3>
+		<p3>方式一：直接查找节点（这是一个查找方法）</p3>
+		<script>
+				document.getElementById('idName');
+				document.getElementsByClassName('className');
+				document.getElementsByTagName('tagName');
+				document.getElementsByName('name');
+		</script>
+
+		<p3>方式二：导航查找节点：通过某一个标签的位置去查找另一个标签（这是一个导航属性）</p3>
+
+	<h3>三、节点操作</h3>
+		<script>
+			/*1.创建节点：创建一个指定名称的元素*/
+			var tag = document.createElement("input");
+			tag.setAttribute('type', 'txt');
+
+			/*2. 添加节点*/
+            // 追加一个子节点（作为最后的子节点）
+            // somenode.appendChild(newnode);
+            // 把增加的节点放到某个节点的前边
+            // somenode.insertBefore(newnode, 某个节点);
+
+            /*3. 删除节点*/
+            // removeChild()   // 获得要删除的元素，通过父元素调用删除
+
+			/*4. 替换节点*/
+            // somenode.replaceChild(newnode, 某个节点);
+
+            /*5. 节点属性操作*/
+			/*1.获取文本节点的值：innerText    innerHTML*/
+			/*innerText:不管你是赋值还是取值，只能识别纯文本*/
+			/*innerHtml:既可以识别纯文本，也可以识别标签*/
+
+			/*2.属性（attribute）操作*/
+            // elementNode.setAttribute(name,value);
+            // elementNode.getAttribute(属性名);  // <------->elementNode.属性名(DHTML)
+            // elementNode.removeAttribute("属性名");
+		</script>
+
+</body>
+</html>

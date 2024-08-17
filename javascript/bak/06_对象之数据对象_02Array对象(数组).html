@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>07_对象之数据对象_02Array对象(数组)</title>
+</head>
+<body>
+	<h2>一、创建数组的三种方式</h2>
+	<script>
+		/*方式一：*/
+		var arrName1 = ['string', 0, 23.4];
+
+        /*方式二：*/
+		var arrName2 = new Array(1, 2, 3);
+
+		/*方式三：*/
+		var arrName3 = new Array(7);
+		/*初始化数组对象*/
+		arrName3[0] = '星期天';
+		arrName3[1] = '星期一';
+		arrName3[2] = '星期二';
+		arrName3[3] = '星期三';
+		arrName3[4] = '星期四';
+		arrName3[5] = '星期五';
+		arrName3[6] = '星期六';
+	</script>
+
+	<h2>二、数组的属性和方法</h2>
+	<script>
+		arr = [11,55,'hello',true,656];
+
+		/*1. join方法：将数组元素拼接成字符串，内嵌到数组了*/
+		var arr1 = arr.join('-');
+		console.log("join: ", arr1);
+
+		/*2. concat方法(链接)*/
+		var arr2 = arr.concat(1, 2, 3);
+		console.log("concat: ", arr2.toString());
+
+		/*3. 数组排序reserve  sort*/
+		console.log("reserve: ", arr.reverse());
+		console.log("sort: ", arr.sort());
+		/*自定义比较数组方法一：*/
+		function intSort(a, b) {
+			if (a > b){
+			    return 1;
+			}
+			else if (a < b){
+			    return -1;
+			}
+			else{
+			    return 0;
+			}
+        }
+        arr.sort(intSort);
+		console.log(arr.toString())
+
+		function intSort2(a, b) {
+			return a - b;
+        }
+        arr.sort(intSort2);
+		console.log(arr.toString());
+
+		/*4. 数组切片*/
+		var arr41 = arr.slice(2, 4);
+		console.log(arr41.toString());
+		var arr42 = arr.slice(4);
+		console.log(arr42.toString());
+		var arr43 = arr.slice(2, -1);
+		console.log(arr43.toString());
+
+		/*5. 删除子数组*/
+		var arr51 = [1,2,3,4,5,6,7,8];
+		var arr52 = arr51.splice(1, 2);
+		console.log(arr51);
+		console.log(arr52);
+
+		/*6. 数组的push和pop*/
+		/*push:是将值添加到数组的结尾*/
+		var arr61 = [1, 2, 3];
+        arr61.push(4, 5.0, "66");
+		console.log(arr61);
+		/*pop；是讲数组的最后一个元素删除*/
+		arr61.pop();
+        console.log(arr61);
+
+        /*7. 数组的shift和unshift*/
+        var arr71 = [1, 2, 3];
+        /*unshift: 将值插入到数组的开始*/
+        arr71.unshift("unshift");
+        console.log(arr71);
+		/*shift: 将数组的第一个元素删除*/
+		arr71.shift();
+		console.log(arr71);
+
+	</script>
+</body>
+</html>

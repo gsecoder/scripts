@@ -1,0 +1,24 @@
+<view class="user_info">
+  <view class="default_mine">
+    <image src="{{image_path}}" class="default_mine">点击我</image>
+  </view>
+
+  <view class="user_name">{{ user_name}}</view>
+
+  <button open-type="getUserInfo" bindgetuserinfo="fetch_userinfo">授权登录</button>
+</view>
+
+<view class="register_phone">手机号： {{ phone_number }}</view>
+<input value="{{ phone_number }}" bindinput="bind_phone" placeholder="请输入手机号"></input>
+
+<view class="register_code">验证码： {{ phone_code }}
+  <button bindtap="send_phone_code">【点击发送验证码】</button>
+</view>
+<input value="{{ phone_code }}" bindinput="bind_phone_code" placeholder="请输入验证码"></input>
+
+<button bindtap="phone_login">登录</button>
+
+<view class="user_location" bindtap="fetch_address">
+  <text>收货地址：</text>
+  {{local_address}}
+</view>

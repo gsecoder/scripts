@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>day1的实战案例：用户输入商品价格和商品数量，以及收获地址，可以自动打印订单信息</title>
+	<style>
+		h2 {
+			text-align: center;
+		}
+		table{
+			/* 合并相邻边框 */
+			border-collapse: collapse;
+			height: 80px;
+			margin: 0 auto;
+			text-align: center;
+		}
+		table,th,td{
+			border: 1px solid #000000;
+		}
+	</style>
+</head>
+<body>
+	<h2>订单信息</h2>
+
+	<script>
+		// 1、用户输入
+		let price = +prompt('请输入商品价格：');
+		let num = +prompt('请输入商品数量：');
+		let address = prompt('请输入收获地址：');
+        
+        // 2、计算商品总价
+		let totalPrice = price * num;
+		
+		// 3、页面打印渲染
+		document.write(`
+			<table>
+				<tr>
+					<th>商品名称</th>
+					<th>商品价格</th>
+					<th>商品数量</th>
+					<th>商品总价</th>
+					<th>收获地址</th>
+				</tr>
+				<tr>
+					<td>小米</td>
+					<td>${price}</td>
+					<td>${num}</td>
+					<td>${totalPrice}</td>
+					<td>${address}</td>
+			</table>
+		`)
+	</script>
+</body>
+</html>

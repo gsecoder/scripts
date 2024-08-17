@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>day6apis-事件流</title>
+	<style>
+		.father{
+            width: 200px;
+            height: 200px;
+            background-color: grey;
+		}
+		.son{
+            width: 100px;
+            height: 100px;
+            background-color: pink;
+		}
+		
+		.father2{
+            width: 200px;
+            height: 200px;
+            background-color: skyblue;
+		}
+		.son2{
+            width: 100px;
+            height: 100px;
+            background-color: pink;
+		}
+	</style>
+</head>
+<body>
+	<div class="father">
+		<div class="son"></div>
+	</div>
+	
+	<div class="father2">
+		<div class="son2"></div>
+	</div>
+	
+	<script>
+		/**
+		document.addEventListener('click', function () {
+			alert("我是爷爷～")
+        }, true)
+		const father = document.querySelector('.father')
+		father.addEventListener('click', function () {
+			alert("我是爸爸～")
+        }, true)
+		const son = document.querySelector('.son')
+		son.addEventListener('click', function () {
+			alert("我是儿子～")
+        }, true)
+		*/	
+		
+		document.addEventListener('click', function () {
+			alert("我是爷爷～")
+        })
+		const father2 = document.querySelector('.father2')
+		father2.addEventListener('click', function () {
+			alert("我是爸爸～")
+        })
+		const son2 = document.querySelector('.son2')
+		son2.addEventListener('click', function (ev) {
+			alert("我是儿子～")
+			ev.stopPropagation()
+        })
+		
+	</script>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>05_JavaScript异常处理</title>
+</head>
+<body>
+
+	<script>
+		try {
+            //这段代码从上往下运行，其中任何一个语句抛出异常该代码块就结束运行
+        }
+        catch (e) {
+            // 如果try代码块中抛出了异常，catch代码块中的代码就会被执行。
+            //e是一个局部变量，用来指向Error对象或者其他抛出的对象
+        }
+        finally {
+            //无论try中代码是否有异常抛出（甚至是try代码块中有return语句），finally代码块中始终会被执行。
+        }
+	</script>
+
+</body>
+</html>

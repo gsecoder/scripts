@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>day6apis-操作DOM元素内容</title>
+</head>
+<body>
+
+	<div class="box">我是文字内容</div>
+	
+	<div class="wrapper">
+		<strong>年会抽奖：从数组随机抽取一等奖、二等奖和三等奖，显示到对应的标签里面</strong>
+		<h3>一等奖：<span id="one">???</span></h3>
+		<h4>二等奖：<span id="two">???</span></h4>
+		<h5>三等奖：<span id="three">???</span></h5>
+	</div>
+	
+	<script>
+		// 获取元素
+		const box = document.querySelector('.box')
+		// 获取元素标签里的值
+		boxText = box.innerHTML
+		document.write(boxText + "<br/>")
+		// 修改元素标签里的值
+		box.innerHTML = `<strong>我是文字内容修改后的内容</strong>`
+		document.write(box.innerHTML + "<br/>")
+		
+		
+		// 年会抽奖
+		const personArr = ['周瑜','诸葛亮','刘备','张飞','曹操','关羽','鲁肃','夏侯渊','司马懿']
+		// 一等奖抽取
+		const randomOne = Math.floor(Math.random() * personArr.length)
+		console.log(personArr[randomOne])
+		const one = document.querySelector('#one')
+		one.innerHTML = personArr[randomOne]
+		personArr.splice(randomOne, 1)
+		console.log(personArr)
+		// 二等奖抽取
+		const randomTwo = Math.floor(Math.random() * personArr.length)
+		console.log(personArr[randomTwo])
+		const two = document.querySelector('#two')
+		two.innerHTML = personArr[randomTwo]
+		personArr.splice(randomTwo, 1)
+		console.log(personArr)
+		// 三等奖抽取
+		const randomThree = Math.floor(Math.random() * personArr.length)
+		console.log(personArr[randomThree])
+		const three = document.querySelector('#three')
+		three.innerHTML = personArr[randomThree]
+		personArr.splice(randomThree, 1)
+		console.log(personArr)
+	</script>
+</body>
+</html>

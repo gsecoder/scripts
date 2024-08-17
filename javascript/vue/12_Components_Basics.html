@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>组件基础</title>
+	<script src="vue.js" type="text/javascript" charset="utf-8"></script>
+</head>
+<body>
+	<div id="app">
+		<component_name component_type="title1" @clicknow="clicknow">
+			<h2>hi vue2</h2>
+		</component_name>
+	</div>
+	
+	<script type="text/javascript">
+		/*这里定义的是全局组件，全局生效*/
+		Vue.component(
+			"component_name",{
+				props: ['component_type'],
+				data: function () {
+					return {
+						count: 0
+					}
+				},
+				template: '<div>' +
+					'<h1>hi vue1</h1>' +
+					'<button v-on:click="clickfun">{{ component_type }} you clicked me {{ count }} times.</button>' +
+					'<slot></slot>' +
+					'</div>',
+				methods:{
+					clickfun: function () {
+						this.count ++;
+						this.$emit('clicknow', this.count)
+					}
+				}
+			}
+		)
+		const vm = new Vue({
+			el: "#app",
+			data: {
+			
+			},
+			methods: {
+				clicknow: function (e) {
+					console.log(e)
+				}
+			}
+		});
+	</script>
+</body>
+</html>

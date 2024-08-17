@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>day8apis-BOMlocation对象</title>
+</head>
+<body>
+
+	<div>
+		<a href="https://www.baidu.com" class="">支付成功 <span>3秒</span>后跳转到百度页面</a>
+	</div>
+	
+	<div>
+		<form action="">
+			<label for="">
+				<input type="text" name="username">
+				<input type="password" name="pwd">
+				<button>提交</button>
+			</label>
+		</form>
+	</div>
+	
+	<div class="hash">
+		<a href="#/my">我的</a>
+		<a href="#/music">音乐</a>
+		<a href="#/text">图文</a>
+		<a href="#/setting">设置</a>
+	</div>
+	
+	<div>
+		<button class="reload">刷新</button>
+	</div>
+
+	<script>
+		console.log(location.href)
+		
+		// 1、href 属性，通过 js 的方式进行页面跳转（注册成功 5s 后自动跳转到首页）
+		// location.href = 'http://www.baidu.com'
+		
+		/**
+		 * 5秒之后跳转页面
+		 * 需求：用户点击可以跳转，如果不点击则 5 秒后自动跳转，要求显示秒数倒计时
+		 * */
+        const a = document.querySelector('a')
+		// 声明倒计时
+		let num = 5
+		let timerId = setInterval(function () {
+			num--
+			a.innerHTML = `支付成功 <span>${num}秒</span>后跳转到百度页面`
+			if (num === 0){
+                clearInterval(timerId)
+				// location.href = "https://www.baidu.com"
+			}
+        }, 1000 )
+		
+		/**
+		 * location的 search 属性
+		 * */
+        console.log(location.search)
+		
+		/**
+		 * location的 hash 属性
+		 * */
+        console.log(location.hash)
+		const hashs = document.querySelector('.hash').children
+		console.log("hashs: ", hashs)
+        for (let i = 0; i < hashs.length; i++) {
+	        hashs[i].addEventListener('click', function () {
+		        console.log(hashs[i].hash)
+            })
+        }
+        
+        /**
+         * location 的 reload 方法
+         * */
+        const reload = document.querySelector('.reload')
+		reload.addEventListener('click', function () {
+            // f5 刷新页面
+			// location.reload()
+			// command + f5强制刷新
+			location.reload(true)
+        })
+	</script>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>模板语法 - 插值</title>
+    <script src="vue.js" type="text/javascript" charset="utf-8"></script>
+</head>
+<body>
+    <div id="app" v-once>
+        {{ msg }}
+        <p>Using mustaches: {{ rawHtml }}</p>
+        <p v-html="rawHtml"> {{ rawHtml }}</p>
+
+        <p v-bind:class="color"> This is dynamic color</p>
+
+        <!--javascript show-->
+        <p> {{ number + 1}}</p>
+        <p> {{ ok ? 'Yes': 'No'}}</p>>
+        <p> {{ message.split('').reverse().join('')}}</p>
+    </div>
+
+    <script>
+        const vm = new Vue({
+           el: "#app",
+           data: {
+               msg: "Hi Vue",
+
+               /*v-html*/
+               rawHtml: '<span style="color: red">This is should be red word</span>',
+
+               /*v-bind*/
+               color: "blue",
+               number: 10,
+               ok : 1,
+               message: "Vue"
+           }
+        });
+        vm.msg = "change hi ....";
+
+    </script>
+
+    <style type="text/css">
+        .red{color: red}
+        .blue{color: blue; font-size: 50px}
+    </style>
+
+</body>
+</html>

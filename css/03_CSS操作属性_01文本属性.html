@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>03_CSS操作属性_文本属性</title>
+    <style>
+        #p1{
+            color: red;
+        }
+        #p2{
+            color: rgb(255, 178, 213);
+        }
+        #p3{
+            color: #FFF000;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>文本</h2>
+    <h3>1.文本颜色：color --- 用来设置文字的颜色</h3>
+    <p>颜色的表示形式：<br>
+        <span id="p1">1.十六进制值: #FF0000</span><br>
+        <span id="p2">2.RGB值: RGB(255,0,0)</span><br>
+        <span id="p3">3.颜色的名称: red</span><br>
+    </p>
+
+    <h3>2. 文本的对齐方式</h3>
+    <p style="text-align: left">left 把文本排列到左边。默认值：由浏览器决定</p>
+    <p style="text-align: right">right 把文本排列到右边。</p>
+    <p style="text-align: center">center 把文本排列到中间。</p>
+    <p style="text-align: justify">justify 实现两端对齐文本效果。</p>
+
+    <p style="font-size: 20px">font-size: 字体的大小设置</p>
+    <p style="line-height: 100px; background: #FFF000">line-height: 文本行高 通俗的讲，文字高度加上文字上下的空白区域的高度 50%:基于字体大小的百分比</p>
+    <p style="vertical-align: -4px; background: blue">vertical-align: 设置元素内容的垂直对齐方式 ,只对行内元素有效，对块级元素无效</p>
+    <a href="#" style="text-decoration: none">text-decoration: 属性用来设置或删除文本的装饰。主要是用来删除链接的下划线</a>
+    <p style="font-family: Arial; font-weight: bolder">font-weight: lighter/bold/border/</p>
+    <p style="font-style: oblique">font-style: oblique</p>
+    <p style="text-indent: 150px">首行缩进150px</p>
+    <p style="letter-spacing: 5px">字母之间的间距letter</p>
+    <p style="word-spacing: 20px">单词之间的间距 Welcome to xian</p>
+    <p style="text-transform: capitalize">welcome to xian</p>
+    <p style="text-transform: uppercase">welcome to xian</p>
+    <p style="text-transform: lowercase">WELCOME TO XIAN</p>
+</body>
+</html>

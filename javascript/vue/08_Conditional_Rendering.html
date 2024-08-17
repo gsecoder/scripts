@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>条件渲染</title>
+	<script src="vue.js" type="text/javascript" charset="utf-8"></script>
+</head>
+<body>
+
+	<!--更高的切换开销-->
+	<div id="app">
+		<div v-if="type === 'A'">
+			A
+		</div>
+		<div v-else-if="type === 'B'">
+			B
+		</div>
+		<div v-else-if="type === 'C'">
+			C
+		</div>
+		<div v-else>
+			Not A/B/C
+		</div>
+		
+		<!--更高的初始化开销-->
+		<div v-show="ok">
+			Hi Vue!
+		</div>
+	</div>
+	
+	<script type="text/javascript">
+		const vm = new Vue({
+			el: "#app",
+			data:{
+				type: 'a',
+				ok: false
+			}
+		});
+	</script>
+</body>
+</html>

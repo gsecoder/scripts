@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>day8apis-DOM节点新增</title>
+</head>
+<body>
+	<ul>
+		<li>我是老大</li>
+	</ul>
+	<script>
+		// 1、创建节点
+		const div = document.createElement('div')
+		// 2、追加元素
+		document.body.appendChild(div);
+        div.style.color = 'red'
+        div.style.width = '200px'
+        div.style.height= '200px'
+		div.innerHTML = "我是新建的 div"
+        
+        const ul = document.querySelector('ul')
+		const li = document.createElement('li')
+		li.innerHTML = "我是新建的第一个 li"
+		const li2 = document.createElement('li')
+		li2.innerHTML = "我是最新的 li"
+		ul.appendChild(li)
+		
+		ul.insertBefore(li2, ul.children[0])
+		
+		// 克隆节点
+		const ul1 = document.querySelector('ul')
+		/**
+		lic = ul.children[0].cloneNode(true)
+		ul.appendChild(lic)
+		 */
+        // 深克隆
+        ul.appendChild(ul.children[0].cloneNode(true))
+		// 浅克隆
+        ul.appendChild(ul.children[0].cloneNode())
+		
+		
+		/**
+		 * 删除节点
+		 * */
+        
+	</script>
+</body>
+</html>

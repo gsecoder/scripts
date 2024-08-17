@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>06_对象之数据对象_01String对象</title>
+</head>
+<body>
+	在JavaScript中除了null和undefined以外其他的数据类型都被定义成了对象，也可以用创建对象的方法定义变量，String、Math、Array、Date、RegExp都是JavaScript中重要的内置对象，在JavaScript程序大多数功能都是基于对象实现的。
+	<h3>1.字符串对象创建</h3>
+	<script>
+		/*一、变量 = "字符串"*/
+		var s = '';
+
+		/*二、字符串对象名称 = new String(字符串)*/
+		var s1 = new String('hello');
+		console.log(s,s1);
+		console.log(typeof(s)); 	// object类型
+		console.log(typeof (s1)); 	// string类型
+	</script>
+
+	<h3>2.字符串对象的属性和函数</h3>
+	<script>
+		var s2= " StrIngSort ";
+
+		/*属性：x.length    －－－－获取字符串的长度*/
+		console.log(s2.length);
+
+		/*方法*/
+		/*x.toLowerCase()        －－－－转为小写*/
+		console.log(s2.toLowerCase())
+
+		/* x.toUpperCase()        －－－－转为大写*/
+        console.log(s2.toLocaleUpperCase())
+
+		/* x.trim()               －－－－去除字符串两边空格 */
+		console.log(s2.trim())
+
+		/*字符串查询方法：－－－－str1.charAt(index);－－－－获取指定位置字符，其中index为要获取的字符索引*/
+		console.log(s2.charAt(2))
+
+		/*字符串查询方法：－－－－查询字符串位置*/
+		console.log(s2.indexOf('I'))
+
+		/*字符串查询方法：-----索引最后一个字符串所在的位置lastIndexOf(findstr)*/
+        console.log(s2.lastIndexOf('S'))
+
+		/*字符串查询方法：－－－－match返回匹配字符串的数组，如果没有匹配则返回null*/
+        console.log(s2.match('a'))
+
+		/*字符串查询方法：－－－－search返回匹配字符串的首字符位置索引*/
+        console.log(s2.search('Sort'))
+
+
+		/*子字符串处理方法：x.substr(start, length) －－－－start表示开始位置，length表示截取长度*/
+		console.log(s2.substr(1, 3))
+
+		/*子字符串处理方法：x.substring(start, end) －－－－end是结束位置*/
+		console.log(s2.substring(1, 5))
+
+        /*子字符串处理方法：x.slice(start, end)     －－－－切片操作字符串*/
+		console.log(s2.slice(1, 5))
+
+		/*子字符串处理方法：x.replace(findstr,tostr) －－－－    字符串替换*/
+		console.log(s2.replace('St', 'FF'))
+
+		/*子字符串处理方法：x.split();                 －－－－分割字符串*/
+		s3 = "1, 2, 3, 4, 5, 6, 7"
+		console.log(s3.split(','))
+
+		/*子字符串处理方法：x.concat(addstr)         －－－－拼接字符串*/
+		s4 = 'Str1'
+		s5 = 'Str2'
+		console.log(s4.concat(s5))
+	</script>
+</body>
+</html>

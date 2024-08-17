@@ -1,0 +1,77 @@
+/**index.wxss**/
+.menu_hot_text {
+  font-size: 50rpx;
+  font-weight: 600;
+}
+.menu_hot_detail .menu_hot_detail_image image{
+  height: 100rpx;
+}
+
+.menu_hot_detail .menu_hot_detail_image image{
+  width: 100rpx;
+}
+
+.menu_hot_detail .menu_hot_detail_image  .weibo{
+  border-radius: 50%;
+}
+
+.menu_hot_detail {
+  display: flex;
+
+  /*
+  * 规定主轴方向：
+  * row: 横轴方向
+  * column：纵轴方向
+  */
+  flex-direction: row;
+
+  /*justify-content 元素在主轴方向如何布局
+  * space-around：平均布局;
+  * space-center：剧中布局
+  */
+  justify-content: space-around;
+}
+
+.menu_hot_detail .menu_hot_detail_image{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.menu_hot_detail .menu_hot_detail_image text{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
+
+/*京东秒杀*/
+.auction .item .big_image image{
+  width: 100%;
+  height: 580rpx;
+}
+
+.auction .item .small_image image{
+  width: 120rpx;
+  height: 120rpx;
+}
+
+.auction .item .small_image{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  /*padding-right: 30rpx;*/
+}
+
+.auction .item .title{
+  font-size: 50rpx;
+  font-weight: 600rpx;
+}
+
+.auction .item .tips{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  font-size: 26rpx;
+  color: #8c8c8c;
+}

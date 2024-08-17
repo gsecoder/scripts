@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>02_CSS的选择器</title>
+    <style>
+        /*标签选择器*/
+        span{
+            color: blue;
+            background: white;
+        }
+
+        /*id选择器*/
+        #id2{
+            color: red;
+            background: aliceblue;
+            font-style: oblique;
+        }
+
+        /*类选择器*/
+        p.p1{
+            color: chocolate;
+            font-size: larger;
+            font-style: unset;
+        }
+
+        /*通用选择器* */
+        *{
+            font-family: 华文楷体;
+        }
+    </style>
+</head>
+<body>
+    <h3>一、基础选择器</h3>
+        <span id="id1">1.标签选择器：匹配所用使用该标签的样式  p{color:red}</span>
+        <p id="id2">2.id选择器：匹配指定的标签  #p2{color:red}</p>
+        <p id="id3" class="p1">3.class类选择器：谁指定class谁的变色，可选多个  .c1{color:red} 或者 div.c1{color:red}</p>
+        <p id="id4" class="p1">4.通用元素选择器*：所有的标签用该样式</p>
+
+    <h3 style="color: red">注意：可以对块级元素设置长宽；不可以对内联标签设置长宽(它只会根据它的文字大小来变)</h3>
+</body>
+</html>
